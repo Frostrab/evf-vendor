@@ -3,6 +3,7 @@ import { Layout } from 'antd'
 import HeaderTab from './Header'
 import MenuList from './MenuList'
 import LogoTab from './Logo'
+import './style.css'
 const { Sider, Content } = Layout
 const Index = props => {
   const [collapsed, setCollapsed] = React.useState(false)
@@ -15,19 +16,26 @@ const Index = props => {
         trigger={null}
         collapsible
         collapsed={collapsed}
+        width={230}
         style={{
-          overflow: 'auto',
           height: '100vh',
-          position: 'fixed',
-          left: 0,
+          // position: 'fixed',
+          // left: 0,
         }}
       >
         <LogoTab logoText={'test'} />
         <MenuList />
       </Sider>
-      <Layout style={{ marginLeft: 200 }}>
+      <Layout>
         <HeaderTab toggle={toggle} />
-        <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
+        <Content
+          style={{
+            margin: '24px 16px',
+            padding: 24,
+            background: '#fff',
+            minHeight: 280,
+          }}
+        >
           <div style={{ padding: 24, background: '#fff', textAlign: 'center' }}>
             Content
           </div>

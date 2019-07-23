@@ -1,0 +1,31 @@
+{
+  "menu": [
+    {
+      "name": "Inbox",
+      "display": true,
+      "children": [
+        {
+          "name": "SubInbox1",
+          "display": true,
+          "children": [
+            {
+              "name": "SubInSubInbox1",
+              "display": true,
+              "children": null
+            },
+            {
+              "name": "SubInSubInbox2",
+              "display": true,
+              "children": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SubInbox2",
+      "children": null,
+      "display": true
+    }
+  ]
+}
