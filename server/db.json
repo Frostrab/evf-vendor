@@ -27,5 +27,11 @@
       "children": null,
       "display": true
     }
+  ],
+  "login": [
+    {
+      "firstName": "test",
+      "lastName": "Naja"
+    }
   ]
 }

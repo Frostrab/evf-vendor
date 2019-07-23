@@ -1,18 +1,11 @@
 import React from 'react'
 import { Menu, Icon } from 'antd'
-import axios from 'axios'
-
-const getMenu = () => axios.get(`http://localhost:4000/menu`)
 const { SubMenu } = Menu
 const MenuList = props => {
-  const [menu, setMenu] = React.useState([])
-  React.useEffect(() => {
-    getMenu().then(res => {
-      setMenu(res.data)
-    })
-  }, [])
+  const { menu } = props
   return (
     <Menu defaultSelectedKeys={['1']} mode="inline">
+      {console.log(menu)}
       {menu.map((mainMenu, key) =>
         mainMenu.children ? (
           mainMenu.display ? (
@@ -41,7 +34,7 @@ const MenuList = props => {
                         lastMenu.display ? (
                           <Menu.Item key={lastMenu.name}>
                             <Icon type="user" />
-                            <span>{lastMenu.Name}</span>
+                            <span>{lastMenu.name}</span>
                           </Menu.Item>
                         ) : (
                           false
@@ -51,7 +44,7 @@ const MenuList = props => {
                   ) : (
                     <Menu.Item key={subMenuTab.name}>
                       <Icon type="user" />
-                      <span>{subMenuTab.Name}</span>
+                      <span>{subMenuTab.name}</span>
                     </Menu.Item>
                   )
                 ) : (

@@ -3,10 +3,20 @@ import { Layout } from 'antd'
 import HeaderTab from './Header'
 import MenuList from './MenuList'
 import LogoTab from './Logo'
+import axios from 'axios'
 import './style.css'
 const { Sider, Content } = Layout
-const Index = props => {
+const getMenu = () => axios.get(`http://localhost:4000/menu`)
+
+const Index = () => {
   const [collapsed, setCollapsed] = React.useState(false)
+  const [menu, setMenu] = React.useState([])
+  React.useEffect(() => {
+    getMenu().then(res => {
+      setMenu(res.data)
+    })
+  }, [])
+
   const toggle = () => {
     setCollapsed(!collapsed)
   }
@@ -24,7 +34,7 @@ const Index = props => {
         }}
       >
         <LogoTab logoText={'test'} />
-        <MenuList />
+        <MenuList menu={menu} />
       </Sider>
       <Layout>
         <HeaderTab toggle={toggle} />
