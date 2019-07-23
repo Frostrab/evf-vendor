@@ -1,22 +1,11 @@
 import React from 'react'
 import logo from './logo.svg'
-import './App.css'
 import { Button } from 'antd'
-import Table from './test'
-
+import List from './test'
+import Table from './table'
+import Layout from './components/layout'
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Table />
-        <Button type="primary">Primary</Button>
-      </header>
-    </div>
-  )
+  return <Layout />
 }
 
 export default App

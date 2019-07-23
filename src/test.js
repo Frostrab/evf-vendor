@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-const Table = () => {
+const List = () => {
   const [data] = useState([
     { id: 1, name: 'Wasif', age: 21, email: 'wasif@email.com' },
     { id: 2, name: 'Ali', age: 19, email: 'ali@email.com' },
@@ -14,4 +14,4 @@ const Table = () => {
     </ul>
   )
 }
-export default Table
+export default List
