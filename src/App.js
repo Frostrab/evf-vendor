@@ -5,8 +5,9 @@ import List from './test'
 import Table from './table'
 import Layout from './components/layout'
 import AuthExample from './testroute'
+import Login from './components/Login'
 function App() {
-  return <Layout />
+  return <Login />
 }
 
 export default App
