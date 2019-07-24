@@ -1,5 +1,7 @@
 import React from 'react'
 import { Menu, Icon } from 'antd'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+
 const { SubMenu } = Menu
 const MenuList = props => {
   const { menu } = props
@@ -7,8 +9,8 @@ const MenuList = props => {
     <Menu defaultSelectedKeys={['1']} mode="inline">
       {console.log(menu)}
       {menu.map((mainMenu, key) =>
-        mainMenu.children ? (
-          mainMenu.display ? (
+        mainMenu.parent ? (
+          mainMenu.displayOnly ? (
             <SubMenu
               key={mainMenu.name}
               title={
@@ -18,9 +20,9 @@ const MenuList = props => {
                 </span>
               }
             >
-              {mainMenu.children.map((subMenuTab, key) =>
-                subMenuTab.children ? (
-                  subMenuTab.display ? (
+              {mainMenu.parent.map((subMenuTab, key) =>
+                subMenuTab.parent ? (
+                  subMenuTab.displayOnly ? (
                     <SubMenu
                       key={subMenuTab.name}
                       title={
@@ -30,8 +32,8 @@ const MenuList = props => {
                         </span>
                       }
                     >
-                      {subMenuTab.children.map((lastMenu, key) =>
-                        lastMenu.display ? (
+                      {subMenuTab.parent.map((lastMenu, key) =>
+                        lastMenu.displayOnly ? (
                           <Menu.Item key={lastMenu.name}>
                             <Icon type="user" />
                             <span>{lastMenu.name}</span>
