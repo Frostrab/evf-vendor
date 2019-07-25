@@ -11,6 +11,10 @@ const styled = {
   },
 }
 const Login = props => {
+  console.log(
+    'Height :' + window.innerHeight + ' : ',
+    'Width :' + window.innerWidth + ' : '
+  )
   const { getFieldDecorator } = props.form
   function handleSubmit(e) {
     e.preventDefault()
