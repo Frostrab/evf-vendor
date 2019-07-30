@@ -1,37 +1,115 @@
 {
-  "menu": [
-    {
-      "name": "Inbox",
-      "display": true,
-      "children": [
-        {
-          "name": "SubInbox1",
-          "display": true,
-          "children": [
-            {
-              "name": "SubInSubInbox1",
-              "display": true,
-              "children": null
-            },
-            {
-              "name": "SubInSubInbox2",
-              "display": true,
-              "children": null
-            }
-          ]
-        }
-      ]
+  "menu": {
+    "employee": {
+      "empNo": "999999",
+      "firstNameTH": "ผู้ดูแลระบบ",
+      "lastNameTH": "ผู้ดูแลระบบLname"
     },
-    {
-      "name": "SubInbox2",
-      "children": null,
-      "display": true
-    }
-  ],
+    "menu": [
+      {
+        "name": "Inbox",
+        "icon": null,
+        "displayOnly": false,
+        "parent": null
+      },
+      {
+        "name": "ใบเบิกเงินทดรองจ่าย",
+        "icon": null,
+        "displayOnly": false,
+        "parent": [
+          {
+            "name": "การจัดการ",
+            "icon": null,
+            "displayOnly": false,
+            "parent": [
+              {
+                "name": "ใบขออนุมัติเบิกเงิน",
+                "icon": null,
+                "displayOnly": false,
+                "parent": null
+              }
+            ]
+          },
+          {
+            "name": "รายงาน",
+            "icon": null,
+            "displayOnly": false,
+            "parent": [
+              {
+                "name": "รายงานแสดงการลงนาม",
+                "icon": null,
+                "displayOnly": true,
+                "parent": null
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
   "login": [
     {
       "firstName": "test",
       "lastName": "Naja"
+    }
+  ],
+  "masterdataList": [
+    {
+      "menuCode": "Inbox",
+      "menuName": "Inbox",
+      "isDisplay": false,
+      "isManage": false,
+      "roleDisplayName": null,
+      "roleManageName": null,
+      "parentMenu": null
+    },
+    {
+      "menuCode": "CA_Group",
+      "menuName": "ใบเบิกเงินทดรองจ่าย",
+      "isDisplay": false,
+      "isManage": false,
+      "roleDisplayName": null,
+      "roleManageName": null,
+      "parentMenu": [
+        {
+          "menuCode": "CA_MGT_Group",
+          "menuName": "การจัดการ",
+          "isDisplay": false,
+          "isManage": false,
+          "roleDisplayName": null,
+          "roleManageName": null,
+          "parentMenu": [
+            {
+              "menuCode": "CA",
+              "menuName": "ใบขออนุมัติเบิกเงิน",
+              "isDisplay": false,
+              "isManage": false,
+              "roleDisplayName": null,
+              "roleManageName": null,
+              "parentMenu": null
+            }
+          ]
+        },
+        {
+          "menuCode": "CA_RP_Group",
+          "menuName": "รายงาน",
+          "isDisplay": false,
+          "isManage": false,
+          "roleDisplayName": null,
+          "roleManageName": null,
+          "parentMenu": [
+            {
+              "menuCode": "CAApproveReport",
+              "menuName": "รายงานแสดงการลงนาม",
+              "isDisplay": false,
+              "isManage": false,
+              "roleDisplayName": null,
+              "roleManageName": null,
+              "parentMenu": null
+            }
+          ]
+        }
+      ]
     }
   ]
 }

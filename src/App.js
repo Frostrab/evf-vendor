@@ -1,13 +1,21 @@
 import React from 'react'
-import logo from './logo.svg'
-import { Button } from 'antd'
-import List from './test'
-import Table from './table'
-import Layout from './components/layout'
-import AuthExample from './testroute'
-import Login from './components/Login'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Loadable from 'react-loadable'
+const LoginPage = Loadable({
+  loader: () => import('./components/Login'),
+  loading: () => null,
+})
+const LayoutPage = Loadable({
+  loader: () => import('./components/layout'),
+  loading: () => null,
+})
 function App() {
-  return <Login />
+  return (
+    <Router>
+      <Route exact path="/" component={LoginPage} />
+      <Route path="/Layout" component={LayoutPage} />
+    </Router>
+  )
 }
 
 export default App

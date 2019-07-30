@@ -6,6 +6,6 @@
   transition: color 0.3s;
 }
 
-#components-layout-demo-custom-trigger .trigger:hover {
+#components-layout-demo-custom-trigger .trigger: {
   color: #1890ff;
 }
