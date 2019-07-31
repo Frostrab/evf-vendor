@@ -1,6 +1,5 @@
 import React from 'react'
 import { Form, Icon, Input, Button } from 'antd'
-
 const styled = {
   form: {
     maxWidth: '300px',
@@ -8,13 +7,10 @@ const styled = {
   content: {
     display: 'flex',
     justifyContent: 'center',
+    width: '400',
   },
 }
 const Login = props => {
-  console.log(
-    'Height :' + window.innerHeight + ' : ',
-    'Width :' + window.innerWidth + ' : '
-  )
   const { getFieldDecorator } = props.form
   function handleSubmit(e) {
     e.preventDefault()
