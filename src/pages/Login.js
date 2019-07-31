@@ -18,15 +18,16 @@ const GlobalStyle = createGlobalStyle`
 `
 const Form = styled.div`
   width: 350px;
+  justify-content: center;
 `
 const LoginPage = () => {
   return (
     <React.Fragment>
       <GlobalStyle />
       <Background>
-        <Form>
-          <Login />
-        </Form>
+        {/* <Form> */}
+        <Login />
+        {/* </Form> */}
       </Background>
     </React.Fragment>
   )

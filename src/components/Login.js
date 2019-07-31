@@ -2,7 +2,7 @@ import React from 'react'
 import { Form, Icon, Input, Button } from 'antd'
 const styled = {
   form: {
-    maxWidth: '300px',
+    maxWidth: '200%',
   },
   content: {
     display: 'flex',
