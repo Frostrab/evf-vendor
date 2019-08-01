@@ -9,6 +9,14 @@ export const LoginPage = Loadable({
     </div>
   ),
 })
+export const Content1 = Loadable({
+  loader: () => import('./Content1'),
+  loading: () => (
+    <div>
+      <Loading />
+    </div>
+  ),
+})
 export const Layout = Loadable({
   loader: () => import('../components/layout'),
   loading: () => (

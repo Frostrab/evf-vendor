@@ -8,7 +8,7 @@ import './style.css'
 const { Sider, Content } = Layout
 const getMenu = () => axios.get(`http://localhost:4000/menu`)
 
-const Index = () => {
+const Index = props => {
   const [collapsed, setCollapsed] = React.useState(false)
   const [menu, setMenu] = React.useState([])
   const [userLogin, setUserLogin] = React.useState([])
@@ -51,11 +51,9 @@ const Index = () => {
         <Layout>
           <HeaderTab toggle={toggle} user={userLogin} />
           <Content style={styleForAnt.content}>
-            <div
-              style={{ padding: 24, background: '#fff', textAlign: 'center' }}
-            >
-              Content
-            </div>
+            {/* <div style={{background: '#fff', textAlign: 'center'}}> */}
+            {props.children}
+            {/* </div> */}
           </Content>
         </Layout>
       </Layout>

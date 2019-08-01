@@ -1,62 +1,102 @@
 import React from 'react'
-import { Form, Icon, Input, Button } from 'antd'
-const styled = {
-  form: {
-    maxWidth: '200%',
+import { Field, reduxForm } from 'redux-form'
+import { Form, Input, Button } from 'antd'
+
+const FormItem = Form.Item
+const formItemLayout = {
+  labelCol: {
+    xs: { span: 24 },
+    sm: { span: 6 },
   },
-  content: {
-    display: 'flex',
-    justifyContent: 'center',
-    width: '400',
+  wrapperCol: {
+    xs: { span: 24 },
+    sm: { span: 14 },
   },
 }
-const Login = props => {
-  const { getFieldDecorator } = props.form
-  function handleSubmit(e) {
-    e.preventDefault()
-    props.form.validateFields((err, values) => {
-      if (!err) {
-        console.log('Received values of form: ', values)
-      }
-    })
-  }
+
+const tailFormItemLayout = {
+  wrapperCol: {
+    xs: {
+      span: 24,
+      offset: 0,
+    },
+    sm: {
+      span: 14,
+      offset: 6,
+    },
+  },
+}
+
+const makeField = Component => ({
+  input,
+  meta,
+  children,
+  hasFeedback,
+  label,
+  ...rest
+}) => {
+  const hasError = meta.touched && meta.invalid
   return (
-    <React.Fragment style={styled.content}>
-      <Form onSubmit={handleSubmit} className="login-form" style={styled.form}>
-        <Form.Item>
-          {getFieldDecorator('username', {
-            rules: [{ required: true, message: 'Please input your username!' }],
-          })(
-            <Input
-              prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-              placeholder="Username"
-            />
-          )}
-        </Form.Item>
-        <Form.Item>
-          {getFieldDecorator('password', {
-            rules: [{ required: true, message: 'Please input your Password!' }],
-          })(
-            <Input
-              prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
-              type="password"
-              placeholder="Password"
-            />
-          )}
-        </Form.Item>
-        <Form.Item style={{ display: 'flex', justifyContent: 'center' }}>
-          <Button
-            type="primary"
-            htmlType="submit"
-            className="login-form-button"
-          >
-            Log in
-          </Button>
-        </Form.Item>
-      </Form>
-    </React.Fragment>
+    <FormItem
+      {...formItemLayout}
+      label={label}
+      validateStatus={hasError ? 'error' : 'success'}
+      hasFeedback={hasFeedback && hasError}
+      help={hasError && meta.error}
+    >
+      <Component {...input} {...rest} children={children} />
+    </FormItem>
   )
 }
-const WrappedNormalLoginForm = Form.create({ name: 'normal_login' })(Login)
 
-export default WrappedNormalLoginForm
+const AInput = makeField(Input)
+const Login = props => {
+  const { handleSubmit, pristine, reset, submitting } = props
+  return (
+    <Form onSubmit={handleSubmit}>
+      <Field
+        label="First Name"
+        name="firstName"
+        component={AInput}
+        placeholder="First Name"
+        hasFeedback
+      />
+
+      <Field
+        label="Last Name"
+        name="lastName"
+        component={AInput}
+        placeholder="Last Name"
+      />
+
+      <FormItem {...tailFormItemLayout}>
+        <Button
+          type="primary"
+          disabled={pristine || submitting}
+          htmlType="submit"
+          style={{ marginRight: '10px' }}
+        >
+          Submit
+        </Button>
+
+        <Button disabled={pristine || submitting} onClick={reset}>
+          Clear Values
+        </Button>
+      </FormItem>
+    </Form>
+  )
+}
+
+const validate = values => {
+  const errors = {}
+  if (!values.firstName) {
+    errors.firstName = 'Required'
+  }
+
+  return errors
+}
+
+export default reduxForm({
+  form: 'login', // a unique identifier for this form
+  validate,
+})(Login)
