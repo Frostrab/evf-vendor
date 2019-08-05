@@ -3,29 +3,33 @@
     "employee": {
       "empNo": "999999",
       "firstNameTH": "ผู้ดูแลระบบ",
-      "lastNameTH": "ผู้ดูแลระบบLname"
+      "lastNameTH": "ผู้ดูแลระบบ"
     },
     "menu": [
       {
         "name": "Inbox",
         "icon": null,
         "displayOnly": false,
+        "url": "/Inbox",
         "parent": null
       },
       {
         "name": "ใบเบิกเงินทดรองจ่าย",
         "icon": null,
         "displayOnly": false,
+        "url": "/CA_Group",
         "parent": [
           {
             "name": "การจัดการ",
             "icon": null,
             "displayOnly": false,
+            "url": "/CA_Group/CA_MGT_Group",
             "parent": [
               {
                 "name": "ใบขออนุมัติเบิกเงิน",
                 "icon": null,
                 "displayOnly": false,
+                "url": "/CA_Group/CA_MGT_Group/CA",
                 "parent": null
               }
             ]
@@ -34,11 +38,13 @@
             "name": "รายงาน",
             "icon": null,
             "displayOnly": false,
+            "url": "/CA_Group/CA_RP_Group",
             "parent": [
               {
                 "name": "รายงานแสดงการลงนาม",
                 "icon": null,
                 "displayOnly": true,
+                "url": "/CA_Group/CA_RP_Group/CAApproveReport",
                 "parent": null
               }
             ]
@@ -51,6 +57,42 @@
     {
       "firstName": "test",
       "lastName": "Naja"
+    }
+  ],
+  "rowItem": [
+    {
+      "id": 0,
+      "name": "New Role",
+      "description": "New Role Test Cache",
+      "active": true,
+      "roleItem": [
+        {
+          "menuCode": "Inbox",
+          "isDisplay": true,
+          "isManage": true,
+          "parentMenu": null
+        },
+        {
+          "menuCode": "CA_Group",
+          "isDisplay": true,
+          "isManage": true,
+          "parentMenu": [
+            {
+              "menuCode": "CA_MGT_Group",
+              "isDisplay": true,
+              "isManage": true,
+              "parentMenu": [
+                {
+                  "menuCode": "CA",
+                  "isDisplay": true,
+                  "isManage": true,
+                  "parentMenu": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "masterdataList": [

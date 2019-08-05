@@ -1,14 +1,30 @@
-import React from 'react'
-import { Menu, Icon } from 'antd'
+import React, { useState, useEffect } from 'react'
+import { Menu, Icon, Tooltip } from 'antd'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
 
 const { SubMenu } = Menu
 const MenuList = props => {
-  const { menu } = props
-  console.log(menu)
+  const [openKeys] = useState(['Inbox'])
+  const { menu, rootSubmenuKeys } = props
+
+  const onOpenChange = openKeys => {
+    console.log(`openKeys`, openKeys)
+    console.log(`test`, rootSubmenuKeys)
+    // const latestOpenKey = openKeys.find (key => openKeys.indexOf (key) === -1);
+    // if (rootSubmenuKeys.indexOf (latestOpenKey) === -1) {
+    //   setOpenKey ({openKeys});
+    // } else {
+    //   setOpenKey (latestOpenKey ? [latestOpenKey] : []);
+    // }
+  }
   return (
     <Router>
-      <Menu defaultSelectedKeys={['1']} mode="inline">
+      <Menu
+        // defaultSelectedKeys={openKeys}
+        mode="inline"
+        openKeys={openKeys}
+        onOpenChange={onOpenChange}
+      >
         {menu.map((mainMenu, key) =>
           mainMenu.parent ? (
             <SubMenu
@@ -33,26 +49,32 @@ const MenuList = props => {
                   >
                     {subMenuTab.parent.map((lastMenu, key) => (
                       <Menu.Item key={lastMenu.name}>
-                        <Link to="/test" />
-                        <Icon type="user" />
-                        <span>{lastMenu.name}</span>
+                        <Tooltip placement="topLeft" title={lastMenu.name}>
+                          <Link to={lastMenu.name} />
+                          <Icon type="user" />
+                          <span>{lastMenu.name}</span>
+                        </Tooltip>
                       </Menu.Item>
                     ))}
                   </SubMenu>
                 ) : (
                   <Menu.Item key={subMenuTab.name}>
-                    <Link to="/test" />
-                    <Icon type="user" />
-                    <span>{subMenuTab.name}</span>
+                    <Tooltip placement="topLeft" title={subMenuTab.name}>
+                      <Link to={subMenuTab.name} />
+                      <Icon type="user" />
+                      <span>{subMenuTab.name}</span>
+                    </Tooltip>
                   </Menu.Item>
                 )
               )}
             </SubMenu>
           ) : (
             <Menu.Item key={mainMenu.name}>
-              <Link to="/test" />
-              <Icon type="user" />
-              <span>{mainMenu.name}</span>
+              <Tooltip placement="topLeft" title={mainMenu.name}>
+                <Link to={mainMenu.url} />
+                <Icon type="user" />
+                <span>{mainMenu.name}</span>
+              </Tooltip>
             </Menu.Item>
           )
         )}

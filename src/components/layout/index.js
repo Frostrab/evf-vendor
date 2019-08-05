@@ -1,5 +1,5 @@
-import React from 'react'
-import { Layout, Spin } from 'antd'
+import React, { useState } from 'react'
+import { Layout, Spin, Switch } from 'antd'
 import HeaderTab from './Header'
 import MenuList from './MenuList'
 import LogoTab from './Logo'
@@ -7,20 +7,23 @@ import axios from 'axios'
 import './style.css'
 const { Sider, Content } = Layout
 const getMenu = () => axios.get(`http://localhost:4000/menu`)
-
 const Index = props => {
-  const [collapsed, setCollapsed] = React.useState(false)
-  const [menu, setMenu] = React.useState([])
-  const [userLogin, setUserLogin] = React.useState([])
-  const [spinLoading, setLoading] = React.useState(true)
+  const [collapsed, setCollapsed] = useState(false)
+  const [menu, setMenu] = useState([])
+  const [userLogin, setUserLogin] = useState([])
+  const [spinLoading, setLoading] = useState(true)
+  const [rootKey, setRootKey] = useState([])
   React.useEffect(() => {
     getMenu().then(res => {
-      setMenu(res.data.menu)
-      setUserLogin(res.data.employee)
+      const { menu, employee } = res.data
+      const data = []
+      menu.map(item => data.push(item.name))
+      setMenu(menu)
+      setUserLogin(employee)
       setLoading(false)
+      setRootKey(data)
     })
   }, [])
-
   const toggle = () => {
     setCollapsed(!collapsed)
   }
@@ -41,20 +44,17 @@ const Index = props => {
           collapsedWidth="0"
           collapsed={collapsed}
           width={230}
+          theme={'light'}
           style={{
             height: '100vh',
           }}
         >
           <LogoTab logoText={'test'} />
-          <MenuList menu={menu} />
+          <MenuList menu={menu} rootSubmenuKeys={rootKey} />
         </Sider>
         <Layout>
           <HeaderTab toggle={toggle} user={userLogin} />
-          <Content style={styleForAnt.content}>
-            {/* <div style={{background: '#fff', textAlign: 'center'}}> */}
-            {props.children}
-            {/* </div> */}
-          </Content>
+          <Content style={styleForAnt.content}>{props.children}</Content>
         </Layout>
       </Layout>
     </Spin>
