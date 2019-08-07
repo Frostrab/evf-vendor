@@ -8,5 +8,8 @@
     "start": "json-server --watch -p 4000 db.json"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "jsonwebtoken": "^8.5.1"
+  }
 }

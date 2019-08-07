@@ -56,7 +56,8 @@
   "login": [
     {
       "firstName": "test",
-      "lastName": "Naja"
+      "lastName": "Naja",
+      "token": "test"
     }
   ],
   "rowItem": [
