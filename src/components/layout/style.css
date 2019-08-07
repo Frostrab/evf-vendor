@@ -6,6 +6,6 @@
   transition: color 0.3s;
 }
 
-#components-layout-demo-custom-trigger .trigger: {
-  color: #1890ff;
+#components-layout-demo-custom-trigger .trigger {
+  color: #d5d7d8;
 }

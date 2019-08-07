@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Layout, Spin, Switch } from 'antd'
+import { Layout, Spin, Drawer } from 'antd'
 import HeaderTab from './Header'
 import MenuList from './MenuList'
 import LogoTab from './Logo'
@@ -8,16 +8,20 @@ import './style.css'
 const { Sider, Content } = Layout
 const getMenu = () => axios.get(`http://localhost:4000/menu`)
 const Index = props => {
-  const [collapsed, setCollapsed] = useState(false)
+  const [collapsed, setCollapsed] = useState(true)
   const [menu, setMenu] = useState([])
   const [userLogin, setUserLogin] = useState([])
   const [spinLoading, setLoading] = useState(true)
   const [rootKey, setRootKey] = useState([])
+  const [showDrawer, setShowDrawer] = useState(false)
+  const [systenName] = useState('ประเมิน')
   React.useEffect(() => {
     getMenu().then(res => {
       const { menu, employee } = res.data
       const data = []
       menu.map(item => data.push(item.name))
+      if (window.innerWidth > 480) setCollapsed(false)
+      if (window.innerWidth < 480) setCollapsed(true)
       setMenu(menu)
       setUserLogin(employee)
       setLoading(false)
@@ -26,32 +30,43 @@ const Index = props => {
   }, [])
   const toggle = () => {
     setCollapsed(!collapsed)
+    setShowDrawer(true)
   }
-  const styleForAnt = {
-    content: {
-      margin: '24px 16px',
-      padding: 24,
-      background: '#fff',
-      minHeight: 280,
-    },
+  const onClose = () => {
+    setShowDrawer(false)
   }
+
   return (
     <Spin spinning={spinLoading} delay={0}>
       <Layout>
-        <Sider
-          trigger={null}
-          collapsible
-          collapsedWidth="0"
-          collapsed={collapsed}
-          width={230}
-          theme={'light'}
-          style={{
-            height: '100vh',
-          }}
-        >
-          <LogoTab logoText={'test'} />
-          <MenuList menu={menu} rootSubmenuKeys={rootKey} />
-        </Sider>
+        {window.innerWidth > 480 ? (
+          <Sider
+            trigger={null}
+            collapsible
+            collapsedWidth="0"
+            collapsed={collapsed}
+            width={256}
+            // theme={'light'}
+            style={{
+              backgroundColor: '#F7F7F8',
+              height: '100vh',
+            }}
+          >
+            <LogoTab logoText={systenName} />
+            <MenuList menu={menu} rootSubmenuKeys={rootKey} />
+          </Sider>
+        ) : (
+          <Drawer
+            title={systenName}
+            placement={'left'}
+            closable={false}
+            onClose={onClose}
+            visible={showDrawer}
+            bodyStyle={{ padding: 0 }}
+          >
+            <MenuList menu={menu} rootSubmenuKeys={rootKey} />
+          </Drawer>
+        )}
         <Layout>
           <HeaderTab toggle={toggle} user={userLogin} />
           <Content style={styleForAnt.content}>{props.children}</Content>
@@ -61,3 +76,11 @@ const Index = props => {
   )
 }
 export default Index
+const styleForAnt = {
+  content: {
+    margin: '24px 16px',
+    padding: 0,
+    background: '#f0f2f5',
+    minHeight: '60vh',
+  },
+}

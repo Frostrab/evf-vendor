@@ -16,6 +16,11 @@ const styleForAnt = {
     marginTop: 20,
     marginLeft: 5,
     fontSize: '20px',
+    pointer: 'cursor',
+    right: {
+      fontSize: '20px',
+      pointer: 'cursor',
+    },
   },
 }
 const HeaderTab = props => (
@@ -27,7 +32,12 @@ const HeaderTab = props => (
       style={styleForAnt.icon}
     />
     <UserLogin>
-      {props.user.firstNameTH} {props.user.lastNameTH}
+      {props.user.firstNameTH} {props.user.lastNameTH}{' '}
+      <Icon
+        type="logout"
+        style={styleForAnt.icon.right}
+        onClick={() => console.log('test')}
+      />
     </UserLogin>
   </Header>
 )

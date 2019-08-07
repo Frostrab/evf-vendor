@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const Logo = styled.div`
   height: 58px;
   background: rgba(255, 255, 255, 0.2);
-  margin: 1px;
+  margin: 2px;
   display: flex;
   justify-content: center;
 `

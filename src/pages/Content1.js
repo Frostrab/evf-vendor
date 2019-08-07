@@ -1,4 +1,4 @@
 import React from 'react'
-
-const MasterList = () => <h1>list</h1>
+import Card from '../components/Card'
+const MasterList = () => <Card title={'Page1'}>5555</Card>
 export default MasterList

@@ -1,30 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Menu, Icon, Tooltip } from 'antd'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
-
 const { SubMenu } = Menu
 const MenuList = props => {
   const [openKeys] = useState(['Inbox'])
-  const { menu, rootSubmenuKeys } = props
-
-  const onOpenChange = openKeys => {
-    console.log(`openKeys`, openKeys)
-    console.log(`test`, rootSubmenuKeys)
-    // const latestOpenKey = openKeys.find (key => openKeys.indexOf (key) === -1);
-    // if (rootSubmenuKeys.indexOf (latestOpenKey) === -1) {
-    //   setOpenKey ({openKeys});
-    // } else {
-    //   setOpenKey (latestOpenKey ? [latestOpenKey] : []);
-    // }
-  }
+  const { menu } = props
   return (
     <Router>
-      <Menu
-        // defaultSelectedKeys={openKeys}
-        mode="inline"
-        openKeys={openKeys}
-        onOpenChange={onOpenChange}
-      >
+      <Menu defaultSelectedKeys={openKeys} mode="inline" style={{ width: 256 }}>
         {menu.map((mainMenu, key) =>
           mainMenu.parent ? (
             <SubMenu
