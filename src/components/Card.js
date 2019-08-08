@@ -3,14 +3,21 @@ import Styled from 'styled-components'
 const Title = Styled.h2`
     font-size: ${props => props.size}
     padding: 10px
+    color: ${props => props.color || '#000000'}
 `
 const TitleTab = Styled.div`
     background-color:#27b6ba
+    border-radius: 10px;
+
 `
 const BodyCard = Styled.div`
     background-color: ${props => props.color || '#FFFFFF'}
     width: ${props => props.width || '100%'}
-    height: '100vh',
+    height: '100vh';
+    border: 1px solid ${props => props.color || '#000000'}
+    padding: 10px;
+    border-radius: 6px;
+    
 `
 const Card = props => (
   <div>

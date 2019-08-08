@@ -1,5 +1,5 @@
 import React from 'react'
-import Login from '../components/Login'
+import Signin from '../components/Login'
 import Bg from '../img/background_singha.png'
 import styled, { createGlobalStyle } from 'styled-components'
 import Background from '../components/Background'
@@ -20,11 +20,7 @@ const LoginPage = () => {
   return (
     <React.Fragment>
       <GlobalStyle />
-      <Background>
-        {/* <Form> */}
-        <Login />
-        {/* </Form> */}
-      </Background>
+      <Signin />
     </React.Fragment>
   )
 }
