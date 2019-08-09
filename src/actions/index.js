@@ -1,1 +1,0 @@
-export * from './Authen.action'
