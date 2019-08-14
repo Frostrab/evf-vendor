@@ -1,7 +1,8 @@
 import React from 'react'
 import Signin from '../components/Login'
 import Bg from '../img/background_singha.png'
-import styled, { createGlobalStyle } from 'styled-components'
+import 'antd/dist/antd.css'
+import { createGlobalStyle } from 'styled-components'
 import Background from '../components/Background'
 const GlobalStyle = createGlobalStyle`
   body {

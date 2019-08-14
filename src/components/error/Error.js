@@ -1,5 +1,5 @@
 import React from 'react'
-import { Result, Button, Icon, Typography } from 'antd'
+import { Result } from 'antd'
 
 export const Error = props => (
   <Result
