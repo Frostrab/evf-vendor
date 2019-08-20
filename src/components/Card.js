@@ -6,20 +6,21 @@ const Title = Styled.h2`
     color: ${props => props.color || '#000000'}
 `
 const TitleTab = Styled.div`
-    background-color:#27b6ba
+    background-color:#fff
     border-radius: 10px;
-
+    border: 1px solid  #27b6ba
+    margin-bottom: 3px
 `
 const BodyCard = Styled.div`
     background-color: ${props => props.color || '#FFFFFF'}
     width: ${props => props.width || '100%'}
-    height: '100vh';
-    border: 1px solid ${props => props.color || '#000000'}
+    height: '100hv';
+    border:  ${props => props.color || '#000000'}
     padding: 10px;
     border-radius: 6px;
     
 `
-const Card = props => (
+const Paper = props => (
   <div>
     {props.title ? (
       <TitleTab>
@@ -31,4 +32,4 @@ const Card = props => (
     <BodyCard color={props.color}>{props.children}</BodyCard>
   </div>
 )
-export default Card
+export default Paper
