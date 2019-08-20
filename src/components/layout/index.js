@@ -14,7 +14,7 @@ const Index = props => {
   const [spinLoading, setLoading] = useState(true)
   const [rootKey, setRootKey] = useState([])
   const [showDrawer, setShowDrawer] = useState(false)
-  const [systenName] = useState('ประเมิน')
+  const [systenName] = useState('SPE System')
   React.useEffect(() => {
     getMenu().then(res => {
       const { menu, employee } = res.data
@@ -78,7 +78,7 @@ const Index = props => {
 export default Index
 const styleForAnt = {
   content: {
-    margin: '24px 16px',
+    margin: '7px 10px',
     padding: 0,
     background: '#f0f2f5',
     minHeight: '60vh',
