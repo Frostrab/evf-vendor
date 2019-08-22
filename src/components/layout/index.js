@@ -18,7 +18,6 @@ const Index = props => {
   React.useEffect(() => {
     getMenu().then(res => {
       const { menu, employee } = res.data
-      console.log(res.data)
       const data = []
       menu.map(item => data.push(item.name))
       if (window.innerWidth > 480) setCollapsed(false)

@@ -7,10 +7,11 @@ const UserLogin = Styled.div`
 `
 const styleForAnt = {
   header: {
-    background: '#fff',
+    background: '#000b38',
     padding: 0,
     display: 'flex',
     justifyContent: 'space-between',
+    color: '#fff',
   },
   icon: {
     marginTop: 20,
@@ -32,7 +33,7 @@ const HeaderTab = props => (
       style={styleForAnt.icon}
     />
     <UserLogin>
-      {props.user.firstNameTH} {props.user.lastNameTH}{' '}
+      คุณ {props.user.firstNameTH} {props.user.lastNameTH}{' '}
       <Icon
         type="logout"
         style={styleForAnt.icon.right}
