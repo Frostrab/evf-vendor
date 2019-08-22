@@ -53,106 +53,205 @@
       }
     ]
   },
-  "login": [
-    {
-      "firstName": "test",
-      "lastName": "Naja",
-      "token": "test"
-    }
-  ],
-  "rowItem": [
-    {
-      "id": 0,
-      "name": "New Role",
-      "description": "New Role Test Cache",
-      "active": true,
-      "roleItem": [
-        {
-          "menuCode": "Inbox",
-          "isDisplay": true,
-          "isManage": true,
-          "parentMenu": null
-        },
-        {
-          "menuCode": "CA_Group",
-          "isDisplay": true,
-          "isManage": true,
-          "parentMenu": [
-            {
-              "menuCode": "CA_MGT_Group",
-              "isDisplay": true,
-              "isManage": true,
-              "parentMenu": [
-                {
-                  "menuCode": "CA",
-                  "isDisplay": true,
-                  "isManage": true,
-                  "parentMenu": null
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ],
-  "masterdataList": [
-    {
-      "menuCode": "Inbox",
-      "menuName": "Inbox",
-      "isDisplay": false,
-      "isManage": false,
-      "roleDisplayName": null,
-      "roleManageName": null,
-      "parentMenu": null
+  "login": {
+    "employee": {
+      "empNo": "001754",
+      "firstNameTH": "สัญชัย",
+      "lastNameTH": "ต้นพุดซา",
+      "comCode": "10000001",
+      "orgId": "10001416",
+      "positionId": "20000641"
     },
-    {
-      "menuCode": "CA_Group",
-      "menuName": "ใบเบิกเงินทดรองจ่าย",
-      "isDisplay": false,
-      "isManage": false,
-      "roleDisplayName": null,
-      "roleManageName": null,
-      "parentMenu": [
-        {
-          "menuCode": "CA_MGT_Group",
-          "menuName": "การจัดการ",
-          "isDisplay": false,
-          "isManage": false,
-          "roleDisplayName": null,
-          "roleManageName": null,
-          "parentMenu": [
-            {
-              "menuCode": "CA",
-              "menuName": "ใบขออนุมัติเบิกเงิน",
-              "isDisplay": false,
-              "isManage": false,
-              "roleDisplayName": null,
-              "roleManageName": null,
-              "parentMenu": null
-            }
-          ]
-        },
-        {
-          "menuCode": "CA_RP_Group",
-          "menuName": "รายงาน",
-          "isDisplay": false,
-          "isManage": false,
-          "roleDisplayName": null,
-          "roleManageName": null,
-          "parentMenu": [
-            {
-              "menuCode": "CAApproveReport",
-              "menuName": "รายงานแสดงการลงนาม",
-              "isDisplay": false,
-              "isManage": false,
-              "roleDisplayName": null,
-              "roleManageName": null,
-              "parentMenu": null
-            }
-          ]
-        }
-      ]
-    }
-  ]
+    "menu": [
+      {
+        "name": "Inbox",
+        "icon": null,
+        "displayOnly": false,
+        "url": "/Inbox",
+        "parent": null
+      },
+      {
+        "name": "ใบประเมินผู้ขาย",
+        "icon": null,
+        "displayOnly": false,
+        "url": "/Evaluation_Group",
+        "parent": [
+          {
+            "name": "การจัดการ",
+            "icon": null,
+            "displayOnly": false,
+            "url": "/Evaluation_Group/Evaluation_MGT_Group",
+            "parent": [
+              {
+                "name": "ประเมินผู้ขาย",
+                "icon": null,
+                "displayOnly": false,
+                "url": "/Evaluation_Group/Evaluation_MGT_Group/Evaluation",
+                "parent": null
+              },
+              {
+                "name": "ภาพรวมประเมินผู้ขาย",
+                "icon": null,
+                "displayOnly": false,
+                "url": "/Evaluation_Group/Evaluation_MGT_Group/SummaryEvaluation",
+                "parent": null
+              }
+            ]
+          },
+          {
+            "name": "รายงาน",
+            "icon": null,
+            "displayOnly": false,
+            "url": "/Evaluation_Group/Evaluation_RP_Group",
+            "parent": [
+              {
+                "name": "รายงานสรุปผลการประเมิน",
+                "icon": null,
+                "displayOnly": false,
+                "url": "/Evaluation_Group/Evaluation_RP_Group/EvaluationReportSummary",
+                "parent": null
+              },
+              {
+                "name": "หนังสือผลการประเมินผู้ขาย",
+                "icon": null,
+                "displayOnly": false,
+                "url": "/Evaluation_Group/Evaluation_RP_Group/EvaluationReportVendor",
+                "parent": null
+              }
+            ]
+          },
+          {
+            "name": "ติดตั้ง",
+            "icon": null,
+            "displayOnly": false,
+            "url": "/Evaluation_Group/Evaluation_Setup_Group",
+            "parent": [
+              {
+                "name": "ตัวชี้วัด",
+                "icon": null,
+                "displayOnly": false,
+                "url": "/Evaluation_Group/Evaluation_Setup_Group/Performance",
+                "parent": null
+              },
+              {
+                "name": "กลุ่มตัวชี้วัด",
+                "icon": null,
+                "displayOnly": false,
+                "url": "/Evaluation_Group/Evaluation_Setup_Group/PerformanceGroup",
+                "parent": null
+              },
+              {
+                "name": "ระยะเวลาประเมิน",
+                "icon": null,
+                "displayOnly": false,
+                "url": "/Evaluation_Group/Evaluation_Setup_Group/Period",
+                "parent": null
+              },
+              {
+                "name": "เกณฑ์การประเมิน",
+                "icon": null,
+                "displayOnly": false,
+                "url": "/Evaluation_Group/Evaluation_Setup_Group/Grade",
+                "parent": null
+              },
+              {
+                "name": "ระดับคะแนน",
+                "icon": null,
+                "displayOnly": false,
+                "url": "/Evaluation_Group/Evaluation_Setup_Group/LevelPoint",
+                "parent": null
+              },
+              {
+                "name": "หลักเกณฑ์",
+                "icon": null,
+                "displayOnly": false,
+                "url": "/Evaluation_Group/Evaluation_Setup_Group/Criteria",
+                "parent": null
+              },
+              {
+                "name": "Template แบบประเมิน",
+                "icon": null,
+                "displayOnly": false,
+                "url": "/Evaluation_Group/Evaluation_Setup_Group/EvaluationTemplate",
+                "parent": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "ผู้ขาย",
+        "icon": null,
+        "displayOnly": false,
+        "url": "/Vendor_Group",
+        "parent": [
+          {
+            "name": "ข้อมูลผู้ขาย",
+            "icon": null,
+            "displayOnly": false,
+            "url": "/Vendor_Group/VendorProfile",
+            "parent": null
+          },
+          {
+            "name": "คัดเลือกผู้ขาย",
+            "icon": null,
+            "displayOnly": false,
+            "url": "/Vendor_Group/VendorFilter",
+            "parent": null
+          }
+        ]
+      },
+      {
+        "name": "ข้อมูลส่วนกลาง",
+        "icon": null,
+        "displayOnly": false,
+        "url": "/CentralSetting",
+        "parent": [
+          {
+            "name": "ปฎิทินวันหยุด",
+            "icon": null,
+            "displayOnly": false,
+            "url": "/CentralSetting/HolidayCalendar",
+            "parent": null
+          },
+          {
+            "name": "ตั้งค่าผู้อนุมัติ",
+            "icon": null,
+            "displayOnly": false,
+            "url": "/CentralSetting/Approval",
+            "parent": null
+          }
+        ]
+      },
+      {
+        "name": "กำหนดสิทธิ์การใช้งาน",
+        "icon": null,
+        "displayOnly": false,
+        "url": "/Authorization",
+        "parent": [
+          {
+            "name": "จัดการสิทธิ์การใช้งานระบบ",
+            "icon": null,
+            "displayOnly": false,
+            "url": "/Authorization/RoleManagement",
+            "parent": null
+          },
+          {
+            "name": "กำหนดสิทธิ์ผู้ใช้งาน",
+            "icon": null,
+            "displayOnly": false,
+            "url": "/Authorization/UserRole",
+            "parent": null
+          },
+          {
+            "name": "สิทธิ์ข้ามบริษัท",
+            "icon": null,
+            "displayOnly": false,
+            "url": "/Authorization/AuthorityCompany",
+            "parent": null
+          }
+        ]
+      }
+    ]
+  }
 }
