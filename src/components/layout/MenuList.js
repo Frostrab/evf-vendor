@@ -33,9 +33,10 @@ const MenuList = props => {
                     {subMenuTab.parent.map((lastMenu, key) => (
                       <Menu.Item key={lastMenu.name}>
                         <Tooltip placement="topLeft" title={lastMenu.name}>
-                          <Link to={lastMenu.name} />
-                          <Icon type="user" />
-                          <span>{lastMenu.name}</span>
+                          <Link to={lastMenu.url}>
+                            <Icon type="user" />
+                            <span>{lastMenu.name}</span>
+                          </Link>
                         </Tooltip>
                       </Menu.Item>
                     ))}
@@ -43,9 +44,10 @@ const MenuList = props => {
                 ) : (
                   <Menu.Item key={subMenuTab.name}>
                     <Tooltip placement="topLeft" title={subMenuTab.name}>
-                      <Link to={subMenuTab.name} />
-                      <Icon type="user" />
-                      <span>{subMenuTab.name}</span>
+                      <Link to={subMenuTab.url}>
+                        <Icon type="user" />
+                        <span>{subMenuTab.name}</span>
+                      </Link>
                     </Tooltip>
                   </Menu.Item>
                 )
@@ -54,9 +56,10 @@ const MenuList = props => {
           ) : (
             <Menu.Item key={mainMenu.name}>
               <Tooltip placement="topLeft" title={mainMenu.name}>
-                <Link to={mainMenu.url} />
-                <Icon type="user" />
-                <span>{mainMenu.name}</span>
+                <Link to={mainMenu.url}>
+                  <Icon type="user" />
+                  <span>{mainMenu.name}</span>
+                </Link>
               </Tooltip>
             </Menu.Item>
           )
