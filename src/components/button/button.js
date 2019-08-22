@@ -6,6 +6,8 @@ const ButtonCustom = Styled.button`
   font-size: 16px;
   border-radius: 3px;
   background: #ffffff
+  width: ${props => props.width}
+  height: ${props => props.height}
   &:hover{
     border-color:black
   }
@@ -58,6 +60,17 @@ const ButtonCustom = Styled.button`
       border-color:#fa8c16
       color: #fa8c16
     `
+    } else if (props.type === 'login') {
+      return `
+    &:hover {
+      background-color: #ffffff;
+      color: #000000;
+      border-color:#95de64
+    }
+    background-color:#95de64
+    border-color:#e8e8e8
+    color: #000000
+  `
     } else if (props.type === 'delete') {
       return `
       &:hover {
@@ -109,6 +122,12 @@ const _checkForIcon = i => {
           <Icon type="edit" />
         </span>
       )
+    case 'login':
+      return (
+        <span style={{ marginRight: 5 }}>
+          <Icon type="login" />
+        </span>
+      )
     case 'delete':
       return (
         <span style={{ marginRight: 5 }}>
@@ -120,7 +139,12 @@ const _checkForIcon = i => {
   }
 }
 const Button = props => (
-  <ButtonCustom type={props.type} onClick={props.onClick}>
+  <ButtonCustom
+    type={props.type}
+    onClick={props.onClick}
+    height={props.height}
+    width={props.width}
+  >
     {_checkForIcon(props.type)}
     {props.children}
   </ButtonCustom>

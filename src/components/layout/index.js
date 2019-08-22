@@ -6,7 +6,7 @@ import LogoTab from './Logo'
 import axios from 'axios'
 import './style.css'
 const { Sider, Content } = Layout
-const getMenu = () => axios.get(`http://localhost:4000/menu`)
+const getMenu = () => axios.get(`http://localhost:4000/login`)
 const Index = props => {
   const [collapsed, setCollapsed] = useState(true)
   const [menu, setMenu] = useState([])
@@ -18,6 +18,7 @@ const Index = props => {
   React.useEffect(() => {
     getMenu().then(res => {
       const { menu, employee } = res.data
+      console.log(res.data)
       const data = []
       menu.map(item => data.push(item.name))
       if (window.innerWidth > 480) setCollapsed(false)
