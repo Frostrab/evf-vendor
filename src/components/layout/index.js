@@ -69,7 +69,7 @@ const Index = props => {
         )}
         <Layout>
           <HeaderTab toggle={toggle} user={userLogin} />
-          <Content style={styleForAnt.content}>{props.children}</Content>
+          <span style={styleForAnt.content}>{props.children}</span>
         </Layout>
       </Layout>
     </Spin>
