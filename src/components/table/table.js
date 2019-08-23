@@ -12,6 +12,7 @@ class TableForm extends React.Component {
         rowClassName={() => 'responsive-row'}
         pagination={false}
         expandedRowRender={this.props.expandedRowRender}
+        size="small"
       />
     )
   }

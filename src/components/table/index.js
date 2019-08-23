@@ -1,6 +1,7 @@
 import React from 'react'
-import { Rate } from 'antd'
+import Rate from '../../components/Rate/index'
 import TableTab from './table'
+import Comment from '../../components/textarea/index'
 import 'antd/dist/antd.css'
 
 const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful']
@@ -9,23 +10,24 @@ const columnsDefinition = [
     title: 'หัวข้อการประเมิน (Performance Item)',
     dataIndex: 'name',
     rowKey: 'name',
-    width: '70%',
+    width: '50%',
   },
   {
     title: `น้ำหนัก %Weight`,
     dataIndex: 'weight',
-    width: '5%',
+    width: '10%',
   },
   {
     title: 'ระดับคะแนน',
     dataIndex: 'point',
-    width: '20%',
-    render: (text, record) => <Rate tooltips={desc} value={0} />,
+    width: '10%',
+    render: (text, record) => <Rate />,
   },
   {
     title: `หมายเหตุ(Commnet) (ความคิดเห็นประกอบการให้คะแนน)`,
     dataIndex: 'comment',
-    width: '5%',
+    render: (text, record) => <Comment />,
+    width: '20%',
   },
 ]
 
@@ -44,6 +46,10 @@ class index extends React.Component {
   state = {
     columns: columnsDefinition,
     hiddenColumns: [],
+    value: 3,
+  }
+  handleChange = value => {
+    this.setState({ value })
   }
   componentWillMount() {
     const w = window.innerWidth
@@ -95,7 +101,6 @@ class index extends React.Component {
           <TableTab
             columns={this.state.columns}
             dataSource={data}
-            size="small"
             pagination={{ defaultPageSize: 5 }}
             expandedRowRender={expandedRowRender}
           />
