@@ -4,8 +4,13 @@ import TableTab from './table'
 import Comment from '../../components/textarea/index'
 import 'antd/dist/antd.css'
 
-const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful']
 const columnsDefinition = [
+  {
+    title: 'หัวข้อที่',
+    dataIndex: 'No',
+    rowKey: 'no',
+    width: '3%',
+  },
   {
     title: 'หัวข้อการประเมิน (Performance Item)',
     dataIndex: 'name',
@@ -35,6 +40,7 @@ const data = []
 for (let i = 0; i < 5; i++) {
   data.push({
     key: i,
+    no: i,
     name: `Edward King ${i}`,
     number: 70,
     building: 'c',
