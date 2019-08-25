@@ -2,11 +2,9 @@ import React from 'react'
 import { Rate } from 'antd'
 const RateScore = props => {
   const [desc, setDesc] = React.useState([
-    'terrible',
-    'bad',
-    'normal',
-    'good',
-    'wonderful',
+    'ต่ำกว่ามาตราฐาน',
+    'ตามมาตราฐาน',
+    'ดีกว่ามาตราฐาน',
   ])
   const [value, setValue] = React.useState(0)
   const handleChange = value => {
