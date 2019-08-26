@@ -6,47 +6,203 @@ import 'antd/dist/antd.css'
 
 const columnsDefinition = [
   {
-    title: 'หัวข้อที่',
-    dataIndex: 'No',
-    rowKey: 'no',
-    width: '3%',
-  },
-  {
-    title: 'หัวข้อการประเมิน (Performance Item)',
-    dataIndex: 'name',
-    rowKey: 'name',
+    title: 'รายละเอียดการประเมิน (Performance Item)',
+    dataIndex: 'topic',
+    rowKey: 'topic',
     width: '50%',
+    render: (text, record) => {
+      if (record.topicType === null) {
+        return {
+          props: {
+            style: { background: record.color },
+          },
+          children: (
+            <span style={{ marginLeft: 10 }}>
+              <label style={{ marginRight: 5 }}>{record.no}</label>
+              {record.topic}
+            </span>
+          ),
+        }
+      } else {
+        return {
+          props: {
+            style: { background: record.color },
+          },
+          children: (
+            <span style={{ fontWeight: 600 }}>
+              <label style={{ marginRight: 5 }}>{record.no}</label>
+              {record.topic}
+            </span>
+          ),
+        }
+      }
+    },
   },
   {
     title: `น้ำหนัก %Weight`,
     dataIndex: 'weight',
     width: '10%',
+    render(text, record) {
+      return {
+        props: {
+          style: { background: record.color },
+        },
+        children: <div>{text}</div>,
+      }
+    },
   },
   {
     title: 'ระดับคะแนน',
     dataIndex: 'point',
-    width: '10%',
-    render: (text, record) => <Rate />,
+    width: '12%',
+    render: (text, record) => {
+      if (record.topicType === null) {
+        return {
+          props: {
+            style: { background: record.color },
+          },
+          children: <Rate />,
+        }
+      } else {
+        return {
+          props: {
+            style: { background: record.color },
+          },
+          children: false,
+        }
+      }
+    },
   },
   {
     title: `หมายเหตุ(Commnet) (ความคิดเห็นประกอบการให้คะแนน)`,
     dataIndex: 'comment',
-    render: (text, record) => <Comment />,
+    render: (text, record) => {
+      if (record.topicType === null) {
+        return {
+          props: {
+            style: { background: record.color },
+          },
+          children: <Comment />,
+        }
+      } else {
+        return {
+          props: {
+            style: { background: record.color },
+          },
+          children: false,
+        }
+      }
+    },
     width: '20%',
   },
 ]
 
-const data = []
-for (let i = 0; i < 5; i++) {
-  data.push({
-    key: i,
-    no: i,
-    name: `Edward King ${i}`,
-    number: 70,
-    building: 'c',
-    comment: 'test',
-  })
-}
+const data = [
+  {
+    no: 1,
+    topic: `คุณภาพของงาน`,
+    topicType: 'major',
+    weight: 40,
+    comment: '',
+    color: '#c8cecf',
+  },
+  {
+    no: 1.1,
+    topic: `งานออกแบบมีความชัดเจนเหมาะสมต่อการใช้งานและspec ตรงตามความต้องการ`,
+    topicType: null,
+    weight: 20,
+    comment: '',
+    color: '#fff',
+  },
+  {
+    no: 1.2,
+    topic: `แผนการดำเนินงานสอดคล้อง และตรงตามความต้องการ`,
+    topicType: null,
+    weight: 20,
+    comment: '',
+    color: '#fff',
+  },
+  {
+    no: 2,
+    topic: `ระยะเวลาดำเนินงาน`,
+    topicType: 'major',
+    weight: 20,
+    comment: '',
+    color: '#c8cecf',
+  },
+  {
+    no: 2.1,
+    topic: `งานแล้วเสร็จตามระยะเวลาที่กำหนด`,
+    topicType: null,
+    weight: 20,
+    comment: '',
+    color: '#fff',
+  },
+  {
+    no: 3,
+    topic: `บุคลากร`,
+    topicType: `major`,
+    weight: 20,
+    comment: '',
+    color: '#c8cecf',
+  },
+  {
+    no: 3.1,
+    topic: `มีความชำนาญในการออกแบบในโครงการนั้นๆ`,
+    topicType: null,
+    weight: 10,
+    comment: '',
+    color: '#fff',
+  },
+  {
+    no: 3.2,
+    topic: `สามารถให้คำปรึกษางานออกแบบ และแนวทางในการแก้ไขที่ถูกต้องในกรณีมีปัญหาเกิดขึ้น	`,
+    topicType: null,
+    weight: 10,
+    comment: '',
+    color: '#fff',
+  },
+  {
+    no: 4,
+    topic: `การประสานงาน`,
+    topicType: 'major',
+    weight: 10,
+    comment: '',
+    color: '#c8cecf',
+  },
+  {
+    no: 4.1,
+    topic: `ความสามารถของทีมงานในการประสานงาน`,
+    topicType: null,
+    weight: 5,
+    comment: '',
+    color: '#fff',
+  },
+  {
+    no: 4.2,
+    topic: `สามารถติดต่อประสานงาน สะดวก รวดเร็วและพร้อมให้บริการทั้งในกรณีเร่งด่วน	`,
+    topicType: null,
+    weight: 5,
+    comment: '',
+    color: '#fff',
+  },
+  {
+    no: 5,
+    topic: `การจัดทำรายงาน`,
+    topicType: `major`,
+    weight: 10,
+    comment: '',
+    color: '#c8cecf',
+  },
+  {
+    no: 5.1,
+    topic: `มีการจัดทำรายงานความคืบหน้าของงานและFinal report เพื่อสรุปงาน`,
+    topicType: null,
+    weight: 10,
+    comment: '',
+    color: '#fff',
+  },
+]
 
 class index extends React.Component {
   state = {
