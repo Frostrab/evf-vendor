@@ -1,8 +1,6 @@
 import React from 'react'
-import { Paper } from '../../components/Paper'
 import { Card, Icon, Avatar, Input } from 'antd'
-import { TableForm } from '../../components'
-import Select from '../../components/select'
+import { TableTemplate, Paper, SelectTemplate } from '../../components'
 const { Meta } = Card
 const VendorProfile = () => {
   const [dataSelect] = React.useState([
@@ -66,9 +64,9 @@ const VendorProfile = () => {
               marginBottom: 10,
             }}
           >
-            <Select dataSelect={dataSelect} width={120} />
+            <SelectTemplate dataSelect={dataSelect} width={120} />
           </span>
-          <TableForm />
+          <TableTemplate />
         </Paper>
       </div>
     </React.Fragment>

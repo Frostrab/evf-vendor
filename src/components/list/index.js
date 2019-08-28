@@ -1,7 +1,7 @@
 import React from 'react'
 import { List, Avatar } from 'antd'
 import styled from 'styled-components'
-import Button from '../../components/button/button'
+import { Button } from '../../components/button/button'
 
 const ListControl = styled.div`
   display: flex;

@@ -1,10 +1,10 @@
 import React from 'react'
-import { TableForm, Paper } from '../../components'
+import { TableTemplate, Paper } from '../../components'
 const VendorFilter = () => {
   return (
     <div>
       <Paper title={'Vendor Fillter'}>
-        <TableForm />
+        <TableTemplate />
       </Paper>
     </div>
   )

@@ -2,7 +2,7 @@ import React from 'react'
 import { Table } from 'antd'
 import 'antd/dist/antd.css'
 
-export const TableForm = props => {
+export const TableTemplate = props => {
   return (
     <Table
       columns={props.columns}

@@ -1,10 +1,12 @@
 import React from 'react'
 import { Paper } from '../../components'
-// import Paper from '../../components/Paper'
-import { TableForm } from '../../components/table/table'
-import Button from '../../components/button/button'
-import Drawer from '../../components/Drawer'
-import Select from '../../components/select'
+import {
+  TableTemplate,
+  Button,
+  DrawerTemplate,
+  SelectTemplate,
+} from '../../components'
+
 const Approval = () => {
   const [visible, setVisible] = React.useState(false)
   const [selected, setSelected] = React.useState('detail')
@@ -98,17 +100,17 @@ const Approval = () => {
         >
           Add
         </Button>
-        <Drawer
+        <DrawerTemplate
           title={selected === 'detail' ? selected : selected.CompCode}
           visible={visible}
           handleOpenDrawer={handleOpenDrawer}
         >
           <div>
             Company<label>*</label>
-            <Select dataSelect={dataSelect} width={120} />
+            <SelectTemplate dataSelect={dataSelect} width={120} />
           </div>
-        </Drawer>
-        <TableForm columns={columns} dataSource={data} />
+        </DrawerTemplate>
+        <TableTemplate columns={columns} dataSource={data} />
       </Paper>
     </React.Fragment>
   )

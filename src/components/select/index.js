@@ -2,7 +2,7 @@ import React from 'react'
 import { Select } from 'antd'
 
 const { Option } = Select
-export const SelecList = props => {
+export const SelectTemplate = props => {
   return (
     <Select
       defaultValue={props.defaultValue}

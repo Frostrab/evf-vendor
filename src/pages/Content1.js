@@ -1,9 +1,6 @@
 import React from 'react'
-import { Paper } from '../components/Paper'
-import Table from '../components/table'
-import Button from '../components/button/button'
+import { Paper, TableTemplate, Button, PopoverIcon } from '../components'
 import Styled from 'styled-components'
-import PopoverIcon from '../components/popover/'
 import { Input, Card, Row, Col } from 'antd'
 
 const Title = Styled.h2`
@@ -114,7 +111,7 @@ const MasterList = () => (
       </div>
     </div>
     <Paper>
-      <Table />
+      <TableTemplate />
       <span style={{ display: 'flex', justifyContent: 'center' }}>
         <Button type="approve">Submit</Button>
       </span>

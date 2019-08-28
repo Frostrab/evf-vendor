@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
 import { Form, Icon, Input } from 'antd'
 import { Link } from 'react-router-dom'
-import Button from '../button/button'
+import { Button } from '../button/button'
 import './Login.css'
 const LoginForm = styled.div`
     background-color: #fafafa
