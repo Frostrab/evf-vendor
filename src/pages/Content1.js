@@ -1,5 +1,5 @@
 import React from 'react'
-import Paper from '../components/Card'
+import { Paper } from '../components/Paper'
 import Table from '../components/table'
 import Button from '../components/button/button'
 import Styled from 'styled-components'

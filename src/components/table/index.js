@@ -1,6 +1,6 @@
 import React from 'react'
 import Rate from '../../components/Rate/index'
-import TableTab from './table'
+import { TableForm } from './table'
 import Comment from '../../components/textarea/index'
 import 'antd/dist/antd.css'
 
@@ -260,7 +260,7 @@ class index extends React.Component {
     return (
       <div>
         <div style={{ margin: '10px 10px 10px 10px' }}>
-          <TableTab
+          <TableForm
             columns={this.state.columns}
             dataSource={data}
             pagination={{ defaultPageSize: 5 }}

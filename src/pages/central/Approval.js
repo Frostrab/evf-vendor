@@ -1,6 +1,7 @@
 import React from 'react'
-import Paper from '../../components/Card'
-import Table from '../../components/table/table'
+import { Paper } from '../../components'
+// import Paper from '../../components/Paper'
+import { TableForm } from '../../components/table/table'
 import Button from '../../components/button/button'
 import Drawer from '../../components/Drawer'
 import Select from '../../components/select'
@@ -107,7 +108,7 @@ const Approval = () => {
             <Select dataSelect={dataSelect} width={120} />
           </div>
         </Drawer>
-        <Table columns={columns} dataSource={data} />
+        <TableForm columns={columns} dataSource={data} />
       </Paper>
     </React.Fragment>
   )

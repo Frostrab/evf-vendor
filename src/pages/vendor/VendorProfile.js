@@ -1,7 +1,7 @@
 import React from 'react'
-import Paper from '../../components/Card'
+import { Paper } from '../../components/Paper'
 import { Card, Icon, Avatar, Input } from 'antd'
-import Table from '../../components/table/table'
+import { TableForm } from '../../components'
 import Select from '../../components/select'
 const { Meta } = Card
 const VendorProfile = () => {
@@ -68,7 +68,7 @@ const VendorProfile = () => {
           >
             <Select dataSelect={dataSelect} width={120} />
           </span>
-          <Table />
+          <TableForm />
         </Paper>
       </div>
     </React.Fragment>

@@ -21,7 +21,7 @@ const BodyCard = Styled.div`
     border-radius: 6px;
     
 `
-const Paper = props => (
+export const Paper = props => (
   <React.Fragment>
     {props.title ? (
       <TitleTab>
@@ -37,4 +37,3 @@ const Paper = props => (
     )}
   </React.Fragment>
 )
-export default Paper
