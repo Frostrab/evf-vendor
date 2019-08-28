@@ -9,10 +9,8 @@ const SelecList = props => {
       style={{ width: props.width }}
       onChange={props.onChange}
     >
-      {props.dataSelect.map((key, item) => (
-        <Option key={key} value={item.id}>
-          {item.name}
-        </Option>
+      {props.dataSelect.map(item => (
+        <Option value={item.id}>{item.name}</Option>
       ))}
     </Select>
   )

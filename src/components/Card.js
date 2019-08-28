@@ -30,7 +30,11 @@ const Paper = props => (
     ) : (
       false
     )}
-    <BodyCard color={props.color}>{props.children}</BodyCard>
+    {props.children ? (
+      <BodyCard color={props.color}>{props.children}</BodyCard>
+    ) : (
+      false
+    )}
   </React.Fragment>
 )
 export default Paper

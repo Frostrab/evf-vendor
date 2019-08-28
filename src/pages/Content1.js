@@ -4,7 +4,7 @@ import Table from '../components/table'
 import Button from '../components/button/button'
 import Styled from 'styled-components'
 import PopoverIcon from '../components/popover/'
-import { Input, Card, Row, Col, Icon } from 'antd'
+import { Input, Card, Row, Col } from 'antd'
 
 const Title = Styled.h2`
     font-size: ${props => props.size}
