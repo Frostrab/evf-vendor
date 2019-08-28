@@ -3,9 +3,10 @@ import Styled from 'styled-components'
 import { Icon } from 'antd'
 const ButtonCustom = Styled.button`
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
   border-radius: 3px;
   background: #ffffff
+  margin-bottom: ${props => props.marginBottom || '0'}
   width: ${props => props.width}
   height: ${props => props.height}
   &:hover{
@@ -61,6 +62,17 @@ const ButtonCustom = Styled.button`
       color: #fa8c16
     `
     } else if (props.type === 'login') {
+      return `
+    &:hover {
+      background-color: #ffffff;
+      color: #000000;
+      border-color:#95de64
+    }
+    background-color:#95de64
+    border-color:#e8e8e8
+    color: #000000
+  `
+    } else if (props.type === 'add') {
       return `
     &:hover {
       background-color: #ffffff;
@@ -128,6 +140,12 @@ const _checkForIcon = i => {
           <Icon type="login" />
         </span>
       )
+    case 'add':
+      return (
+        <span style={{ marginRight: 5 }}>
+          <Icon type="plus-circle" />
+        </span>
+      )
     case 'delete':
       return (
         <span style={{ marginRight: 5 }}>
@@ -144,6 +162,7 @@ const Button = props => (
     onClick={props.onClick}
     height={props.height}
     width={props.width}
+    marginBottom={props.marginBottom}
   >
     {_checkForIcon(props.type)}
     {props.children}

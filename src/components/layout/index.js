@@ -5,8 +5,8 @@ import MenuList from './MenuList'
 import LogoTab from './Logo'
 import axios from 'axios'
 import './style.css'
-const { Sider, Content } = Layout
-const getMenu = () => axios.get(`http://localhost:4000/login`)
+const { Sider } = Layout
+const getMenu = () => axios.get(`/login`)
 const Index = props => {
   const [collapsed, setCollapsed] = useState(true)
   const [menu, setMenu] = useState([])
@@ -68,8 +68,12 @@ const Index = props => {
           </Drawer>
         )}
         <Layout>
-          <HeaderTab toggle={toggle} user={userLogin} />
-          <span style={styleForAnt.content}>{props.children}</span>
+          <div style={{ background: '#d9d9d9', minHeight: '100vh' }}>
+            <HeaderTab toggle={toggle} user={userLogin} />
+            <div style={{ padding: '20px' }}>
+              <span style={styleForAnt.content}>{props.children}</span>
+            </div>
+          </div>
         </Layout>
       </Layout>
     </Spin>
@@ -78,9 +82,6 @@ const Index = props => {
 export default Index
 const styleForAnt = {
   content: {
-    margin: '7px 10px',
-    padding: 0,
-    background: '#f0f2f5',
-    minHeight: '60vh',
+    minHeight: '80vh',
   },
 }

@@ -1,58 +1,4 @@
 {
-  "menu": {
-    "employee": {
-      "empNo": "999999",
-      "firstNameTH": "ผู้ดูแลระบบ",
-      "lastNameTH": "ผู้ดูแลระบบ"
-    },
-    "menu": [
-      {
-        "name": "Inbox",
-        "icon": null,
-        "displayOnly": false,
-        "url": "/Inbox",
-        "parent": null
-      },
-      {
-        "name": "ใบเบิกเงินทดรองจ่าย",
-        "icon": null,
-        "displayOnly": false,
-        "url": "/CA_Group",
-        "parent": [
-          {
-            "name": "การจัดการ",
-            "icon": null,
-            "displayOnly": false,
-            "url": "/CA_Group/CA_MGT_Group",
-            "parent": [
-              {
-                "name": "ใบขออนุมัติเบิกเงิน",
-                "icon": null,
-                "displayOnly": false,
-                "url": "/CA_Group/CA_MGT_Group/CA",
-                "parent": null
-              }
-            ]
-          },
-          {
-            "name": "รายงาน",
-            "icon": null,
-            "displayOnly": false,
-            "url": "/CA_Group/CA_RP_Group",
-            "parent": [
-              {
-                "name": "รายงานแสดงการลงนาม",
-                "icon": null,
-                "displayOnly": true,
-                "url": "/CA_Group/CA_RP_Group/CAApproveReport",
-                "parent": null
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
   "login": {
     "employee": {
       "empNo": "001754",
@@ -65,33 +11,33 @@
     "menu": [
       {
         "name": "Inbox",
-        "icon": null,
         "displayOnly": false,
         "url": "/Inbox",
+        "icon": "inbox",
         "parent": null
       },
       {
         "name": "ใบประเมินผู้ขาย",
-        "icon": null,
         "displayOnly": false,
         "url": "/Evaluation_Group",
+        "icon": "file-text",
         "parent": [
           {
             "name": "การจัดการ",
-            "icon": null,
+            "icon": "file-protect",
             "displayOnly": false,
             "url": "/Evaluation_Group/Evaluation_MGT_Group",
             "parent": [
               {
                 "name": "ประเมินผู้ขาย",
-                "icon": null,
+                "icon": "file-protect",
                 "displayOnly": false,
                 "url": "/Evaluation_Group/Evaluation_MGT_Group/Evaluation",
                 "parent": null
               },
               {
                 "name": "ภาพรวมประเมินผู้ขาย",
-                "icon": null,
+                "icon": "file-protect",
                 "displayOnly": false,
                 "url": "/Evaluation_Group/Evaluation_MGT_Group/SummaryEvaluation",
                 "parent": null
@@ -100,20 +46,20 @@
           },
           {
             "name": "รายงาน",
-            "icon": null,
+            "icon": "file-pdf",
             "displayOnly": false,
             "url": "/Evaluation_Group/Evaluation_RP_Group",
             "parent": [
               {
                 "name": "รายงานสรุปผลการประเมิน",
-                "icon": null,
+                "icon": "file-pdf",
                 "displayOnly": false,
                 "url": "/Evaluation_Group/Evaluation_RP_Group/EvaluationReportSummary",
                 "parent": null
               },
               {
                 "name": "หนังสือผลการประเมินผู้ขาย",
-                "icon": null,
+                "icon": "file-pdf",
                 "displayOnly": false,
                 "url": "/Evaluation_Group/Evaluation_RP_Group/EvaluationReportVendor",
                 "parent": null
@@ -122,55 +68,55 @@
           },
           {
             "name": "ติดตั้ง",
-            "icon": null,
+            "icon": "download",
             "displayOnly": false,
             "url": "/Evaluation_Group/Evaluation_Setup_Group",
             "parent": [
               {
                 "name": "ตัวชี้วัด",
-                "icon": null,
+                "icon": "tag",
                 "displayOnly": false,
                 "url": "/Evaluation_Group/Evaluation_Setup_Group/Performance",
                 "parent": null
               },
               {
                 "name": "กลุ่มตัวชี้วัด",
-                "icon": null,
+                "icon": "tags",
                 "displayOnly": false,
                 "url": "/Evaluation_Group/Evaluation_Setup_Group/PerformanceGroup",
                 "parent": null
               },
               {
                 "name": "ระยะเวลาประเมิน",
-                "icon": null,
+                "icon": "pull-request",
                 "displayOnly": false,
                 "url": "/Evaluation_Group/Evaluation_Setup_Group/Period",
                 "parent": null
               },
               {
                 "name": "เกณฑ์การประเมิน",
-                "icon": null,
+                "icon": "dashboard",
                 "displayOnly": false,
                 "url": "/Evaluation_Group/Evaluation_Setup_Group/Grade",
                 "parent": null
               },
               {
                 "name": "ระดับคะแนน",
-                "icon": null,
+                "icon": "line-chart",
                 "displayOnly": false,
                 "url": "/Evaluation_Group/Evaluation_Setup_Group/LevelPoint",
                 "parent": null
               },
               {
                 "name": "หลักเกณฑ์",
-                "icon": null,
+                "icon": "sliders",
                 "displayOnly": false,
                 "url": "/Evaluation_Group/Evaluation_Setup_Group/Criteria",
                 "parent": null
               },
               {
                 "name": "Template แบบประเมิน",
-                "icon": null,
+                "icon": "layout",
                 "displayOnly": false,
                 "url": "/Evaluation_Group/Evaluation_Setup_Group/EvaluationTemplate",
                 "parent": null
@@ -181,20 +127,20 @@
       },
       {
         "name": "ผู้ขาย",
-        "icon": null,
+        "icon": "team",
         "displayOnly": false,
         "url": "/Vendor_Group",
         "parent": [
           {
             "name": "ข้อมูลผู้ขาย",
-            "icon": null,
+            "icon": "idcard",
             "displayOnly": false,
             "url": "/Vendor_Group/VendorProfile",
             "parent": null
           },
           {
             "name": "คัดเลือกผู้ขาย",
-            "icon": null,
+            "icon": "solution",
             "displayOnly": false,
             "url": "/Vendor_Group/VendorFilter",
             "parent": null
@@ -203,20 +149,20 @@
       },
       {
         "name": "ข้อมูลส่วนกลาง",
-        "icon": null,
+        "icon": "bank",
         "displayOnly": false,
         "url": "/CentralSetting",
         "parent": [
           {
             "name": "ปฎิทินวันหยุด",
-            "icon": null,
+            "icon": "calendar",
             "displayOnly": false,
             "url": "/CentralSetting/HolidayCalendar",
             "parent": null
           },
           {
             "name": "ตั้งค่าผู้อนุมัติ",
-            "icon": null,
+            "icon": "user-add",
             "displayOnly": false,
             "url": "/CentralSetting/Approval",
             "parent": null
@@ -225,27 +171,27 @@
       },
       {
         "name": "กำหนดสิทธิ์การใช้งาน",
-        "icon": null,
+        "icon": "setting",
         "displayOnly": false,
         "url": "/Authorization",
         "parent": [
           {
             "name": "จัดการสิทธิ์การใช้งานระบบ",
-            "icon": null,
+            "icon": "security-scan",
             "displayOnly": false,
             "url": "/Authorization/RoleManagement",
             "parent": null
           },
           {
             "name": "กำหนดสิทธิ์ผู้ใช้งาน",
-            "icon": null,
+            "icon": "eye",
             "displayOnly": false,
             "url": "/Authorization/UserRole",
             "parent": null
           },
           {
             "name": "สิทธิ์ข้ามบริษัท",
-            "icon": null,
+            "icon": "tool",
             "displayOnly": false,
             "url": "/Authorization/AuthorityCompany",
             "parent": null
@@ -253,5 +199,85 @@
         ]
       }
     ]
-  }
+  },
+  "Approval": {
+    "id": 2,
+    "comCode": "10000001",
+    "orgId": "10000074",
+    "approvalList": [
+      {
+        "id": 5,
+        "adUser": "BOONRAWD_LOCALds01",
+        "step": 1
+      }
+    ]
+  },
+  "UserRoles": {
+    "adUser": "BOONRAWD_LOCALds01",
+    "roleList": [0]
+  },
+  "HolidayCalendar": {
+    "year": "2019",
+    "holidayList": [
+      {
+        "holidayDateString": "2019-01-01",
+        "description": "Test วันหยุด 1"
+      },
+      {
+        "holidayDateString": "2019-01-02",
+        "description": "Test วันหยุด 2"
+      },
+      {
+        "holidayDateString": "2019-01-03",
+        "description": "Test วันหยุด 3"
+      }
+    ]
+  },
+  "AuthorityCompany": {
+    "adUser": "string",
+    "comCode": ["string"]
+  },
+  "AppCompoSiteRole": {
+    "id": 0,
+    "name": "string",
+    "description": "string",
+    "active": true,
+    "roleItem": [
+      {
+        "menuCode": "string",
+        "isDisplay": true,
+        "isManage": true,
+        "parentMenu": [
+          {
+            "menuCode": "string",
+            "isDisplay": true,
+            "isManage": true,
+            "parentMenu": [null]
+          }
+        ]
+      }
+    ]
+  },
+  "Performance": {
+    "id": 1,
+    "performanceNameTh": "test ตัวชี้วัด 1",
+    "performanceNameEn": "test performance item 1"
+  },
+  "PerformanceGroup": {
+    "id": 1,
+    "performanceGroupNameTh": "test กลุ่มตัวชี้วัด 1",
+    "performanceGroupNameEn": "test performance group 1",
+    "sapScoreField": "SCORE_1_Quality",
+    "performanceGroupItems": [1]
+  },
+  "test": [
+    {
+      "id": 1,
+      "name": "หนึ่ง"
+    },
+    {
+      "id": 1,
+      "name": "หนึ่ง"
+    }
+  ]
 }

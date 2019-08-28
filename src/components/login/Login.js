@@ -1,6 +1,7 @@
 import React from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
 import { Form, Icon, Input } from 'antd'
+import { Link } from 'react-router-dom'
 import Button from '../button/button'
 import './Login.css'
 const LoginForm = styled.div`
@@ -75,9 +76,11 @@ const Login = props => (
             )}
           </Form.Item>
           <Form.Item style={{ textAlign: 'center' }}>
-            <Button type="login" width="300px" height="43px">
-              Log in
-            </Button>
+            <Link to="/inbox">
+              <Button type="login" width="300px" height="43px">
+                Log in
+              </Button>
+            </Link>
           </Form.Item>
         </Form>
       </LoginFormStyle>

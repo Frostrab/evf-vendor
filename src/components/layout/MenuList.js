@@ -13,7 +13,7 @@ const MenuList = props => {
             key={mainMenu.name}
             title={
               <span>
-                <Icon type="mail" />
+                <Icon type={mainMenu.icon} />
                 <span>{mainMenu.name}</span>
               </span>
             }
@@ -24,7 +24,7 @@ const MenuList = props => {
                   key={subMenuTab.name}
                   title={
                     <span>
-                      <Icon type="mail" />
+                      <Icon type={subMenuTab.icon} />
                       <span> {subMenuTab.name}</span>
                     </span>
                   }
@@ -33,7 +33,7 @@ const MenuList = props => {
                     <Menu.Item key={lastMenu.name}>
                       <Tooltip placement="topLeft" title={lastMenu.name}>
                         <Link to={lastMenu.url}>
-                          <Icon type="user" />
+                          <Icon type={lastMenu.icon} />
                           <span>{lastMenu.name}</span>
                         </Link>
                       </Tooltip>
@@ -44,7 +44,7 @@ const MenuList = props => {
                 <Menu.Item key={subMenuTab.name}>
                   <Tooltip placement="topLeft" title={subMenuTab.name}>
                     <Link to={subMenuTab.url}>
-                      <Icon type="user" />
+                      <Icon type={subMenuTab.icon} />
                       <span>{subMenuTab.name}</span>
                     </Link>
                   </Tooltip>
@@ -56,7 +56,7 @@ const MenuList = props => {
           <Menu.Item key={mainMenu.name}>
             <Tooltip placement="topLeft" title={mainMenu.name}>
               <Link to={mainMenu.url}>
-                <Icon type="user" />
+                <Icon type={mainMenu.icon} />
                 <span>{mainMenu.name}</span>
               </Link>
             </Tooltip>

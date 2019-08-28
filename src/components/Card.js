@@ -6,6 +6,7 @@ const Title = Styled.h2`
     color: ${props => props.color || '#000000'}
 `
 const TitleTab = Styled.div`
+    width: 50%
     background-color:#fff
     border-radius: 10px;
     border: 1px solid  #27b6ba
@@ -21,7 +22,7 @@ const BodyCard = Styled.div`
     
 `
 const Paper = props => (
-  <div>
+  <React.Fragment>
     {props.title ? (
       <TitleTab>
         <Title size="30px">{props.title}</Title>
@@ -30,6 +31,6 @@ const Paper = props => (
       false
     )}
     <BodyCard color={props.color}>{props.children}</BodyCard>
-  </div>
+  </React.Fragment>
 )
 export default Paper
