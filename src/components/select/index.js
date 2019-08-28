@@ -2,7 +2,7 @@ import React from 'react'
 import { Select } from 'antd'
 
 const { Option } = Select
-const SelecList = props => {
+export const SelecList = props => {
   return (
     <Select
       defaultValue={props.defaultValue}
@@ -15,4 +15,3 @@ const SelecList = props => {
     </Select>
   )
 }
-export default SelecList

@@ -156,7 +156,7 @@ const _checkForIcon = i => {
       return false
   }
 }
-const Button = props => (
+export const Button = props => (
   <ButtonCustom
     type={props.type}
     onClick={props.onClick}
@@ -168,4 +168,3 @@ const Button = props => (
     {props.children}
   </ButtonCustom>
 )
-export default Button

@@ -1,6 +1,6 @@
 import { notification } from 'antd'
 
-const Notification = (title, message, type) => {
+export const Notification = (title, message, type) => {
   //type = "warning" || "succress" || "error"
   notification[type || 'error']({
     message: title || 'ข้อความ',
@@ -11,5 +11,3 @@ const Notification = (title, message, type) => {
     duration: 2,
   })
 }
-
-export default Notification

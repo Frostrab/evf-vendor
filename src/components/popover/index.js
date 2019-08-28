@@ -35,34 +35,19 @@ const data = [
   },
 ]
 const content = <Table columns={columns} dataSource={data} pagination={false} />
-class PopoverIcon extends React.Component {
-  state = {
-    visible: false,
-  }
+export const PopoverIcon = props => {
+  const [visible, setVisible] = React.useState(false)
 
-  hide = () => {
-    this.setState({
-      visible: false,
-    })
-  }
-
-  handleVisibleChange = visible => {
-    this.setState({ visible })
-  }
-
-  render() {
-    return (
-      <Popover
-        placement="top"
-        content={content}
-        title="เกณฑ์การประเมิน"
-        trigger="click"
-        visible={this.state.visible}
-        onVisibleChange={this.handleVisibleChange}
-      >
-        <Icon type="info-circle" />
-      </Popover>
-    )
-  }
+  return (
+    <Popover
+      placement="top"
+      content={content}
+      title="เกณฑ์การประเมิน"
+      trigger="click"
+      visible={visible}
+      onVisibleChange={setVisible}
+    >
+      <Icon type="info-circle" />
+    </Popover>
+  )
 }
-export default PopoverIcon

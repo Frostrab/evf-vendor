@@ -1,6 +1,6 @@
 import React from 'react'
 import { Rate } from 'antd'
-const RateScore = props => {
+export const RateScore = props => {
   const [desc, setDesc] = React.useState([
     'ต่ำกว่ามาตราฐาน',
     'ตามมาตราฐาน',
@@ -18,4 +18,3 @@ const RateScore = props => {
     </span>
   )
 }
-export default RateScore

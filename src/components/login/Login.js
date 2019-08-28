@@ -87,6 +87,6 @@ const Login = props => (
     </LoginForm>
   </React.Fragment>
 )
-const WrappedNormalLoginForm = Form.create({ name: 'normal_login' })(Login)
-
-export default WrappedNormalLoginForm
+export const WrappedNormalLoginForm = Form.create({ name: 'normal_login' })(
+  Login
+)

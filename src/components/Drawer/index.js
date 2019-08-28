@@ -1,7 +1,7 @@
 import React from 'react'
 import { Drawer } from 'antd'
 
-const DrawerTemplate = props => {
+export const DrawerTemplate = props => {
   return (
     <div>
       <Drawer
@@ -15,4 +15,3 @@ const DrawerTemplate = props => {
     </div>
   )
 }
-export default DrawerTemplate

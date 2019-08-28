@@ -9,7 +9,7 @@ const ListControl = styled.div`
   width: 100%;
   margin-top: 5px;
 `
-const ListData = props => (
+export const ListData = props => (
   <ListControl>
     <List
       itemLayout={props.itemLayout || 'horizontal'}
@@ -78,4 +78,3 @@ const ListData = props => (
     />
   </ListControl>
 )
-export default ListData
