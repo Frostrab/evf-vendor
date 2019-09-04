@@ -9,7 +9,7 @@ export const SelectTemplate = props => {
       style={{ width: props.width }}
       onChange={props.onChange}
     >
-      {props.dataSelect.map(item => (
+      {props.data.map(item => (
         <Option value={item.id}>{item.name}</Option>
       ))}
     </Select>

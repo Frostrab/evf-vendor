@@ -22,6 +22,16 @@ const ButtonCustom = Styled.button`
       border-color:#52c41a
       color: #52c41a
     `
+    } else if (props.type === 'submit') {
+      return `
+    &:hover {
+      background-color: #a9690f;
+      color: white;
+      border-color:black
+    }
+    border-color: #fa541c
+    color: #fa541c
+  `
     } else if (props.type === 'reject') {
       return `
       &:hover {
@@ -57,6 +67,7 @@ const ButtonCustom = Styled.button`
       &:hover {
         background-color: #fa8c16;
         color: white;
+        border-color:black
       }
       border-color:#fa8c16
       color: #fa8c16
@@ -83,6 +94,16 @@ const ButtonCustom = Styled.button`
     border-color:#e8e8e8
     color: #000000
   `
+    } else if (props.type === 'copy') {
+      return `
+      &:hover {
+        background-color: #0050b3;
+        color: white;
+        border-color:black
+      }
+      border-color:#0050b3
+      color: #0050b3
+  `
     } else if (props.type === 'delete') {
       return `
       &:hover {
@@ -105,6 +126,12 @@ const ButtonCustom = Styled.button`
 const _checkForIcon = i => {
   switch (i) {
     case 'approve':
+      return (
+        <span style={{ marginRight: 5 }}>
+          <Icon type="check-circle" />
+        </span>
+      )
+    case 'submit':
       return (
         <span style={{ marginRight: 5 }}>
           <Icon type="check-circle" />
@@ -140,6 +167,12 @@ const _checkForIcon = i => {
           <Icon type="login" />
         </span>
       )
+    case 'copy':
+      return (
+        <span style={{ marginRight: 5 }}>
+          <Icon type="copy" />
+        </span>
+      )
     case 'add':
       return (
         <span style={{ marginRight: 5 }}>
@@ -152,6 +185,7 @@ const _checkForIcon = i => {
           <Icon type="delete" />
         </span>
       )
+
     default:
       return false
   }
