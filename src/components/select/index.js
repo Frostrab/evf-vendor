@@ -5,6 +5,8 @@ const { Option } = Select
 export const SelectTemplate = props => {
   return (
     <Select
+      labelInValue={true}
+      name={props.name}
       defaultValue={props.defaultValue}
       style={{ width: props.width }}
       onChange={props.onChange}

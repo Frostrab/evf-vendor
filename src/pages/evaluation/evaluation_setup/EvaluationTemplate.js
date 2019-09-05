@@ -39,6 +39,7 @@ const EvaluationTemplate = () => {
           size={'small'}
           bordered={true}
           icon={'layout'}
+          openDrawer={handleOpenDrawer}
           view
           edit
           copy
@@ -49,7 +50,7 @@ const EvaluationTemplate = () => {
           width={'50%'}
           handleOpenDrawer={handleOpenDrawer}
         >
-          <WrappedNomalForm />
+          <WrappedNomalForm handleDrawerClose={() => setVisible(false)} />
         </DrawerTemplate>
       </Paper>
     </React.Fragment>

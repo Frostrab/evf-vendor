@@ -270,6 +270,182 @@
     "sapScoreField": "SCORE_1_Quality",
     "performanceGroupItems": [1]
   },
+  "EveForm": {
+    "name": "แบบประเมินสำหรับ ทดสอบ",
+    "criteria": {
+      "id": 4,
+      "criteriaName": "หลักเกณฑ์ประเมิน ทั่วไป",
+      "isDefault": false,
+      "isUse": false,
+      "criteriaGroups": [
+        {
+          "id": 4,
+          "criteriaId": 4,
+          "kpiGroupId": 2,
+          "sequence": 1,
+          "maxScore": 40,
+          "criteriaItems": [
+            {
+              "id": 7,
+              "sequence": 1,
+              "criteriaGroupId": 4,
+              "kpiId": 2,
+              "kpiNameTh": "ความรู้ ความชำนาญในการให้คำปรึกษาในงาน และ/หรือการแก้ปัญหางาน",
+              "kpiNameEn": "en Text",
+              "maxScore": 20
+            },
+            {
+              "id": 8,
+              "sequence": 2,
+              "criteriaGroupId": 4,
+              "kpiId": 3,
+              "kpiNameTh": " แผนการดำเนินงานสอดคล้องและเป็นไปตามระยะเวลาดำเนินงาน",
+              "kpiNameEn": "en Text",
+              "maxScore": 20
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "criteriaId": 4,
+          "kpiGroupId": 3,
+          "sequence": 2,
+          "maxScore": 20,
+          "criteriaItems": [
+            {
+              "id": 9,
+              "sequence": 1,
+              "criteriaGroupId": 5,
+              "kpiId": 4,
+              "kpiNameTh": "ความสามารถในการควบคุมงานให้เป็นไปตามแผน",
+              "kpiNameEn": "en text",
+              "maxScore": 20
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "criteriaId": 4,
+          "kpiGroupId": 4,
+          "sequence": 3,
+          "maxScore": 10,
+          "criteriaItems": [
+            {
+              "id": 10,
+              "sequence": 1,
+              "criteriaGroupId": 6,
+              "kpiId": 5,
+              "kpiNameTh": "มีการนำเสนอคำปรึกษาและแนวทางในเชิงนวัตกรรมที่เกี่ยวข้องกับการลดต้นทุนและเวลาให้โครงการนั้นๆ",
+              "kpiNameEn": "en text",
+              "maxScore": 5
+            },
+            {
+              "id": 11,
+              "sequence": 2,
+              "criteriaGroupId": 6,
+              "kpiId": 6,
+              "kpiNameTh": "มีการนำเสนอคำปรึกษาและแนวทางในเชิงนวัตกรรมที่เกี่ยวข้องกับการเพิ่มประสิทธิภาพให้โครงการนั้นๆ",
+              "kpiNameEn": "en text",
+              "maxScore": 5
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "criteriaId": 4,
+          "kpiGroupId": 5,
+          "sequence": 4,
+          "maxScore": 20,
+          "criteriaItems": [
+            {
+              "id": 12,
+              "sequence": 1,
+              "criteriaGroupId": 7,
+              "kpiId": 7,
+              "kpiNameTh": "ความสามารถของทีมงานในการประสานงาน",
+              "kpiNameEn": "en text",
+              "maxScore": 10
+            },
+            {
+              "id": 13,
+              "sequence": 2,
+              "criteriaGroupId": 7,
+              "kpiId": 8,
+              "kpiNameTh": "สามารถติดต่อประสานงาน สะดวก รวดเร็วและพร้อมให้บริการทั้งในกรณีเร่งด่วน",
+              "kpiNameEn": "en text",
+              "maxScore": 10
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "criteriaId": 4,
+          "kpiGroupId": 6,
+          "sequence": 5,
+          "maxScore": 10,
+          "criteriaItems": [
+            {
+              "id": 14,
+              "sequence": 1,
+              "criteriaGroupId": 8,
+              "kpiId": 9,
+              "kpiNameTh": "มีการจัดทำรายงานความคืบหน้าของงานและ Final Report เพื่อสรุปงาน",
+              "kpiNameEn": "en text",
+              "maxScore": 10
+            }
+          ]
+        }
+      ]
+    },
+    "levelPoint": {
+      "id": 1,
+      "name": "ระดับ ทั่วไป",
+      "isDefault": false,
+      "levelPointItems": [
+        {
+          "id": 1,
+          "levelPointId": 1,
+          "levelPointName": "ต่ำกว่ามาตรฐาน",
+          "percentPoint": 20
+        },
+        {
+          "id": 2,
+          "levelPointId": 1,
+          "levelPointName": "ธรรมดา",
+          "percentPoint": 50
+        },
+        {
+          "id": 3,
+          "levelPointId": 1,
+          "levelPointName": "สูงกว่ามาตรฐาน",
+          "percentPoint": 100
+        }
+      ]
+    },
+    "grade": {
+      "id": 1,
+      "name": "เกณฑ์การประเมิน ทั่วไป",
+      "isDefault": true,
+      "gradeItems": [
+        {
+          "id": 2,
+          "gradeId": 1,
+          "startPoint": 60,
+          "endPoint": 79,
+          "gradeNameTh": "ตามมาตรฐาน",
+          "gradeNameEn": null
+        },
+        {
+          "id": 3,
+          "gradeId": 1,
+          "startPoint": 80,
+          "endPoint": 100,
+          "gradeNameTh": "สูงกว่ามาตรฐาน",
+          "gradeNameEn": null
+        }
+      ]
+    }
+  },
   "test": [
     {
       "id": 1,

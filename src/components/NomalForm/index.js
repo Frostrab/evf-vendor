@@ -1,57 +1,29 @@
 import React from 'react'
-import {
-  Form,
-  Input,
-  Tooltip,
-  Icon,
-  Cascader,
-  Select,
-  Row,
-  Col,
-  Checkbox,
-  Button,
-  AutoComplete,
-} from 'antd'
+import { Form, Input, Row, Col, Avatar } from 'antd'
+import { Button, SelectTemplate, ModalTemplate } from '../../components'
 
-const { Option } = Select
-const AutoCompleteOption = AutoComplete.Option
-
-const residences = [
-  {
-    value: 'zhejiang',
-    label: 'Zhejiang',
-    children: [
-      {
-        value: 'hangzhou',
-        label: 'Hangzhou',
-        children: [
-          {
-            value: 'xihu',
-            label: 'West Lake',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    value: 'jiangsu',
-    label: 'Jiangsu',
-    children: [
-      {
-        value: 'nanjing',
-        label: 'Nanjing',
-        children: [
-          {
-            value: 'zhonghuamen',
-            label: 'Zhong Hua Men',
-          },
-        ],
-      },
-    ],
-  },
-]
 const RegistrationForm = props => {
-  const { getFieldDecorator } = props.form
+  const [viewSelect, setViewSelect] = React.useState()
+  const [openModal, setOpenModal] = React.useState(false)
+  const [levelPoint, setLevelPoint] = React.useState({
+    key: 1,
+    label: '3 ระดับคะแนน',
+  })
+  const [grade, setGrade] = React.useState({
+    key: 1,
+    label: 'หลักเกณฑ์การประเมินสำหรับ กลางปี',
+  })
+  const [criteria, setCriteria] = React.useState({
+    key: 1,
+    label: 'หลักเกณฑ์ประจำ weighting key A2',
+  })
+  const openPreview = selected => {
+    setOpenModal(true)
+    setViewSelect(selected)
+  }
+  const handleModalClose = () => {
+    setOpenModal(false)
+  }
 
   const formItemLayout = {
     labelCol: {
@@ -75,105 +47,129 @@ const RegistrationForm = props => {
       },
     },
   }
-  const prefixSelector = getFieldDecorator('prefix', {
-    initialValue: '86',
-  })(
-    <Select style={{ width: 70 }}>
-      <Option value="86">+86</Option>
-      <Option value="87">+87</Option>
-    </Select>
-  )
-
   return (
-    <Form {...formItemLayout}>
-      <Form.Item label="ชื่อ Template">
-        {getFieldDecorator('email', {
-          rules: [
-            {
-              type: 'text',
-              message: 'The input is not valid E-mail!',
-            },
-            {
-              required: true,
-              message: 'Please input your E-mail!',
-            },
-          ],
-        })(<Input />)}
-      </Form.Item>
-      <Form.Item
-        label={
-          <span>
-            Nickname&nbsp;
-            <Tooltip title="What do you want others to call you?">
-              <Icon type="question-circle-o" />
-            </Tooltip>
-          </span>
-        }
-      >
-        {getFieldDecorator('nickname', {
-          rules: [
-            {
-              required: true,
-              message: 'Please input your nickname!',
-              whitespace: true,
-            },
-          ],
-        })(<Input />)}
-      </Form.Item>
-      <Form.Item label="Habitual Residence">
-        {getFieldDecorator('residence', {
-          initialValue: ['zhejiang', 'hangzhou', 'xihu'],
-          rules: [
-            {
-              type: 'array',
-              required: true,
-              message: 'Please select your habitual residence!',
-            },
-          ],
-        })(<Cascader options={residences} />)}
-      </Form.Item>
-      <Form.Item label="Phone Number">
-        {getFieldDecorator('phone', {
-          rules: [
-            { required: true, message: 'Please input your phone number!' },
-          ],
-        })(<Input addonBefore={prefixSelector} style={{ width: '100%' }} />)}
-      </Form.Item>
-      <Form.Item
-        label="Captcha"
-        extra="We must make sure that your are a human."
-      >
-        <Row gutter={8}>
-          <Col span={12}>
-            {getFieldDecorator('captcha', {
-              rules: [
-                {
-                  required: true,
-                  message: 'Please input the captcha you got!',
-                },
-              ],
-            })(<Input />)}
-          </Col>
-          <Col span={12}>
-            <Button>Get captcha</Button>
-          </Col>
-        </Row>
-      </Form.Item>
-      <Form.Item {...tailFormItemLayout}>
-        {getFieldDecorator('agreement', {
-          valuePropName: 'checked',
-        })(
-          <Checkbox>
-            I have read the <a href="">agreement</a>
-          </Checkbox>
-        )}
-      </Form.Item>
-      <Form.Item {...tailFormItemLayout}>
-        <Button type="primary" htmlType="submit">
-          Register
+    <React.Fragment>
+      <ModalTemplate
+        title={viewSelect}
+        visible={openModal}
+        handleClose={handleModalClose}
+        width={'80%'}
+      />
+      <Form {...formItemLayout}>
+        <Form.Item label="ชื่อ Template">
+          <Input />
+        </Form.Item>
+        <Form.Item label="หลักเกณฑ์(Criteria)">
+          <Row gutter={8}>
+            <Col span={20}>
+              <SelectTemplate
+                name={'Criteria'}
+                data={[
+                  { id: 1, name: 'หลักเกณฑ์ประจำ weighting key A2' },
+                  { id: 2, name: 'หลักเกณฑ์ประจำ weighting key A1' },
+                ]}
+                defaultValue={criteria}
+                onChange={e => setCriteria(e)}
+                width={'100%'}
+              />
+            </Col>
+            <Col span={4}>
+              <Avatar
+                size={30}
+                icon="search"
+                style={{
+                  backgroundColor: '#fff',
+                  color: '#262626',
+                  borderColor: '#000000',
+                  border: '2px solid #1890ff',
+                  cursor: 'pointer',
+                }}
+                onClick={() => openPreview(criteria.label)}
+              />
+            </Col>
+          </Row>
+        </Form.Item>
+        <Form.Item label="หลักเกณฑ์การประเมิน(Grade)">
+          <Row gutter={8}>
+            <Col span={20}>
+              <SelectTemplate
+                name={'grade'}
+                data={[
+                  { id: 1, name: 'หลักเกณฑ์การประเมินสำหรับ กลางปี' },
+                  { id: 2, name: 'หลักเกณฑ์การประเมินสำหรับ ปลายปี' },
+                ]}
+                defaultValue={grade}
+                onChange={e => setGrade(e)}
+                width={'100%'}
+              />
+            </Col>
+            <Col span={4}>
+              <Avatar
+                size={30}
+                icon="search"
+                style={{
+                  backgroundColor: '#fff',
+                  color: '#262626',
+                  borderColor: '#000000',
+                  border: '2px solid #1890ff',
+                  cursor: 'pointer',
+                }}
+                onClick={() => openPreview(grade.label)}
+              />
+            </Col>
+          </Row>
+        </Form.Item>
+        <Form.Item label="ระดับคะแนน(Level Point)">
+          <Row gutter={8}>
+            <Col span={20}>
+              <SelectTemplate
+                name={'levelpoint'}
+                data={[
+                  { id: 1, name: '3 ระดับคะแนน' },
+                  { id: 2, name: '5 ระดับคะแนน' },
+                ]}
+                defaultValue={levelPoint}
+                onChange={e => setLevelPoint(e)}
+                width={'100%'}
+              />
+            </Col>
+            <Col span={4}>
+              <Avatar
+                size={30}
+                icon="search"
+                style={{
+                  backgroundColor: '#fff',
+                  color: '#262626',
+                  borderColor: '#000000',
+                  border: '2px solid #1890ff',
+                  cursor: 'pointer',
+                }}
+                onClick={() => openPreview(levelPoint.label)}
+              />
+            </Col>
+          </Row>
+        </Form.Item>
+        <Form.Item {...tailFormItemLayout} />
+      </Form>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Button
+          type="view"
+          width="100px"
+          height="30px"
+          onClick={() => openPreview('preview')}
+        >
+          ตัวอย่าง
         </Button>
-      </Form.Item>
-    </Form>
+        <Button
+          type="submit"
+          width="100px"
+          height="30px"
+          onClick={props.handleDrawerClose}
+        >
+          บันทึก
+        </Button>
+      </div>
+    </React.Fragment>
   )
 }
 
