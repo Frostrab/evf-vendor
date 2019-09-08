@@ -1,7 +1,7 @@
 import React from 'react'
-import Rate from '../../components/Rate/index'
-import { TableForm } from './table'
-import Comment from '../../components/textarea/index'
+import { RateScore } from '../../components/Rate'
+import { TableTemplate } from './table'
+import { Comment } from '../../components/textarea'
 import 'antd/dist/antd.css'
 
 const columnsDefinition = [
@@ -61,7 +61,7 @@ const columnsDefinition = [
           props: {
             style: { background: record.color },
           },
-          children: <Rate />,
+          children: <RateScore />,
         }
       } else {
         return {
@@ -260,7 +260,7 @@ class index extends React.Component {
     return (
       <div>
         <div style={{ margin: '10px 10px 10px 10px' }}>
-          <TableForm
+          <TableTemplate
             columns={this.state.columns}
             dataSource={data}
             pagination={{ defaultPageSize: 5 }}
