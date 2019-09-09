@@ -1,6 +1,11 @@
 import React from 'react'
 import { Form, Input, Row, Col, Avatar } from 'antd'
-import { Button, SelectTemplate, ModalTemplate } from '..'
+import {
+  Button,
+  SelectTemplate,
+  ModalTemplate,
+  EveForm,
+} from '../../components'
 
 const RegistrationForm = props => {
   const [viewSelect, setViewSelect] = React.useState()
@@ -54,7 +59,9 @@ const RegistrationForm = props => {
         visible={openModal}
         handleClose={handleModalClose}
         width={'80%'}
-      />
+      >
+        <EveForm />
+      </ModalTemplate>
       <Form {...formItemLayout}>
         <Form.Item label="ชื่อ Template">
           <Input />
@@ -159,14 +166,6 @@ const RegistrationForm = props => {
           onClick={() => openPreview('preview')}
         >
           ตัวอย่าง
-        </Button>
-        <Button
-          type="submit"
-          width="100px"
-          height="30px"
-          onClick={props.handleDrawerClose}
-        >
-          บันทึก
         </Button>
       </div>
     </React.Fragment>

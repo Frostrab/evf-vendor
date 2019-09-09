@@ -24,18 +24,22 @@ const Grade = () => {
   return (
     <React.Fragment>
       <Paper title={'เกณฑ์การประเมิน (Grade) '}>
-        <Button
-          onClick={e => {
-            handleOpenDrawer(true)
-          }}
-          type={'add'}
-        >
-          เพิ่ม
-        </Button>
+        <span style={{ marginLeft: '20%' }}>
+          <Button
+            width="100px"
+            height="40px"
+            onClick={e => {
+              handleOpenDrawer(true)
+            }}
+            type={'submit'}
+          >
+            เพิ่ม
+          </Button>
+        </span>
         <ListData
           header={'ชื่อ เกณฑ์การประเมิน (Grade)'}
           data={data}
-          width={'650px'}
+          width={'800px'}
           size={'small'}
           bordered={true}
           icon={'line-chart'}
@@ -43,6 +47,8 @@ const Grade = () => {
           view
           edit
         />
+        <br />
+        <br />
         <DrawerTemplate
           title={'เพิ่ม เกณฑ์การประเมิน'}
           visible={visible}

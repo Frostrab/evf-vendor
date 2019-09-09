@@ -32,7 +32,7 @@ const VendorFilter = () => {
             display: 'flex',
             justifyContent: 'center',
             borderStyle: 'solid',
-            borderColor: 'black',
+            borderColor: '#bfbfbf',
             borderWidth: '2px',
             padding: 10,
             marginBottom: 7,

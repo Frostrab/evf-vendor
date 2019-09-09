@@ -1,7 +1,12 @@
 import React from 'react'
-import { Paper, TableTemplate, Button, PopoverIcon } from '../components'
+import {
+  Paper,
+  TableTemplate,
+  Button,
+  ModalTemplate,
+  TableInbox,
+} from '../components'
 import Styled from 'styled-components'
-import { Divider } from 'antd'
 
 const Title = Styled.h2`
     font-size: ${props => props.size}
@@ -14,166 +19,223 @@ const TitleTab = Styled.div`
     border: 1px solid  #27b6ba
     margin-bottom: 3px
 `
-const MasterList = () => (
-  <React.Fragment>
-    <TitleTab>
-      <Title size="30px">Inbox</Title>
-    </TitleTab>
-    <div>
-      <div style={{ textAlign: 'center' }}>
-        <div
-          style={{ display: 'flex', justifyContent: 'center', marginBottom: 3 }}
-        >
-          <div>
-            {' '}
-            <Button type="submit" />
-          </div>
+
+const MasterList = () => {
+  const [viewSelect, setViewSelect] = React.useState()
+  const [openModal, setOpenModal] = React.useState(false)
+  const [title, setTitle] = React.useState()
+
+  const openPreview = selected => {
+    setOpenModal(true)
+    setViewSelect(selected)
+  }
+  const handleModalClose = () => {
+    setOpenModal(false)
+  }
+  return (
+    <React.Fragment>
+      <ModalTemplate
+        title={viewSelect}
+        visible={openModal}
+        handleClose={handleModalClose}
+        width={'80%'}
+      >
+        <TableInbox />
+      </ModalTemplate>
+      <TitleTab>
+        <Title size="30px">Inbox</Title>
+      </TitleTab>
+      <div>
+        <div style={{ textAlign: 'center' }}>
           <div
             style={{
-              width: 250,
-              height: 250,
-              backgroundColor: '#fff',
-              borderRadius: '50%',
               display: 'flex',
-              alignItems: 'center',
               justifyContent: 'center',
-              cursor: 'pointer',
+              marginBottom: 3,
             }}
           >
             <div>
-              <div style={{ fontSize: 100, color: 'brow' }}>60</div>
-              <div style={{ display: 'flex', justifyContent: 'center' }}>
-                งานทั้งหมด
+              {' '}
+              <Button type="submit" />
+            </div>
+            <div
+              style={{
+                width: 400,
+                height: 400,
+                backgroundColor: '#fff',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+              }}
+              onClick={() => openPreview('ผู้ชายทั้งหมด')}
+            >
+              <div>
+                <div style={{ fontSize: 100, color: 'brow' }}>60</div>
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    fontSize: '20px',
+                  }}
+                >
+                  งานทั้งหมด
+                </div>
               </div>
             </div>
-          </div>
-          <div>
-            <Button type="reject" />
+            <div>
+              <Button type="reject" />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div style={{ display: 'flex', justifyContent: 'center', marginTop: 30 }}>
-      <div style={{ textAlign: 'center', marginRight: 10 }}>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            marginBottom: 3,
-            padding: 5,
-            borderWidth: '1px',
-            borderStyle: 'solid',
-            borderColor: 'black',
-          }}
-        >
-          <div>
-            {' '}
-            <Button type="submit" />
-          </div>
+      <div style={{ display: 'flex', justifyContent: 'center', marginTop: 30 }}>
+        <div style={{ textAlign: 'center', marginRight: 10 }}>
           <div
             style={{
-              width: 200,
-              height: 200,
-              backgroundColor: '#fff',
-              borderRadius: '50%',
               display: 'flex',
-              alignItems: 'center',
               justifyContent: 'center',
+              marginBottom: 3,
+              padding: 5,
+              borderWidth: '1px',
+              borderStyle: 'solid',
+              borderColor: 'black',
             }}
           >
             <div>
-              <div style={{ fontSize: 80, color: 'brow' }}>20</div>
-              <div style={{ display: 'flex', justifyContent: 'center' }}>
-                ปานกลาง
+              {' '}
+              <Button type="submit" />
+            </div>
+            <div
+              style={{
+                width: 300,
+                height: 300,
+                backgroundColor: '#fff',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+              }}
+              onClick={() => openPreview('ผู้ขาย ที่ได้คะแนนดี')}
+            >
+              <div>
+                <div style={{ fontSize: 80, color: 'brow' }}>20</div>
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    fontSize: '20px',
+                  }}
+                >
+                  ดี
+                </div>
               </div>
             </div>
-          </div>
-          <div>
-            <Button type="reject" />
+            <div>
+              <Button type="reject" />
+            </div>
           </div>
         </div>
-      </div>
-      <div style={{ textAlign: 'center', marginRight: 10 }}>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            marginBottom: 3,
-            padding: 5,
-            borderWidth: '1px',
-            borderStyle: 'solid',
-            borderColor: 'black',
-          }}
-        >
-          <div>
-            {' '}
-            <Button type="submit" />
-          </div>
+        <div style={{ textAlign: 'center', marginRight: 10 }}>
           <div
             style={{
-              width: 200,
-              height: 200,
-              backgroundColor: '#fff',
-              borderRadius: '50%',
               display: 'flex',
-              alignItems: 'center',
               justifyContent: 'center',
+              marginBottom: 3,
+              padding: 5,
+              borderWidth: '1px',
+              borderStyle: 'solid',
+              borderColor: 'black',
             }}
           >
             <div>
-              <div style={{ fontSize: 80, color: 'blue' }}>20</div>
-              <div style={{ display: 'flex', justifyContent: 'center' }}>
-                ดี
+              {' '}
+              <Button type="submit" />
+            </div>
+            <div
+              style={{
+                width: 300,
+                height: 300,
+                backgroundColor: '#fff',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+              }}
+              onClick={() => openPreview('ผู้ขาย ที่ได้คะแนนปานกลาง')}
+            >
+              <div>
+                <div style={{ fontSize: 80, color: 'blue' }}>20</div>
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    fontSize: '20px',
+                  }}
+                >
+                  ปานกลาง
+                </div>
               </div>
             </div>
-          </div>
-          <div>
-            {' '}
-            <Button type="reject" />
+            <div>
+              {' '}
+              <Button type="reject" />
+            </div>
           </div>
         </div>
-      </div>
-      <div style={{ textAlign: 'center' }}>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            marginBottom: 3,
-            padding: 5,
-            borderWidth: '1px',
-            borderStyle: 'solid',
-            borderColor: 'black',
-          }}
-        >
-          <div>
-            {' '}
-            <Button type="submit" />
-          </div>
+        <div style={{ textAlign: 'center' }}>
           <div
             style={{
-              width: 200,
-              height: 200,
-              backgroundColor: '#fff',
-              borderRadius: '50%',
               display: 'flex',
-              alignItems: 'center',
               justifyContent: 'center',
+              marginBottom: 3,
+              padding: 5,
+              borderWidth: '1px',
+              borderStyle: 'solid',
+              borderColor: 'black',
             }}
           >
             <div>
-              <div style={{ fontSize: 80, color: 'red' }}>20</div>
-              <div style={{ display: 'flex', justifyContent: 'center' }}>
-                แย่
+              {' '}
+              <Button type="submit" />
+            </div>
+            <div
+              style={{
+                width: 300,
+                height: 300,
+                backgroundColor: '#fff',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+              }}
+              onClick={() => openPreview('ผู้ขาย ที่ได้คะแนนควรปรับปรุง')}
+            >
+              <div>
+                <div style={{ fontSize: 80, color: 'red' }}>20</div>
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    fontSize: '20px',
+                  }}
+                >
+                  ปรับปรุง
+                </div>
               </div>
             </div>
-          </div>
-          <div>
-            {' '}
-            <Button type="reject" />
+            <div>
+              {' '}
+              <Button type="reject" />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </React.Fragment>
-)
+    </React.Fragment>
+  )
+}
 export default MasterList

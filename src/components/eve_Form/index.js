@@ -3,6 +3,7 @@ import { Paper, TableTemplate, Button, PopoverIcon } from '../../components'
 import Styled from 'styled-components'
 import TableForm from '../table/index'
 import { Input, Card, Row, Col } from 'antd'
+import { Switch, Icon } from 'antd'
 
 const Title = Styled.h2`
     font-size: ${props => props.size}
@@ -34,7 +35,7 @@ export const EveForm = () => (
         }}
       >
         <div style={{ padding: '50px' }}>
-          <span style={{ display: 'flex', fontSize: 16 }}>
+          <span style={{ display: 'flex', fontSize: 16, marginTop: 5 }}>
             <div
               style={{ display: 'flex', alignItems: 'center', width: '100px' }}
             >
@@ -44,7 +45,7 @@ export const EveForm = () => (
               <Input value="ทดสอบ" readOnly />
             </div>
           </span>
-          <span style={{ display: 'flex', fontSize: 16 }}>
+          <span style={{ display: 'flex', fontSize: 16, marginTop: 5 }}>
             <div
               style={{ display: 'flex', alignItems: 'center', width: '100px' }}
             >
@@ -54,7 +55,7 @@ export const EveForm = () => (
               <Input value="ทดสอบ" readOnly />
             </div>
           </span>
-          <span style={{ display: 'flex', fontSize: 16 }}>
+          <span style={{ display: 'flex', fontSize: 16, marginTop: 5 }}>
             <div
               style={{ display: 'flex', alignItems: 'center', width: '100px' }}
             >
@@ -62,6 +63,16 @@ export const EveForm = () => (
             </div>
             <div style={{ marginLeft: 10 }}>
               <Input value="ทดสอบ" readOnly />
+            </div>
+          </span>
+          <span style={{ display: 'flex', fontSize: 16, marginTop: 5 }}>
+            <div
+              style={{ display: 'flex', alignItems: 'center', width: '100px' }}
+            >
+              ภาษา (Language)
+            </div>
+            <div style={{ marginLeft: 10 }}>
+              <Switch checkedChildren="EN" unCheckedChildren="TH" />
             </div>
           </span>
         </div>

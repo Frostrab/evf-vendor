@@ -25,18 +25,22 @@ const Criteria = () => {
   return (
     <React.Fragment>
       <Paper title={'หลักเกณฑ์การประเมิน(Criteria)'}>
-        <Button
-          onClick={e => {
-            handleOpenDrawer(true)
-          }}
-          type={'add'}
-        >
-          เพิ่ม
-        </Button>
+        <span style={{ marginLeft: '20%' }}>
+          <Button
+            width="100px"
+            height="40px"
+            onClick={e => {
+              handleOpenDrawer(true)
+            }}
+            type={'submit'}
+          >
+            เพิ่ม
+          </Button>
+        </span>
         <ListData
           header={'ชื่อ หลักเกณฑ์การประเมิน(Criteria)'}
           data={data}
-          width={'650px'}
+          width={'800px'}
           size={'small'}
           bordered={true}
           icon={'layout'}
@@ -44,6 +48,9 @@ const Criteria = () => {
           view
           edit
         />
+        <br />
+        <br />
+
         <DrawerTemplate
           title={'รายละเอียด'}
           visible={visible}

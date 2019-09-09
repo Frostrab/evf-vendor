@@ -2,56 +2,54 @@ import React, { useState } from 'react'
 import {
   Paper,
   Button,
-  ListData,
-  DrawerTemplate,
-  WrappedNomalForm,
+  EveForm,
+  ModalTemplate,
+  TableEve,
 } from '../../../components'
+import { Tabs } from 'antd'
+
+const { TabPane } = Tabs
+function callback(key) {
+  console.log(key)
+}
 const Evaluation = () => {
-  const [data, setData] = useState([
-    {
-      title: 'ต้นปี',
-      description: 'ประเมิน ต้นปี',
-    },
-    {
-      title: 'กลางปี',
-      description: 'ประเมิน กลางปี',
-    },
-  ])
+  const [viewSelect, setViewSelect] = useState()
+  const [openModal, setOpenModal] = useState(false)
   const [visible, setVisible] = useState(false)
   const handleOpenDrawer = (a, data) => {
     setVisible(a)
   }
+  const openPreview = selected => {
+    setOpenModal(true)
+    setViewSelect(selected)
+  }
+  const handleModalClose = () => {
+    setOpenModal(false)
+  }
   return (
     <React.Fragment>
-      <Paper title={'Template แบบประเมิน'}>
-        <Button
-          onClick={e => {
-            handleOpenDrawer(true)
-          }}
-          type={'add'}
-        >
-          เพิ่ม
-        </Button>
-        <ListData
-          header={'ชื่อ Template'}
-          data={data}
-          width={'650px'}
-          size={'small'}
-          bordered={true}
-          icon={'layout'}
-          openDrawer={handleOpenDrawer}
-          view
-          edit
-          copy
-        />
-        <DrawerTemplate
-          title={'รายละเอียด'}
-          visible={visible}
-          width={'50%'}
-          handleOpenDrawer={handleOpenDrawer}
-        >
-          <WrappedNomalForm handleDrawerClose={() => setVisible(false)} />
-        </DrawerTemplate>
+      <ModalTemplate
+        title={viewSelect}
+        visible={openModal}
+        handleClose={handleModalClose}
+        width={'80%'}
+      >
+        <EveForm />
+      </ModalTemplate>
+      <Paper title={'ประเมินผู้ขาย'}>
+        <Tabs onChange={callback} type="card">
+          <TabPane tab="รายการ การประเมิน" key="1">
+            <div style={{ padding: 50 }}>
+              <TableEve openPreview={openPreview} />
+            </div>
+          </TabPane>
+          <TabPane tab="รายการ การประเมินทั้งหมด" key="2">
+            <div style={{ padding: 50 }}>
+              <TableEve />
+            </div>
+          </TabPane>
+        </Tabs>
+        ,
       </Paper>
     </React.Fragment>
   )

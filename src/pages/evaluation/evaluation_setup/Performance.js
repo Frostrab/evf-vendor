@@ -20,14 +20,19 @@ const Performance = () => {
   return (
     <React.Fragment>
       <Paper title={'ตัวชี้วัด(Performence)'}>
-        <Button
-          onClick={e => {
-            handleOpenDrawer(true)
-          }}
-          type={'add'}
-        >
-          เพิ่ม
-        </Button>
+        <span style={{ marginLeft: '20%' }}>
+          <Button
+            width="100px"
+            height="40px"
+            onClick={e => {
+              handleOpenDrawer(true)
+            }}
+            type={'submit'}
+          >
+            เพิ่ม
+          </Button>
+        </span>
+
         <ListData
           header={'ชื่อ ตัวชี้วัด(Performence)'}
           data={data}
@@ -40,6 +45,9 @@ const Performance = () => {
           edit
           delete
         />
+        <br />
+        <br />
+
         <DrawerTemplate
           title={'รายละเอียด'}
           visible={visible}
