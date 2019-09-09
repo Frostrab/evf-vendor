@@ -4,17 +4,17 @@ import {
   Button,
   ListData,
   DrawerTemplate,
-  WrappedNomalForm,
+  WrappedGradeForm,
 } from '../../../components'
 const Grade = () => {
   const [data, setData] = useState([
     {
-      title: 'ต้นปี',
-      description: 'ประเมิน ต้นปี',
+      title: '5 ระดับ',
+      description: '5 ระดับคะแนน',
     },
     {
-      title: 'กลางปี',
-      description: 'ประเมิน กลางปี',
+      title: '3 ระดับ',
+      description: '3 ระดับคะแนน',
     },
   ])
   const [visible, setVisible] = useState(false)
@@ -23,7 +23,7 @@ const Grade = () => {
   }
   return (
     <React.Fragment>
-      <Paper title={'Template แบบประเมิน'}>
+      <Paper title={'เกณฑ์การประเมิน'}>
         <Button
           onClick={e => {
             handleOpenDrawer(true)
@@ -33,16 +33,15 @@ const Grade = () => {
           เพิ่ม
         </Button>
         <ListData
-          header={'ชื่อ Template'}
+          header={'ชื่อ เกณฑ์การประเมิน (Levelpoint)'}
           data={data}
           width={'650px'}
           size={'small'}
           bordered={true}
-          icon={'layout'}
+          icon={'line-chart'}
           openDrawer={handleOpenDrawer}
           view
           edit
-          copy
         />
         <DrawerTemplate
           title={'รายละเอียด'}
@@ -50,7 +49,7 @@ const Grade = () => {
           width={'50%'}
           handleOpenDrawer={handleOpenDrawer}
         >
-          <WrappedNomalForm handleDrawerClose={() => setVisible(false)} />
+          <WrappedGradeForm handleDrawerClose={() => setVisible(false)} />
         </DrawerTemplate>
       </Paper>
     </React.Fragment>

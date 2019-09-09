@@ -1,6 +1,6 @@
 import React from 'react'
 import { Form, Input, Row, Col, Avatar } from 'antd'
-import { Button, SelectTemplate, ModalTemplate } from '../../components'
+import { Button, SelectTemplate, ModalTemplate } from '..'
 
 const RegistrationForm = props => {
   const [viewSelect, setViewSelect] = React.useState()
