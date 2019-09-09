@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { LoginPage, Content1 } from './pages'
+import { LoginPage, Content1, Inbox } from './pages'
+import { EveForm } from './components'
 
 import { RouterPath } from './router'
 import PrivateRoute from './components/PrivateRoute'

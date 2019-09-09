@@ -1,7 +1,7 @@
 import React from 'react'
 import { Paper, TableTemplate, Button, PopoverIcon } from '../components'
 import Styled from 'styled-components'
-import { Input, Card, Row, Col } from 'antd'
+import { Divider } from 'antd'
 
 const Title = Styled.h2`
     font-size: ${props => props.size}
@@ -17,105 +17,163 @@ const TitleTab = Styled.div`
 const MasterList = () => (
   <React.Fragment>
     <TitleTab>
-      <Title size="30px">ประเมินผลการปฏิบัติงานผู้รับจ้าง</Title>
+      <Title size="30px">Inbox</Title>
     </TitleTab>
-    <div style={{ display: 'flex', height: 250 }}>
-      <div
-        style={{
-          backgroundColor: '#fff',
-          marginBottom: 30,
-          marginTop: 30,
-          marginLeft: '2.5%',
-          marginRight: '5%',
-          width: '45%',
-          borderRadius: '10px',
-          border: '1px solid  #fff',
-        }}
-      >
-        <div style={{ padding: '50px' }}>
-          <span style={{ display: 'flex', fontSize: 16 }}>
-            <div
-              style={{ display: 'flex', alignItems: 'center', width: '100px' }}
-            >
-              ชื่อ Vendor <i style={{ color: 'red' }}>*</i>
+    <div>
+      <div style={{ textAlign: 'center' }}>
+        <div
+          style={{ display: 'flex', justifyContent: 'center', marginBottom: 3 }}
+        >
+          <div>
+            {' '}
+            <Button type="submit" />
+          </div>
+          <div
+            style={{
+              width: 250,
+              height: 250,
+              backgroundColor: '#fff',
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+            }}
+          >
+            <div>
+              <div style={{ fontSize: 100, color: 'brow' }}>60</div>
+              <div style={{ display: 'flex', justifyContent: 'center' }}>
+                งานทั้งหมด
+              </div>
             </div>
-            <div style={{ marginLeft: 10 }}>
-              <Input value="ทดสอบ" readOnly />
-            </div>
-          </span>
-          <span style={{ display: 'flex', fontSize: 16 }}>
-            <div
-              style={{ display: 'flex', alignItems: 'center', width: '100px' }}
-            >
-              รอบการประเมิน
-            </div>
-            <div style={{ marginLeft: 10 }}>
-              <Input value="ทดสอบ" readOnly />
-            </div>
-          </span>
-          <span style={{ display: 'flex', fontSize: 16 }}>
-            <div
-              style={{ display: 'flex', alignItems: 'center', width: '100px' }}
-            >
-              เริ่มต้น-สิ้นสุด
-            </div>
-            <div style={{ marginLeft: 10 }}>
-              <Input value="ทดสอบ" readOnly />
-            </div>
-          </span>
+          </div>
+          <div>
+            <Button type="reject" />
+          </div>
         </div>
       </div>
-      <div
-        style={{
-          backgroundColor: '#456',
-          marginBottom: 30,
-          marginTop: 30,
-          width: '45%',
-          padding: '30px',
-          borderRadius: '10px',
-          border: '1px solid  #fff',
-        }}
-      >
-        <Row gutter={16} style={{ display: 'flex', justifyContent: 'center' }}>
-          <Col span={9}>
-            <Card
-              style={{ fontSize: 20, height: 130 }}
-              bodyStyle={{ padding: '25px' }}
-            >
-              <div />
-              <div>คะแนนรวม</div>
-              <div style={{ fontSize: 50, color: '#3f8600' }}>0</div>
-              <p />
-            </Card>
-          </Col>
-          <Col span={9}>
-            <Card style={{ height: 130 }} bodyStyle={{ padding: '0px' }}>
-              <span style={{ float: 'right', fontSize: 20 }}>
-                <PopoverIcon />
-              </span>
-              <div style={{ padding: '25px' }}>
-                <div style={{ fontSize: 20 }}>เกรด</div>
-                <div
-                  style={{
-                    fontSize: 50,
-                    color: '#cf1322',
-                    textAlign: 'center',
-                  }}
-                >
-                  C
-                </div>
+    </div>
+    <div style={{ display: 'flex', justifyContent: 'center', marginTop: 30 }}>
+      <div style={{ textAlign: 'center', marginRight: 10 }}>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            marginBottom: 3,
+            padding: 5,
+            borderWidth: '1px',
+            borderStyle: 'solid',
+            borderColor: 'black',
+          }}
+        >
+          <div>
+            {' '}
+            <Button type="submit" />
+          </div>
+          <div
+            style={{
+              width: 200,
+              height: 200,
+              backgroundColor: '#fff',
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <div>
+              <div style={{ fontSize: 80, color: 'brow' }}>20</div>
+              <div style={{ display: 'flex', justifyContent: 'center' }}>
+                ปานกลาง
               </div>
-            </Card>
-          </Col>
-        </Row>
+            </div>
+          </div>
+          <div>
+            <Button type="reject" />
+          </div>
+        </div>
+      </div>
+      <div style={{ textAlign: 'center', marginRight: 10 }}>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            marginBottom: 3,
+            padding: 5,
+            borderWidth: '1px',
+            borderStyle: 'solid',
+            borderColor: 'black',
+          }}
+        >
+          <div>
+            {' '}
+            <Button type="submit" />
+          </div>
+          <div
+            style={{
+              width: 200,
+              height: 200,
+              backgroundColor: '#fff',
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <div>
+              <div style={{ fontSize: 80, color: 'blue' }}>20</div>
+              <div style={{ display: 'flex', justifyContent: 'center' }}>
+                ดี
+              </div>
+            </div>
+          </div>
+          <div>
+            {' '}
+            <Button type="reject" />
+          </div>
+        </div>
+      </div>
+      <div style={{ textAlign: 'center' }}>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            marginBottom: 3,
+            padding: 5,
+            borderWidth: '1px',
+            borderStyle: 'solid',
+            borderColor: 'black',
+          }}
+        >
+          <div>
+            {' '}
+            <Button type="submit" />
+          </div>
+          <div
+            style={{
+              width: 200,
+              height: 200,
+              backgroundColor: '#fff',
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <div>
+              <div style={{ fontSize: 80, color: 'red' }}>20</div>
+              <div style={{ display: 'flex', justifyContent: 'center' }}>
+                แย่
+              </div>
+            </div>
+          </div>
+          <div>
+            {' '}
+            <Button type="reject" />
+          </div>
+        </div>
       </div>
     </div>
-    <Paper>
-      <TableTemplate />
-      <span style={{ display: 'flex', justifyContent: 'center' }}>
-        <Button type="approve">Submit</Button>
-      </span>
-    </Paper>
   </React.Fragment>
 )
 export default MasterList

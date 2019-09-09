@@ -1,7 +1,6 @@
 import React from 'react'
 import PrivateRoute from '../components/PrivateRoute'
 import { Switch } from 'react-router-dom'
-
 import { Evaluation, SummaryEvaluation } from '../pages'
 import { EvaluationReportSummary, EvaluationReportVendor } from '../pages'
 import {
@@ -19,6 +18,11 @@ import { Approval, HolidayCalendar } from '../pages'
 export const RouterPath = () => {
   return (
     <Switch>
+      {/* inbox*/}
+      {/* <PrivateRoute
+        path="/Inbox"
+        component={Inbox}
+      /> */}
       {/* eval management*/}
       <PrivateRoute
         path="/Evaluation_Group/Evaluation_MGT_Group/Evaluation"

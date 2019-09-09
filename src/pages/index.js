@@ -13,6 +13,14 @@ export const LoginPage = Loadable({
     </div>
   ),
 })
+export const Inbox = Loadable({
+  loader: () => import('./inbox'),
+  loading: () => (
+    <div>
+      <Loading />
+    </div>
+  ),
+})
 export const Content1 = Loadable({
   loader: () => import('./Content1'),
   loading: () => (
