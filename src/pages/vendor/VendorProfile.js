@@ -1,7 +1,8 @@
 import React from 'react'
-import { Card, Icon, Avatar, Input } from 'antd'
-import { TableTemplate, Paper, SelectTemplate } from '../../components'
+import { Card, Icon, Avatar, Input, Select } from 'antd'
+import { TableTemplate, Paper, TableVendorProfile } from '../../components'
 const { Meta } = Card
+const { Option } = Select
 const VendorProfile = () => {
   const [dataSelect] = React.useState([
     { id: 1, name: 'หนึ่ง' },
@@ -34,7 +35,7 @@ const VendorProfile = () => {
                         readOnly={true}
                       />
                     </div>
-                    <div style={{ display: 'flex' }}>
+                    <div style={{ display: 'flex', marginTop: 7 }}>
                       <label style={{ marginRight: 25 }}>
                         <b>Tel</b>
                       </label>
@@ -63,10 +64,16 @@ const VendorProfile = () => {
               justifyContent: 'flex-end',
               marginBottom: 10,
             }}
-          >
-            <SelectTemplate dataSelect={dataSelect} width={120} />
-          </span>
-          <TableTemplate />
+          />
+          <div style={{ marginBottom: 10 }}>
+            <label style={{ marginRight: 7 }}>เลือกปีที่ทำการประเมิน: </label>
+            <Select defaultValue="lucy" style={{ width: 120 }}>
+              <Option value="jack">2562</Option>
+              <Option value="lucy">2561</Option>
+              <Option value="Yiminghe">2560</Option>
+            </Select>
+          </div>
+          <TableVendorProfile />
         </Paper>
       </div>
     </React.Fragment>
