@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { Form, Input, Select, Descriptions } from 'antd'
+import { Form, Input, Select, Card, Row, Col } from 'antd'
 import { Button } from '../../components'
 
 const { Option } = Select
 
-const GradeForm = props => {
+export const WrappedGradeForm = props => {
   const [descList, setDescList] = useState([
     {
       gradeStart: '90',
@@ -14,107 +14,138 @@ const GradeForm = props => {
     },
     { gradeStart: '80', gradeEnd: '79', textTH: 'ดี', textEN: 'Good' },
   ])
-  const { getFieldDecorator } = props.form
-
-  const formItemLayout = {
-    labelCol: {
-      xs: { span: 24 },
-      sm: { span: 8 },
-    },
-    wrapperCol: {
-      xs: { span: 24 },
-      sm: { span: 16 },
-    },
+  const [listArray, setList] = useState([{ id: 1 }, { id: 2 }])
+  const handlePush = () => {
+    console.log(listArray)
+    listArray.push({ id: 4 })
   }
-  const tailFormItemLayout = {
-    wrapperCol: {
-      xs: {
-        span: 24,
-        offset: 0,
-      },
-      sm: {
-        span: 16,
-        offset: 8,
-      },
-    },
-  }
-
   return (
     <React.Fragment>
-      <Form {...formItemLayout}>
-        <Form.Item label="ชื่อ Level Point">
-          {getFieldDecorator('email', {
-            rules: [
-              {
-                type: 'email',
-                message: 'The input is not valid E-mail!',
-              },
-              {
-                required: true,
-                message: 'Please input your E-mail!',
-              },
-            ],
-          })(<Input />)}
-        </Form.Item>
-        <Form.Item label={<span>ระดับคะแนน</span>}>
-          {getFieldDecorator('nickname', {
-            rules: [
-              {
-                required: true,
-                message: 'Please input your nickname!',
-                whitespace: true,
-              },
-            ],
-          })(<Input />)}
-        </Form.Item>
-        <Form.Item label={<span>Text TH</span>}>
-          {getFieldDecorator('nickname', {
-            rules: [
-              {
-                required: true,
-                message: 'Please input your nickname!',
-                whitespace: true,
-              },
-            ],
-          })(<Input />)}
-        </Form.Item>
-        <Form.Item label={<span>Text EN</span>}>
-          {getFieldDecorator('nickname', {
-            rules: [
-              {
-                required: true,
-                message: 'Please input your nickname!',
-                whitespace: true,
-              },
-            ],
-          })(<Input />)}
-        </Form.Item>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <div style={{ color: '#000000' }}>
+        {' '}
+        <Row gutter={24}>
+          <Col className="gutter-row" span={8} style={{ textAlign: 'right' }}>
+            <div className="gutter-box">
+              <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>*</i>
+              <label>ชื่อ เกณฑ์การประเมิน(Grade) :</label>
+            </div>
+          </Col>
+          <Col className="gutter-row" span={16} style={{ textAlign: 'left' }}>
+            <div className="gutter-box">
+              <Input />
+            </div>
+          </Col>
+        </Row>
+        <div
+          style={{ display: 'flex', justifyContent: 'center', marginTop: 20 }}
+        >
           <Button
             type="submit"
-            width="180px"
+            width="200px"
             height="30px"
-            onClick={props.handleDrawerClose}
+            onClick={() => handlePush()}
           >
-            เพิ่มหลักเกณฑ์การประเมิน
+            เพิ่มเกณฑ์การประเมิน
           </Button>
         </div>
         <hr />
-      </Form>
-      {console.log(descList)}
-      {descList.map(item => (
-        <span>
-          <Descriptions
-            title={'คะแนน :' + item.gradeStart + '-' + item.gradeEnd}
-          >
-            <Descriptions.Item label="Text TH">{item.textTH}</Descriptions.Item>
-            <Descriptions.Item label="Text EN">{item.textEN}</Descriptions.Item>
-          </Descriptions>
-          <hr />
-        </span>
-      ))}
+        {console.log(listArray)}
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <Card hoverable style={{ width: 650 }}>
+            <Row gutter={24} style={{ marginTop: 5 }}>
+              <Col
+                className="gutter-row"
+                span={8}
+                style={{ textAlign: 'right' }}
+              >
+                <div className="gutter-box">
+                  <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>
+                    *
+                  </i>
+                  <label>คะแนน :</label>
+                </div>
+              </Col>
+              <Col
+                className="gutter-row"
+                span={3}
+                style={{ textAlign: 'left' }}
+              >
+                <div className="gutter-box">
+                  <Select defaultValue="0" style={{ width: 70 }}>
+                    <Option value="100">100</Option>
+                    <Option value="90">90</Option>
+                    <Option value="80">80</Option>
+                  </Select>
+                </div>
+              </Col>
+              <Col className="gutter-row" span={2} style={{ marginTop: 5 }}>
+                <div className="gutter-box">
+                  <label>ถึง</label>
+                </div>
+              </Col>
+              <Col
+                className="gutter-row"
+                span={6}
+                style={{ textAlign: 'left' }}
+              >
+                <div className="gutter-box">
+                  <Select defaultValue="0" style={{ width: 70 }}>
+                    <Option value="100">100</Option>
+                    <Option value="90">90</Option>
+                    <Option value="80">80</Option>
+                  </Select>
+                </div>
+              </Col>
+            </Row>
+            <Row gutter={24} style={{ marginTop: 5 }}>
+              <Col
+                className="gutter-row"
+                span={8}
+                style={{ textAlign: 'right' }}
+              >
+                <div className="gutter-box">
+                  <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>
+                    *
+                  </i>
+                  <label>Text TH :</label>
+                </div>
+              </Col>
+              <Col
+                className="gutter-row"
+                span={16}
+                style={{ textAlign: 'left' }}
+              >
+                <div className="gutter-box">
+                  <Input style={{ width: '100%' }} />
+                </div>
+              </Col>
+            </Row>
+            <Row gutter={24} style={{ marginTop: 5 }}>
+              <Col
+                className="gutter-row"
+                span={8}
+                style={{ textAlign: 'right' }}
+              >
+                <div className="gutter-box">
+                  <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>
+                    *
+                  </i>
+                  <label>Text EN :</label>
+                </div>
+              </Col>
+              <Col
+                className="gutter-row"
+                span={16}
+                style={{ textAlign: 'left' }}
+              >
+                <div className="gutter-box">
+                  <Input style={{ width: '100%' }} />
+                </div>
+              </Col>
+            </Row>
+          </Card>
+        </div>
+      </div>
     </React.Fragment>
   )
 }
-
-export const WrappedGradeForm = Form.create({ name: 'grade-form' })(GradeForm)

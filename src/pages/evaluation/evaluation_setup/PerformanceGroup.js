@@ -4,17 +4,20 @@ import {
   Button,
   ListData,
   DrawerTemplate,
-  WrappedNomalForm,
+  EditableTablePerformanceGroup,
 } from '../../../components'
+import { Select, Input, Col, Row } from 'antd'
+const { Option } = Select
+
 const PerformanceGroup = () => {
   const [data, setData] = useState([
     {
-      title: 'ต้นปี',
-      description: 'ประเมิน ต้นปี',
+      title: 'การจัดทำรายงาน',
+      description: 'จัดทำรายงานเอกสาร',
     },
     {
-      title: 'กลางปี',
-      description: 'ประเมิน กลางปี',
+      title: 'การประสานงาน',
+      description: 'ประสานงานกับฝ่ายที่เกี่ยวข้อง',
     },
   ])
   const [visible, setVisible] = useState(false)
@@ -23,7 +26,7 @@ const PerformanceGroup = () => {
   }
   return (
     <React.Fragment>
-      <Paper title={'Template แบบประเมิน'}>
+      <Paper title={'กลุ่มตัวชี้วัด (Performance Group)'}>
         <Button
           onClick={e => {
             handleOpenDrawer(true)
@@ -33,7 +36,7 @@ const PerformanceGroup = () => {
           เพิ่ม
         </Button>
         <ListData
-          header={'ชื่อ Template'}
+          header={'ชื่อ กลุ่มตัวชี้วัด (Performance Group)'}
           data={data}
           width={'650px'}
           size={'small'}
@@ -42,7 +45,7 @@ const PerformanceGroup = () => {
           openDrawer={handleOpenDrawer}
           view
           edit
-          copy
+          delete
         />
         <DrawerTemplate
           title={'รายละเอียด'}
@@ -50,7 +53,89 @@ const PerformanceGroup = () => {
           width={'50%'}
           handleOpenDrawer={handleOpenDrawer}
         >
-          <WrappedNomalForm handleDrawerClose={() => setVisible(false)} />
+          <div style={{ color: '#000000', marginBottom: 5 }}>
+            {' '}
+            <Row gutter={24}>
+              <Col
+                className="gutter-row"
+                span={8}
+                style={{ textAlign: 'right' }}
+              >
+                <div className="gutter-box">
+                  <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>
+                    *
+                  </i>
+                  <label>ชื่อกลุ่มตัวชี้วัด TH :</label>
+                </div>
+              </Col>
+              <Col
+                className="gutter-row"
+                span={16}
+                style={{ textAlign: 'left' }}
+              >
+                <div className="gutter-box">
+                  <Input />
+                </div>
+              </Col>
+            </Row>
+          </div>
+          <div style={{ color: '#000000', marginBottom: 5 }}>
+            {' '}
+            <Row gutter={24}>
+              <Col
+                className="gutter-row"
+                span={8}
+                style={{ textAlign: 'right' }}
+              >
+                <div className="gutter-box">
+                  <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>
+                    *
+                  </i>
+                  <label>ชื่อกลุ่มตัวชี้วัด EN :</label>
+                </div>
+              </Col>
+              <Col
+                className="gutter-row"
+                span={16}
+                style={{ textAlign: 'left' }}
+              >
+                <div className="gutter-box">
+                  <Input />
+                </div>
+              </Col>
+            </Row>
+          </div>
+          <div style={{ color: '#000000', marginBottom: 5 }}>
+            {' '}
+            <Row gutter={24}>
+              <Col
+                className="gutter-row"
+                span={8}
+                style={{ textAlign: 'right' }}
+              >
+                <div className="gutter-box">
+                  <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>
+                    *
+                  </i>
+                  <label>SSP Field:</label>
+                </div>
+              </Col>
+              <Col
+                className="gutter-row"
+                span={16}
+                style={{ textAlign: 'left' }}
+              >
+                <div className="gutter-box">
+                  <Select defaultValue="1" style={{ width: 120 }}>
+                    <Option value="1">1</Option>
+                    <Option value="2">2</Option>
+                    <Option value="3">3</Option>
+                  </Select>
+                </div>
+              </Col>
+            </Row>
+          </div>
+          <EditableTablePerformanceGroup />
         </DrawerTemplate>
       </Paper>
     </React.Fragment>

@@ -24,11 +24,11 @@ export const DrawerTemplate = props => {
         }}
       >
         <Button
-          type={'close'}
+          type={'submit'}
           onClick={e => props.handleOpenDrawer(false)}
           style={{ marginRight: 8 }}
         >
-          ปิด
+          ตกลง
         </Button>
       </div>
     </Drawer>

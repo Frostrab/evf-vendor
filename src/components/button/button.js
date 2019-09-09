@@ -29,8 +29,8 @@ const ButtonCustom = Styled.button`
       color: white;
       border-color:black
     }
-    border-color: #fa541c
-    color: #fa541c
+    border-color: #a9690f
+    color: #a9690f
   `
     } else if (props.type === 'reject') {
       return `

@@ -36,7 +36,7 @@ export const ListData = props => {
       <ListControl>
         <List
           size={props.size}
-          header={<h3>{props.header}</h3>}
+          header={<h2>{props.header}</h2>}
           itemLayout={props.itemLayout || 'horizontal'}
           dataSource={props.data || []}
           bordered={props.bordered}
@@ -126,7 +126,7 @@ export const ListData = props => {
                   />
                 }
                 title={
-                  <div style={{ fontSize: '20px' }}>{item.title || ''}</div>
+                  <div style={{ fontSize: '16px' }}>{item.title || ''}</div>
                 }
                 description={item.description || ''}
               />

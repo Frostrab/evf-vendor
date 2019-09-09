@@ -1,20 +1,16 @@
 import React, { useState } from 'react'
-import {
-  Paper,
-  Button,
-  ListData,
-  DrawerTemplate,
-  WrappedNomalForm,
-} from '../../../components'
+import { Paper, Button, ListData, DrawerTemplate } from '../../../components'
+import { Input, Col, Row } from 'antd'
 const Performance = () => {
   const [data, setData] = useState([
     {
-      title: 'ต้นปี',
-      description: 'ประเมิน ต้นปี',
+      title:
+        'งานออกแบบมีความชัดเจนเหมาะสมต่อการใช้งานและspec ตรงตามความต้องการ',
+      description: 'คำอธิบาย',
     },
     {
-      title: 'กลางปี',
-      description: 'ประเมิน กลางปี',
+      title: ' แผนการดำเนินงานสอดคล้อง และตรงตามความต้องการ',
+      description: 'คำอธิบาย',
     },
   ])
   const [visible, setVisible] = useState(false)
@@ -23,7 +19,7 @@ const Performance = () => {
   }
   return (
     <React.Fragment>
-      <Paper title={'Template แบบประเมิน'}>
+      <Paper title={'ตัวชี้วัด(Performence)'}>
         <Button
           onClick={e => {
             handleOpenDrawer(true)
@@ -33,16 +29,16 @@ const Performance = () => {
           เพิ่ม
         </Button>
         <ListData
-          header={'ชื่อ Template'}
+          header={'ชื่อ ตัวชี้วัด(Performence)'}
           data={data}
-          width={'650px'}
+          width={'800px'}
           size={'small'}
           bordered={true}
           icon={'layout'}
           openDrawer={handleOpenDrawer}
           view
           edit
-          copy
+          delete
         />
         <DrawerTemplate
           title={'รายละเอียด'}
@@ -50,7 +46,58 @@ const Performance = () => {
           width={'50%'}
           handleOpenDrawer={handleOpenDrawer}
         >
-          <WrappedNomalForm handleDrawerClose={() => setVisible(false)} />
+          <div style={{ color: '#000000', marginBottom: 5 }}>
+            {' '}
+            <Row gutter={24}>
+              <Col
+                className="gutter-row"
+                span={8}
+                style={{ textAlign: 'right' }}
+              >
+                <div className="gutter-box">
+                  <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>
+                    *
+                  </i>
+                  <label>ชื่อตัวชี้วัด EN :</label>
+                </div>
+              </Col>
+              <Col
+                className="gutter-row"
+                span={16}
+                style={{ textAlign: 'left' }}
+              >
+                <div className="gutter-box">
+                  <Input />
+                </div>
+              </Col>
+            </Row>
+          </div>
+          <div style={{ color: '#000000', marginBottom: 5 }}>
+            {' '}
+            <Row gutter={24}>
+              <Col
+                className="gutter-row"
+                span={8}
+                style={{ textAlign: 'right' }}
+              >
+                <div className="gutter-box">
+                  <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>
+                    *
+                  </i>
+                  <label>ชื่อตัวชี้วัด EN :</label>
+                </div>
+              </Col>
+              <Col
+                className="gutter-row"
+                span={16}
+                style={{ textAlign: 'left' }}
+              >
+                <div className="gutter-box">
+                  <Input />
+                </div>
+              </Col>
+            </Row>
+          </div>
         </DrawerTemplate>
       </Paper>
     </React.Fragment>

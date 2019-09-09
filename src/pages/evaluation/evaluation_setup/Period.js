@@ -4,17 +4,20 @@ import {
   Button,
   ListData,
   DrawerTemplate,
-  WrappedNomalForm,
+  EditableTablePeriod,
 } from '../../../components'
+import { Select, Row, Col } from 'antd'
+
+const { Option } = Select
 const Period = () => {
   const [data, setData] = useState([
     {
-      title: 'ต้นปี',
-      description: 'ประเมิน ต้นปี',
+      title: 'ปี 2562',
+      description: 'ระยะเวลาการประเมินผล',
     },
     {
-      title: 'กลางปี',
-      description: 'ประเมิน กลางปี',
+      title: 'ปี 2561',
+      description: 'ระยะเวลาการประเมินผล',
     },
   ])
   const [visible, setVisible] = useState(false)
@@ -23,7 +26,7 @@ const Period = () => {
   }
   return (
     <React.Fragment>
-      <Paper title={'Template แบบประเมิน'}>
+      <Paper title={'ระยะเวลาการประเมิน(Period)'}>
         <Button
           onClick={e => {
             handleOpenDrawer(true)
@@ -33,7 +36,7 @@ const Period = () => {
           เพิ่ม
         </Button>
         <ListData
-          header={'ชื่อ Template'}
+          header={'ชื่อ ระยะเวลาการประเมิน(Period)'}
           data={data}
           width={'650px'}
           size={'small'}
@@ -42,7 +45,6 @@ const Period = () => {
           openDrawer={handleOpenDrawer}
           view
           edit
-          copy
         />
         <DrawerTemplate
           title={'รายละเอียด'}
@@ -50,7 +52,37 @@ const Period = () => {
           width={'50%'}
           handleOpenDrawer={handleOpenDrawer}
         >
-          <WrappedNomalForm handleDrawerClose={() => setVisible(false)} />
+          <div style={{ color: '#000000', marginBottom: 50 }}>
+            {' '}
+            <Row gutter={24}>
+              <Col
+                className="gutter-row"
+                span={8}
+                style={{ textAlign: 'right' }}
+              >
+                <div className="gutter-box">
+                  <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>
+                    *
+                  </i>
+                  <label>ชื่อหลักเกณฑ์ :</label>
+                </div>
+              </Col>
+              <Col
+                className="gutter-row"
+                span={16}
+                style={{ textAlign: 'left' }}
+              >
+                <div className="gutter-box">
+                  <Select defaultValue="2562" style={{ width: 120 }}>
+                    <Option value="2562">2562</Option>
+                    <Option value="2561">2561</Option>
+                    <Option value="2560">2560</Option>
+                  </Select>
+                </div>
+              </Col>
+            </Row>
+          </div>
+          <EditableTablePeriod />
         </DrawerTemplate>
       </Paper>
     </React.Fragment>
