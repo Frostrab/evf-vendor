@@ -117,7 +117,7 @@ export class EditableTableCriteria extends React.Component {
         ),
       },
       {
-        title: 'น้ำหนัก',
+        title: 'คะแนน',
         dataIndex: 'operation',
         render: (text, record) => (
           <Select defaultValue="lucy" style={{ width: 120 }}>
@@ -210,7 +210,7 @@ export class EditableTableCriteria extends React.Component {
           type="submit"
           style={{ marginBottom: 16 }}
         >
-          Add a row
+          เพิ่มหลักเกณฑ์
         </Button>
         <Table
           components={components}
@@ -219,7 +219,7 @@ export class EditableTableCriteria extends React.Component {
           dataSource={dataSource}
           columns={columns}
           pagination={false}
-          footer={() => <div style={{ textAlign: 'end' }}>น้ำหนักรวม : 0</div>}
+          footer={() => <div style={{ textAlign: 'end' }}>คะแนนรวม : 0</div>}
         />
       </div>
     )

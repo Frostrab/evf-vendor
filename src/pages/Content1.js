@@ -90,7 +90,15 @@ const MasterList = () => {
           </div>
         </div>
       </div>
-      <div style={{ display: 'flex', justifyContent: 'center', marginTop: 30 }}>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          flexWrap: 'wrap',
+          marginTop: 30,
+          marginLeft: 256,
+        }}
+      >
         <div style={{ textAlign: 'center', marginRight: 10 }}>
           <div
             style={{

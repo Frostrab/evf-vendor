@@ -24,7 +24,7 @@ const Criteria = () => {
   }
   return (
     <React.Fragment>
-      <Paper title={'หลักเกณฑ์การประเมิน(Criteria)'}>
+      <Paper title={'หลักเกณฑ์(Criteria)'}>
         <span style={{ marginLeft: '20%' }}>
           <Button
             width="100px"
@@ -38,7 +38,7 @@ const Criteria = () => {
           </Button>
         </span>
         <ListData
-          header={'ชื่อ หลักเกณฑ์การประเมิน(Criteria)'}
+          header={'ชื่อ หลักเกณฑ์(Criteria)'}
           data={data}
           width={'800px'}
           size={'small'}
