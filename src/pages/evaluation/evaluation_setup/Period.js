@@ -6,7 +6,7 @@ import {
   DrawerTemplate,
   EditableTablePeriod,
 } from '../../../components'
-import { Select, Row, Col } from 'antd'
+import { Select, Row, Col, Input } from 'antd'
 
 const { Option } = Select
 const Period = () => {
@@ -40,7 +40,7 @@ const Period = () => {
           </Button>
         </span>
         <ListData
-          header={'ชื่อ ระยะเวลาการประเมิน(Period)'}
+          header={'ชื่อ รอบการประเมิน(Period)'}
           data={data}
           width={'800px'}
           size={'small'}
@@ -70,7 +70,7 @@ const Period = () => {
                   <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>
                     *
                   </i>
-                  <label>ชื่อหลักเกณฑ์ :</label>
+                  <label>ปี :</label>
                 </div>
               </Col>
               <Col
@@ -84,6 +84,29 @@ const Period = () => {
                     <Option value="2561">2561</Option>
                     <Option value="2560">2560</Option>
                   </Select>
+                </div>
+              </Col>
+            </Row>
+            <Row gutter={24}>
+              <Col
+                className="gutter-row"
+                span={8}
+                style={{ textAlign: 'right' }}
+              >
+                <div className="gutter-box">
+                  <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>
+                    *
+                  </i>
+                  <label>ชื่อรอบการประเมิน :</label>
+                </div>
+              </Col>
+              <Col
+                className="gutter-row"
+                span={8}
+                style={{ textAlign: 'left' }}
+              >
+                <div className="gutter-box">
+                  <Input />
                 </div>
               </Col>
             </Row>

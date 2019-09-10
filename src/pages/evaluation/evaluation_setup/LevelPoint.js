@@ -34,7 +34,7 @@ const LevelPoint = () => {
             }}
             type={'submit'}
           >
-            เพิ่ม
+            เพิ่มระดับคะแนน
           </Button>
         </span>
         <ListData

@@ -23,7 +23,7 @@ const Grade = () => {
   }
   return (
     <React.Fragment>
-      <Paper title={'เกณฑ์การประเมิน (Grade) '}>
+      <Paper title={'ชื่อหลักเกณฑ์การประเมิน (Grade) '}>
         <span style={{ marginLeft: '20%' }}>
           <Button
             width="100px"
@@ -37,7 +37,7 @@ const Grade = () => {
           </Button>
         </span>
         <ListData
-          header={'ชื่อ เกณฑ์การประเมิน (Grade)'}
+          header={'ชื่อ หลักเกณฑ์การประเมิน (Grade)'}
           data={data}
           width={'800px'}
           size={'small'}
@@ -50,7 +50,7 @@ const Grade = () => {
         <br />
         <br />
         <DrawerTemplate
-          title={'เพิ่ม เกณฑ์การประเมิน'}
+          title={'เพิ่ม หลักเกณฑ์การประเมิน'}
           visible={visible}
           width={'50%'}
           handleOpenDrawer={handleOpenDrawer}

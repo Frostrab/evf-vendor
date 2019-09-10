@@ -39,7 +39,7 @@ const columnsDefinition = [
     },
   },
   {
-    title: `น้ำหนัก %Weight`,
+    title: `หลักเกณฑ์`,
     dataIndex: 'weight',
     width: '10%',
     render(text, record) {
@@ -52,7 +52,7 @@ const columnsDefinition = [
     },
   },
   {
-    title: 'ระดับคะแนน',
+    title: 'คะแนน',
     dataIndex: 'point',
     width: '12%',
     render: (text, record) => {

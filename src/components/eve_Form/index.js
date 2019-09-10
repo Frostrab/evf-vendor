@@ -39,7 +39,7 @@ export const EveForm = () => (
             <div
               style={{ display: 'flex', alignItems: 'center', width: '100px' }}
             >
-              ชื่อ Vendor <i style={{ color: 'red' }}>*</i>
+              ผู้ขาย <i style={{ color: 'red' }}>*</i>
             </div>
             <div style={{ marginLeft: 10 }}>
               <Input value="ทดสอบ" readOnly />

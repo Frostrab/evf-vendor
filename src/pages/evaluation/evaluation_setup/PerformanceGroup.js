@@ -71,7 +71,7 @@ const PerformanceGroup = () => {
                   <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>
                     *
                   </i>
-                  <label>ชื่อกลุ่มตัวชี้วัด TH :</label>
+                  <label>ชื่อกลุ่มตัวชี้วัดภาษาไทย:</label>
                 </div>
               </Col>
               <Col
@@ -97,7 +97,7 @@ const PerformanceGroup = () => {
                   <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>
                     *
                   </i>
-                  <label>ชื่อกลุ่มตัวชี้วัด EN :</label>
+                  <label>ชื่อกลุ่มตัวชี้วัดภาษาอังกฤษ :</label>
                 </div>
               </Col>
               <Col
@@ -123,7 +123,7 @@ const PerformanceGroup = () => {
                   <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>
                     *
                   </i>
-                  <label>SSP Field:</label>
+                  <label>SAP Field:</label>
                 </div>
               </Col>
               <Col

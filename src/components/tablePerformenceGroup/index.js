@@ -120,7 +120,7 @@ export class EditableTablePerformanceGroup extends React.Component {
         ),
       },
       {
-        title: 'น้ำหนัก',
+        title: '',
         dataIndex: '',
         width: '10%',
         render: (text, record) => <Button type="delete">ลบ</Button>,

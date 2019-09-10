@@ -66,7 +66,7 @@ const Performance = () => {
                   <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>
                     *
                   </i>
-                  <label>ชื่อตัวชี้วัด EN :</label>
+                  <label>ชื่อตัวชี้วัดภาษาไทย :</label>
                 </div>
               </Col>
               <Col
@@ -92,7 +92,7 @@ const Performance = () => {
                   <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>
                     *
                   </i>
-                  <label>ชื่อตัวชี้วัด EN :</label>
+                  <label>ชื่อตัวชี้วัดภาษาอังกฤษ:</label>
                 </div>
               </Col>
               <Col

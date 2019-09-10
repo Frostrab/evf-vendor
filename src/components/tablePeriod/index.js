@@ -106,19 +106,19 @@ export class EditableTablePeriod extends React.Component {
         render: (text, record) => <Input value={record.name} />,
       },
       {
-        title: 'เริ่ม',
+        title: 'วันที่เริ่มต้นการประเมิน',
         dataIndex: 'start',
         width: '30%',
         render: (text, record) => <DatePicker />,
       },
       {
-        title: 'สิ้นสุด',
+        title: 'วันที่สิ้นสุดการประเมิน',
         dataIndex: 'finish',
         width: '30%',
         render: (text, record) => <DatePicker />,
       },
       {
-        title: 'น้ำหนัก',
+        title: '',
         dataIndex: '',
         width: '10%',
         render: (text, record) => <Button type="delete">ลบ</Button>,

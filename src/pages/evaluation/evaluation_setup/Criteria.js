@@ -69,12 +69,12 @@ const Criteria = () => {
                   <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>
                     *
                   </i>
-                  <label>ชื่อหลักเกณฑ์ :</label>
+                  <label>ชื่อ :</label>
                 </div>
               </Col>
               <Col
                 className="gutter-row"
-                span={16}
+                span={8}
                 style={{ textAlign: 'right' }}
               >
                 <div className="gutter-box">

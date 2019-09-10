@@ -26,7 +26,7 @@ const VendorProfile = () => {
               actions={[<Icon type="edit" key="edit" />]}
             >
               <Meta
-                title="Leaderplanet"
+                title="ชื่อ: Leaderplanet"
                 description={
                   <div style={{ display: 'flex' }}>
                     <span style={{ marginRight: 10 }}>
@@ -38,7 +38,7 @@ const VendorProfile = () => {
                             textAlign: 'right',
                           }}
                         >
-                          <b>Email :</b>
+                          <b>อีเมล :</b>
                         </div>
                         <Input
                           value={'admin@leaderplanet.co.th'}

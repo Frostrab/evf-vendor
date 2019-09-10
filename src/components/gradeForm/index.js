@@ -27,7 +27,7 @@ export const WrappedGradeForm = props => {
           <Col className="gutter-row" span={8} style={{ textAlign: 'right' }}>
             <div className="gutter-box">
               <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>*</i>
-              <label>ชื่อ เกณฑ์การประเมิน(Grade) :</label>
+              <label>ชื่อ หลักเกณฑ์การประเมิน(Grade) :</label>
             </div>
           </Col>
           <Col className="gutter-row" span={16} style={{ textAlign: 'left' }}>
@@ -45,7 +45,7 @@ export const WrappedGradeForm = props => {
             height="30px"
             onClick={() => handlePush()}
           >
-            เพิ่มเกณฑ์การประเมิน
+            เพิ่มหลักเกณฑ์การประเมิน
           </Button>
         </div>
         <hr />
@@ -62,7 +62,7 @@ export const WrappedGradeForm = props => {
                   <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>
                     *
                   </i>
-                  <label>คะแนน :</label>
+                  <label>คะแนนเริ่มต้น :</label>
                 </div>
               </Col>
               <Col
@@ -78,14 +78,21 @@ export const WrappedGradeForm = props => {
                   </Select>
                 </div>
               </Col>
-              <Col className="gutter-row" span={2} style={{ marginTop: 5 }}>
+              <Col
+                className="gutter-row"
+                span={5}
+                style={{ marginTop: 5, textAlign: 'right' }}
+              >
                 <div className="gutter-box">
-                  <label>ถึง</label>
+                  <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>
+                    *
+                  </i>
+                  <label>คะแนนสิ้นสุด :</label>
                 </div>
               </Col>
               <Col
                 className="gutter-row"
-                span={6}
+                span={3}
                 style={{ textAlign: 'left' }}
               >
                 <div className="gutter-box">
@@ -107,7 +114,7 @@ export const WrappedGradeForm = props => {
                   <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>
                     *
                   </i>
-                  <label>Text TH :</label>
+                  <label>ระดับหลักเกณฑ์ :</label>
                 </div>
               </Col>
               <Col
@@ -130,7 +137,7 @@ export const WrappedGradeForm = props => {
                   <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>
                     *
                   </i>
-                  <label>Text EN :</label>
+                  <label>Grade :</label>
                 </div>
               </Col>
               <Col
