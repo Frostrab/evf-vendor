@@ -27,3 +27,6 @@ export * from './tableVendorFillter'
 export * from './tableVendorProfile'
 export * from './tableInbox'
 export * from './tableEve'
+
+export * from './graphForVendor'
+export * from './graphLineforVendor'

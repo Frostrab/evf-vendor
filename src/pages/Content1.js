@@ -54,7 +54,7 @@ const MasterList = () => {
               marginBottom: 3,
             }}
           >
-            <div>
+            <div style={{ marginRight: -20, marginTop: 15 }}>
               {' '}
               <Button type="submit" />
             </div>
@@ -64,12 +64,15 @@ const MasterList = () => {
                 height: 400,
                 backgroundColor: '#fff',
                 borderRadius: '50%',
+                borderColor: 'brow',
+                borderWidth: 8,
+                borderStyle: 'solid',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 cursor: 'pointer',
               }}
-              onClick={() => openPreview('ผู้ชายทั้งหมด')}
+              onClick={() => openPreview('ผู้ขายทั้งหมด')}
             >
               <div>
                 <div style={{ fontSize: 100, color: 'brow' }}>60</div>
@@ -84,7 +87,7 @@ const MasterList = () => {
                 </div>
               </div>
             </div>
-            <div>
+            <div style={{ marginLeft: -20, marginTop: 15 }}>
               <Button type="reject" />
             </div>
           </div>
@@ -96,22 +99,18 @@ const MasterList = () => {
           justifyContent: 'center',
           flexWrap: 'wrap',
           marginTop: 30,
-          marginLeft: 256,
         }}
       >
-        <div style={{ textAlign: 'center', marginRight: 10 }}>
+        <div style={{ textAlign: 'center', marginRight: 50 }}>
           <div
             style={{
               display: 'flex',
               justifyContent: 'center',
               marginBottom: 3,
               padding: 5,
-              borderWidth: '1px',
-              borderStyle: 'solid',
-              borderColor: 'black',
             }}
           >
-            <div>
+            <div style={{ marginRight: -20, marginTop: 15 }}>
               {' '}
               <Button type="submit" />
             </div>
@@ -121,6 +120,9 @@ const MasterList = () => {
                 height: 300,
                 backgroundColor: '#fff',
                 borderRadius: '50%',
+                borderColor: '#52c41a',
+                borderWidth: 10,
+                borderStyle: 'solid',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -129,36 +131,36 @@ const MasterList = () => {
               onClick={() => openPreview('ผู้ขาย ที่ได้คะแนนดี')}
             >
               <div>
-                <div style={{ fontSize: 80, color: 'brow' }}>20</div>
+                <div style={{ fontSize: 80, color: '#092b00' }}>
+                  <b> 20</b>
+                </div>
                 <div
                   style={{
                     display: 'flex',
                     justifyContent: 'center',
-                    fontSize: '20px',
+                    fontSize: '30px',
+                    color: '#52c41a',
                   }}
                 >
-                  ดี
+                  สูงกว่ามาตรฐาน
                 </div>
               </div>
             </div>
-            <div>
+            <div style={{ marginLeft: -20, marginTop: 15 }}>
               <Button type="reject" />
             </div>
           </div>
         </div>
-        <div style={{ textAlign: 'center', marginRight: 10 }}>
+        <div style={{ textAlign: 'center', marginRight: 50 }}>
           <div
             style={{
               display: 'flex',
               justifyContent: 'center',
               marginBottom: 3,
               padding: 5,
-              borderWidth: '1px',
-              borderStyle: 'solid',
-              borderColor: 'black',
             }}
           >
-            <div>
+            <div style={{ marginRight: -20, marginTop: 15 }}>
               {' '}
               <Button type="submit" />
             </div>
@@ -168,27 +170,33 @@ const MasterList = () => {
                 height: 300,
                 backgroundColor: '#fff',
                 borderRadius: '50%',
+                borderWidth: 10,
+                borderStyle: 'solid',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 cursor: 'pointer',
+                borderColor: '#fadb14',
               }}
               onClick={() => openPreview('ผู้ขาย ที่ได้คะแนนปานกลาง')}
             >
               <div>
-                <div style={{ fontSize: 80, color: 'blue' }}>20</div>
+                <div style={{ fontSize: 80, color: '#614700' }}>
+                  <b>20</b>
+                </div>
                 <div
                   style={{
                     display: 'flex',
                     justifyContent: 'center',
-                    fontSize: '20px',
+                    fontSize: '30px',
+                    color: '#614700',
                   }}
                 >
-                  ปานกลาง
+                  มาตรฐาน
                 </div>
               </div>
             </div>
-            <div>
+            <div style={{ marginLeft: -20, marginTop: 15 }}>
               {' '}
               <Button type="reject" />
             </div>
@@ -201,12 +209,9 @@ const MasterList = () => {
               justifyContent: 'center',
               marginBottom: 3,
               padding: 5,
-              borderWidth: '1px',
-              borderStyle: 'solid',
-              borderColor: 'black',
             }}
           >
-            <div>
+            <div style={{ marginRight: -20, marginTop: 15 }}>
               {' '}
               <Button type="submit" />
             </div>
@@ -216,6 +221,9 @@ const MasterList = () => {
                 height: 300,
                 backgroundColor: '#fff',
                 borderRadius: '50%',
+                borderWidth: 10,
+                borderStyle: 'solid',
+                borderColor: '#cf1322',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -224,19 +232,22 @@ const MasterList = () => {
               onClick={() => openPreview('ผู้ขาย ที่ได้คะแนนควรปรับปรุง')}
             >
               <div>
-                <div style={{ fontSize: 80, color: 'red' }}>20</div>
+                <div style={{ fontSize: 80, color: '#cf1322' }}>
+                  <b>20</b>
+                </div>
                 <div
                   style={{
                     display: 'flex',
                     justifyContent: 'center',
-                    fontSize: '20px',
+                    fontSize: '30px',
+                    color: '#cf1322',
                   }}
                 >
-                  ปรับปรุง
+                  ต่ำกว่ามาตรฐาน
                 </div>
               </div>
             </div>
-            <div>
+            <div style={{ marginLeft: -20, marginTop: 15 }}>
               {' '}
               <Button type="reject" />
             </div>

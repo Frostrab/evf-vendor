@@ -6,7 +6,7 @@ import {
   DrawerTemplate,
   FormSummaryVendor,
 } from '../../../components'
-import { Select } from 'antd'
+import { Select, Card } from 'antd'
 const { Option } = Select
 const SummaryEvaluation = () => {
   const [data, setData] = useState([
@@ -30,36 +30,43 @@ const SummaryEvaluation = () => {
           style={{
             display: 'flex',
             justifyContent: 'center',
-            borderStyle: 'solid',
-            borderColor: '#bfbfbf',
-            borderWidth: '2px',
             padding: 10,
             marginBottom: 7,
           }}
         >
-          <div style={{ marginRight: 10 }}>
-            <label style={{ marginRight: 10 }}>เลือกปีที่ต้องการ</label>
-            <Select style={{ width: 120 }} placeholder="เลือกปีที่ต้องการ">
-              <Option value="jack">2562</Option>
-              <Option value="lucy">2561</Option>
-              <Option value="Yiminghe">2560</Option>
-            </Select>
-          </div>
-          <div>
-            <label style={{ marginRight: 10 }}>เลือกครั้งที่ต้องการการ</label>
-            <Select
-              style={{ width: 120 }}
-              placeholder="เลือกครั้งที่ต้องการการ"
-            >
-              <Option value="jack">ครั้งที่ 1</Option>
-              <Option value="lucy">ครั้งที่ 2</Option>
-            </Select>
-          </div>
-          <div style={{ marginLeft: 5 }}>
-            <Button type="view">ค้นหา</Button>
-          </div>
+          <Card
+            style={{
+              width: 800,
+              display: 'flex',
+              justifyContent: 'center',
+            }}
+          >
+            <div style={{ marginRight: 10 }}>
+              <label style={{ marginRight: 42, width: 100 }}>
+                เลือกปีที่ต้องการ
+              </label>
+              <Select style={{ width: 200 }} placeholder="เลือกปีที่ต้องการ">
+                <Option value="jack">2562</Option>
+                <Option value="lucy">2561</Option>
+                <Option value="Yiminghe">2560</Option>
+              </Select>
+            </div>
+            <div>
+              <label style={{ marginRight: 10 }}>เลือกครั้งที่ต้องการการ</label>
+              <Select
+                style={{ width: 200 }}
+                placeholder="เลือกครั้งที่ต้องการการ"
+              >
+                <Option value="jack">ครั้งที่ 1</Option>
+                <Option value="lucy">ครั้งที่ 2</Option>
+              </Select>
+            </div>
+            <div style={{ marginLeft: 5 }}>
+              <Button type="view">ค้นหา</Button>
+            </div>
+          </Card>
         </div>
-        <span style={{ marginLeft: '20%' }}>
+        {/* <span style={{ marginLeft: '20%' }}>
           <Button
             width="100px"
             height="40px"
@@ -70,7 +77,7 @@ const SummaryEvaluation = () => {
           >
             เพิ่ม
           </Button>
-        </span>
+        </span> */}
         <ListData
           header={'ชื่อผู้ขาย'}
           data={data}
@@ -87,7 +94,7 @@ const SummaryEvaluation = () => {
           width={'80%'}
           handleOpenDrawer={handleOpenDrawer}
         >
-          <FormSummaryVendor></FormSummaryVendor>
+          <FormSummaryVendor />
         </DrawerTemplate>
       </Paper>
     </React.Fragment>

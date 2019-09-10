@@ -1,6 +1,11 @@
 import React from 'react'
 import { Card, Icon, Avatar, Input, Select } from 'antd'
-import { TableTemplate, Paper, TableVendorProfile } from '../../components'
+import {
+  Paper,
+  TableVendorProfile,
+  GraphPieForVendor,
+  GraphLineForVendor,
+} from '../../components'
 const { Meta } = Card
 const { Option } = Select
 const VendorProfile = () => {
@@ -12,48 +17,104 @@ const VendorProfile = () => {
     <React.Fragment>
       <Paper title={'ข้อมูลผู้ขาย'} />;
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-        <div style={{ width: '500px', marginRight: '10px' }}>
+        <div
+          style={{ width: '700px', marginRight: '10px', marginLeft: '10px' }}
+        >
           <Paper>
             <Card
               style={{ width: '100%' }}
               actions={[<Icon type="edit" key="edit" />]}
             >
               <Meta
-                avatar={
-                  <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-                }
                 title="Leaderplanet"
                 description={
-                  <span>
-                    <div style={{ display: 'flex' }}>
-                      <label style={{ marginRight: 10 }}>
-                        <b>Email</b>
-                      </label>
-                      <Input
-                        value={'admin@leaderplanet.co.th'}
-                        style={{ width: '200px' }}
-                        readOnly={true}
-                      />
-                    </div>
-                    <div style={{ display: 'flex', marginTop: 7 }}>
-                      <label style={{ marginRight: 25 }}>
-                        <b>Tel</b>
-                      </label>
-                      <Input
-                        value={'0800000000'}
-                        style={{ width: '200px' }}
-                        readOnly={true}
-                      />
-                    </div>
-                  </span>
+                  <div style={{ display: 'flex' }}>
+                    <span style={{ marginRight: 10 }}>
+                      <div style={{ display: 'flex' }}>
+                        <div
+                          style={{
+                            marginRight: 10,
+                            width: '130px',
+                            textAlign: 'right',
+                          }}
+                        >
+                          <b>Email :</b>
+                        </div>
+                        <Input
+                          value={'admin@leaderplanet.co.th'}
+                          style={{ width: '200px' }}
+                          readOnly={true}
+                        />
+                      </div>
+                      <div style={{ display: 'flex', marginTop: 7 }}>
+                        <div
+                          style={{
+                            marginRight: 10,
+                            width: '130px',
+                            textAlign: 'right',
+                          }}
+                        >
+                          <b>เบอร์โทรศัพท์ :</b>
+                        </div>
+                        <Input
+                          value={'0800000000'}
+                          style={{ width: '200px' }}
+                          readOnly={true}
+                        />
+                      </div>
+                      <div style={{ display: 'flex', marginTop: 7 }}>
+                        <label
+                          style={{
+                            marginRight: 10,
+                            width: '130px',
+                            textAlign: 'right',
+                          }}
+                        >
+                          <b>เบอร์โทรศัพท์ (มือถือ) :</b>
+                        </label>
+                        <Input
+                          value={'0800000000'}
+                          style={{ width: '200px' }}
+                          readOnly={true}
+                        />
+                      </div>
+                    </span>
+                    <span>
+                      <div style={{ display: 'flex' }}>
+                        <label style={{ marginRight: 10 }}>
+                          <b>ประเภทผู้ขาย</b>
+                        </label>
+                        <Input
+                          value={'บริการ'}
+                          style={{ width: '80px' }}
+                          readOnly={true}
+                        />
+                      </div>
+                      <div style={{ display: 'flex', marginTop: 7 }}>
+                        <label style={{ marginRight: 25 }}>
+                          <b>WeightingKey</b>
+                        </label>
+                        <Input
+                          value={'A2'}
+                          style={{ width: '80px' }}
+                          readOnly={true}
+                        />
+                      </div>
+                    </span>
+                  </div>
                 }
               />
             </Card>
             ,
           </Paper>
         </div>
-        <div style={{ width: '500px' }}>
-          <Paper>graph</Paper>
+        <div style={{ width: '800px' }}>
+          <Paper>
+            <div style={{ display: 'flex' }}>
+              <GraphPieForVendor />
+              <GraphLineForVendor />
+            </div>
+          </Paper>
         </div>
       </div>
       <div style={{ marginTop: 10 }}>
