@@ -57,14 +57,18 @@ const VendorFilter = () => {
             </Select>
           </div>
         </div>
-        <Button
-          onClick={e => {
-            handleOpenDrawer(true)
-          }}
-          type={'add'}
-        >
-          เพิ่ม
-        </Button>
+        <span style={{ marginLeft: '20%' }}>
+          <Button
+            width="100px"
+            height="40px"
+            onClick={e => {
+              handleOpenDrawer(true)
+            }}
+            type={'submit'}
+          >
+            เพิ่ม
+          </Button>
+        </span>
         <ListData
           header={'คัดเลือกผู้ขาย(Vendor Fillter)'}
           data={data}
