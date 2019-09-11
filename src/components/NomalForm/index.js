@@ -96,7 +96,7 @@ const RegistrationForm = props => {
             </Col>
           </Row>
         </Form.Item>
-        <Form.Item label="หลักเกณฑ์การประเมิน(Grade)">
+        <Form.Item label="เกณฑ์การประเมิณ">
           <Row gutter={8}>
             <Col span={20}>
               <SelectTemplate

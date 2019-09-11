@@ -5,16 +5,55 @@ import {
   ListData,
   DrawerTemplate,
   WrappedNomalForm,
+  TableChange,
 } from '../../../components'
 const EvaluationTemplate = () => {
   const [data, setData] = useState([
     {
-      title: 'ต้นปี',
+      name: 'ต้นปี',
       description: 'ประเมิน ต้นปี',
     },
     {
-      title: 'กลางปี',
+      name: 'กลางปี',
       description: 'ประเมิน กลางปี',
+    },
+  ])
+  const [columns] = useState([
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      key: 'name',
+      width: '30%',
+    },
+    {
+      title: 'Age',
+      dataIndex: 'age',
+      key: 'age',
+      width: '20%',
+    },
+    {
+      title: 'Address',
+      dataIndex: 'address',
+      key: 'address',
+      width: '20%',
+    },
+    {
+      title: '',
+      key: 'action',
+      width: '30%',
+      render: (text, record) => (
+        <span>
+          <Button onClick={() => handleOpenDrawer(true)} type="view">
+            แสดง
+          </Button>
+          <Button onClick={() => handleOpenDrawer(true)} type="edit">
+            แก้ไข
+          </Button>
+          <Button onClick={() => handleOpenDrawer(true)} type="copy">
+            คัดลอก
+          </Button>
+        </span>
+      ),
     },
   ])
   const [visible, setVisible] = useState(false)
@@ -36,7 +75,12 @@ const EvaluationTemplate = () => {
             เพิ่ม
           </Button>
         </span>
-        <ListData
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div style={{ width: 1000, justifyContent: 'center' }}>
+            <TableChange columns={columns} data={data} />
+          </div>
+        </div>
+        {/* <ListData
           header={'ชื่อ Template'}
           data={data}
           width={'800px'}
@@ -47,7 +91,7 @@ const EvaluationTemplate = () => {
           view
           edit
           copy
-        />
+        /> */}
         <br />
         <br />
         <DrawerTemplate

@@ -5,18 +5,51 @@ import {
   ListData,
   DrawerTemplate,
   FormSummaryVendor,
+  TableChange,
 } from '../../../components'
 import { Select, Card } from 'antd'
 const { Option } = Select
 const SummaryEvaluation = () => {
   const [data, setData] = useState([
     {
-      title: 'leaderplanet',
+      name: 'leaderplanet',
       description: 'ประเมิน ต้นปี',
     },
     {
-      title: 'leaderplanet',
+      name: 'leaderplanet',
       description: 'ประเมิน กลางปี',
+    },
+  ])
+  const [columns] = useState([
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      key: 'name',
+      width: '30%',
+    },
+    {
+      title: 'Age',
+      dataIndex: 'age',
+      key: 'age',
+      width: '20%',
+    },
+    {
+      title: 'Address',
+      dataIndex: 'address',
+      key: 'address',
+      width: '20%',
+    },
+    {
+      title: '',
+      key: 'action',
+      width: '20%',
+      render: (text, record) => (
+        <span>
+          <Button onClick={() => handleOpenDrawer(true)} type="view">
+            แสดง
+          </Button>
+        </span>
+      ),
     },
   ])
   const [visible, setVisible] = useState(false)
@@ -78,7 +111,7 @@ const SummaryEvaluation = () => {
             เพิ่ม
           </Button>
         </span> */}
-        <ListData
+        {/* <ListData
           header={'ชื่อผู้ขาย'}
           data={data}
           width={'650px'}
@@ -87,7 +120,12 @@ const SummaryEvaluation = () => {
           icon={'layout'}
           openDrawer={handleOpenDrawer}
           view
-        />
+        /> */}
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div style={{ width: 1000, justifyContent: 'center' }}>
+            <TableChange columns={columns} data={data} />
+          </div>
+        </div>
         <DrawerTemplate
           title={'ชื่อผ้ขาย'}
           visible={visible}

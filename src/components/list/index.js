@@ -1,8 +1,7 @@
 import React from 'react'
-import { List, Avatar } from 'antd'
+import { List, Avatar, Table } from 'antd'
 import styled from 'styled-components'
 import { Button } from '../../components/button/button'
-
 const ListControl = styled.div`
   display: flex;
   justify-content: center;

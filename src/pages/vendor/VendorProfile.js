@@ -81,9 +81,15 @@ const VendorProfile = () => {
                     </span>
                     <span>
                       <div style={{ display: 'flex' }}>
-                        <label style={{ marginRight: 10 }}>
-                          <b>ประเภทผู้ขาย</b>
-                        </label>
+                        <div
+                          style={{
+                            marginRight: 10,
+                            width: '146px',
+                            textAlign: 'right',
+                          }}
+                        >
+                          <b>ประเภทผู้ขาย :</b>
+                        </div>
                         <Input
                           value={'บริการ'}
                           style={{ width: '80px' }}
@@ -91,9 +97,15 @@ const VendorProfile = () => {
                         />
                       </div>
                       <div style={{ display: 'flex', marginTop: 7 }}>
-                        <label style={{ marginRight: 25 }}>
-                          <b>WeightingKey</b>
-                        </label>
+                        <div
+                          style={{
+                            marginRight: 10,
+                            width: '147px',
+                            textAlign: 'right',
+                          }}
+                        >
+                          <b>WeightingKey :</b>
+                        </div>
                         <Input
                           value={'A2'}
                           style={{ width: '80px' }}

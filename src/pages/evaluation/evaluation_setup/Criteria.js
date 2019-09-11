@@ -5,17 +5,53 @@ import {
   ListData,
   DrawerTemplate,
   EditableTableCriteria,
+  TableChange,
 } from '../../../components'
 import { Row, Col, Input } from 'antd'
 const Criteria = () => {
   const [data, setData] = useState([
     {
-      title: 'หลักเกณฑ์สำหรับกลางปี',
+      name: 'หลักเกณฑ์สำหรับกลางปี',
       description: 'หลักเกณฑ์สำหรับกลางปี',
     },
     {
-      title: 'หลักเกณฑ์สำหรับปลายปี',
+      name: 'หลักเกณฑ์สำหรับปลายปี',
       description: 'หลักเกณฑ์สำหรับปลายปี',
+    },
+  ])
+  const [columns] = useState([
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      key: 'name',
+      width: '30%',
+    },
+    {
+      title: 'Age',
+      dataIndex: 'age',
+      key: 'age',
+      width: '20%',
+    },
+    {
+      title: 'Address',
+      dataIndex: 'address',
+      key: 'address',
+      width: '20%',
+    },
+    {
+      title: '',
+      key: 'action',
+      width: '20%',
+      render: (text, record) => (
+        <span>
+          <Button onClick={() => handleOpenDrawer(true)} type="view">
+            แสดง
+          </Button>
+          <Button onClick={() => handleOpenDrawer(true)} type="edit">
+            แก้ไข
+          </Button>
+        </span>
+      ),
     },
   ])
   const [visible, setVisible] = useState(false)
@@ -24,20 +60,25 @@ const Criteria = () => {
   }
   return (
     <React.Fragment>
-      <Paper title={'หลักเกณฑ์(Criteria)'}>
+      <Paper title={'หลักเกณฑ์'}>
         <span style={{ marginLeft: '20%' }}>
           <Button
-            width="100px"
+            width="150px"
             height="40px"
             onClick={e => {
               handleOpenDrawer(true)
             }}
             type={'submit'}
           >
-            เพิ่ม
+            เพิ่มหลักเกณฑ์
           </Button>
         </span>
-        <ListData
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div style={{ width: 1000, justifyContent: 'center' }}>
+            <TableChange columns={columns} data={data} />
+          </div>
+        </div>
+        {/* <ListData
           header={'ชื่อ หลักเกณฑ์(Criteria)'}
           data={data}
           width={'800px'}
@@ -47,7 +88,7 @@ const Criteria = () => {
           openDrawer={handleOpenDrawer}
           view
           edit
-        />
+        /> */}
         <br />
         <br />
 

@@ -34,15 +34,15 @@ const columns = [
       </span>
     ),
   },
-  {
-    title: '',
-    key: 'action',
-    render: (text, record) => (
-      <span>
-        <Button type="delete">ลบ</Button>
-      </span>
-    ),
-  },
+  // {
+  //   title: '',
+  //   key: 'action',
+  //   render: (text, record) => (
+  //     <span>
+  //       <Button type="delete">ลบ</Button>
+  //     </span>
+  //   ),
+  // },
 ]
 
 const data = [

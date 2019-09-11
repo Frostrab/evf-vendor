@@ -31,6 +31,7 @@ export const Paper = props => (
       false
     )}
     {props.children ? (
+      // <span>{props.children}</span>
       <BodyCard color={props.color}>{props.children}</BodyCard>
     ) : (
       false

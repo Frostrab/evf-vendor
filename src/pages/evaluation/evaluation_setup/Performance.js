@@ -1,16 +1,59 @@
 import React, { useState } from 'react'
-import { Paper, Button, ListData, DrawerTemplate } from '../../../components'
+import {
+  Paper,
+  Button,
+  ListData,
+  DrawerTemplate,
+  TableChange,
+} from '../../../components'
 import { Input, Col, Row } from 'antd'
 const Performance = () => {
   const [data, setData] = useState([
     {
-      title:
-        'งานออกแบบมีความชัดเจนเหมาะสมต่อการใช้งานและspec ตรงตามความต้องการ',
+      name: 'งานออกแบบมีความชัดเจนเหมาะสมต่อการใช้งานและspec ตรงตามความต้องการ',
       description: 'คำอธิบาย',
     },
     {
-      title: ' แผนการดำเนินงานสอดคล้อง และตรงตามความต้องการ',
+      name: ' แผนการดำเนินงานสอดคล้อง และตรงตามความต้องการ',
       description: 'คำอธิบาย',
+    },
+  ])
+  const [columns] = useState([
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      key: 'name',
+      width: '30%',
+    },
+    {
+      title: 'Age',
+      dataIndex: 'age',
+      key: 'age',
+      width: '20%',
+    },
+    {
+      title: 'Address',
+      dataIndex: 'address',
+      key: 'address',
+      width: '20%',
+    },
+    {
+      title: '',
+      key: 'action',
+      width: '30%',
+      render: (text, record) => (
+        <span>
+          <Button onClick={() => handleOpenDrawer(true)} type="view">
+            แสดง
+          </Button>
+          <Button onClick={() => handleOpenDrawer(true)} type="edit">
+            แก้ไข
+          </Button>
+          <Button onClick={() => handleOpenDrawer(true)} type="delete">
+            ลบ
+          </Button>
+        </span>
+      ),
     },
   ])
   const [visible, setVisible] = useState(false)
@@ -19,7 +62,7 @@ const Performance = () => {
   }
   return (
     <React.Fragment>
-      <Paper title={'ตัวชี้วัด(Performence)'}>
+      <Paper title={'ตัวชี้วัด'}>
         <span style={{ marginLeft: '20%' }}>
           <Button
             width="100px"
@@ -32,8 +75,12 @@ const Performance = () => {
             เพิ่ม
           </Button>
         </span>
-
-        <ListData
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div style={{ width: 1000, justifyContent: 'center' }}>
+            <TableChange columns={columns} data={data} />
+          </div>
+        </div>
+        {/* <ListData
           header={'ชื่อ ตัวชี้วัด(Performence)'}
           data={data}
           width={'800px'}
@@ -44,7 +91,7 @@ const Performance = () => {
           view
           edit
           delete
-        />
+        /> */}
         <br />
         <br />
 

@@ -2,21 +2,56 @@ import React, { useState } from 'react'
 import {
   DrawerTemplate,
   Paper,
-  ListData,
   Button,
   TableVendorFillter,
+  TableChange,
 } from '../../components'
-import { Select, Col, Row, Input } from 'antd'
+import { Select, Col, Row } from 'antd'
 
 const { Option } = Select
 const VendorFilter = () => {
+  const [columns] = useState([
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      key: 'name',
+      width: '30%',
+    },
+    {
+      title: 'Age',
+      dataIndex: 'age',
+      key: 'age',
+      width: '20%',
+    },
+    {
+      title: 'Address',
+      dataIndex: 'address',
+      key: 'address',
+      width: '20%',
+    },
+    {
+      title: '',
+      key: 'action',
+      width: '20%',
+      render: (text, record) => (
+        <span>
+          <Button onClick={() => handleOpenDrawer(true)} type="view">
+            แสดง
+          </Button>
+          <Button onClick={() => handleOpenDrawer(true)} type="edit">
+            แก้ไข
+          </Button>
+        </span>
+      ),
+    },
+  ])
   const [data, setData] = useState([
     {
-      title: 'leaderplanet',
+      name: 'leaderplanet',
       description: 'งานบริการ',
     },
     {
-      title: 'leaderplanet',
+      name: 'leaderplanet',
       description: 'งานบริการ',
     },
   ])
@@ -39,7 +74,7 @@ const VendorFilter = () => {
           }}
         >
           <div style={{ marginRight: 10 }}>
-            <label style={{ marginRight: 10 }}>เลือกปีที่ต้องการ</label>
+            <label style={{ marginRight: 10 }}>เลือกปี</label>
             <Select style={{ width: 120 }} placeholder="เลือกปีที่ต้องการ">
               <Option value="jack">2562</Option>
               <Option value="lucy">2561</Option>
@@ -47,7 +82,7 @@ const VendorFilter = () => {
             </Select>
           </div>
           <div>
-            <label style={{ marginRight: 10 }}>เลือกครั้งที่ต้องการการ</label>
+            <label style={{ marginRight: 10 }}>เลือกรอบการประเมิน</label>
             <Select
               style={{ width: 120 }}
               placeholder="เลือกครั้งที่ต้องการการ"
@@ -69,7 +104,12 @@ const VendorFilter = () => {
             เพิ่ม
           </Button>
         </span>
-        <ListData
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div style={{ width: 1000, justifyContent: 'center' }}>
+            <TableChange columns={columns} data={data} />
+          </div>
+        </div>
+        {/* <ListData
           header={'คัดเลือกผู้ขาย(Vendor Fillter)'}
           data={data}
           width={'650px'}
@@ -79,7 +119,7 @@ const VendorFilter = () => {
           openDrawer={handleOpenDrawer}
           view
           edit
-        />
+        /> */}
         <DrawerTemplate
           title={'คัดเลือกผู้ขาย'}
           visible={visible}

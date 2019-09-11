@@ -5,6 +5,7 @@ import {
   ListData,
   DrawerTemplate,
   EditableTablePerformanceGroup,
+  TableChange,
 } from '../../../components'
 import { Select, Input, Col, Row } from 'antd'
 const { Option } = Select
@@ -12,12 +13,47 @@ const { Option } = Select
 const PerformanceGroup = () => {
   const [data, setData] = useState([
     {
-      title: 'การจัดทำรายงาน',
+      name: 'การจัดทำรายงาน',
       description: 'จัดทำรายงานเอกสาร',
     },
     {
-      title: 'การประสานงาน',
+      name: 'การประสานงาน',
       description: 'ประสานงานกับฝ่ายที่เกี่ยวข้อง',
+    },
+  ])
+  const [columns] = useState([
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      key: 'name',
+      width: '30%',
+    },
+    {
+      title: 'Age',
+      dataIndex: 'age',
+      key: 'age',
+      width: '20%',
+    },
+    {
+      title: 'Address',
+      dataIndex: 'address',
+      key: 'address',
+      width: '20%',
+    },
+    {
+      title: '',
+      key: 'action',
+      width: '30%',
+      render: (text, record) => (
+        <span>
+          <Button onClick={() => handleOpenDrawer(true)} type="view">
+            แสดง
+          </Button>
+          <Button onClick={() => handleOpenDrawer(true)} type="edit">
+            แก้ไข
+          </Button>
+        </span>
+      ),
     },
   ])
   const [visible, setVisible] = useState(false)
@@ -26,7 +62,7 @@ const PerformanceGroup = () => {
   }
   return (
     <React.Fragment>
-      <Paper title={'กลุ่มตัวชี้วัด (Performance Group)'}>
+      <Paper title={'กลุ่มตัวชี้วัด'}>
         <span style={{ marginLeft: '20%' }}>
           <Button
             width="100px"
@@ -39,7 +75,12 @@ const PerformanceGroup = () => {
             เพิ่ม
           </Button>
         </span>
-        <ListData
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div style={{ width: 1000, justifyContent: 'center' }}>
+            <TableChange columns={columns} data={data} />
+          </div>
+        </div>
+        {/* <ListData
           header={'ชื่อ กลุ่มตัวชี้วัด (Performance Group)'}
           data={data}
           width={'800px'}
@@ -50,7 +91,7 @@ const PerformanceGroup = () => {
           view
           edit
           delete
-        />
+        /> */}
         <br />
         <br />
         <DrawerTemplate

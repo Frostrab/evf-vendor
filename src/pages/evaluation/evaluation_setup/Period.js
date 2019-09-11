@@ -5,6 +5,7 @@ import {
   ListData,
   DrawerTemplate,
   EditableTablePeriod,
+  TableChange,
 } from '../../../components'
 import { Select, Row, Col, Input } from 'antd'
 
@@ -12,12 +13,47 @@ const { Option } = Select
 const Period = () => {
   const [data, setData] = useState([
     {
-      title: 'ปี 2562',
+      name: 'ปี 2562',
       description: 'ระยะเวลาการประเมินผล',
     },
     {
-      title: 'ปี 2561',
+      name: 'ปี 2561',
       description: 'ระยะเวลาการประเมินผล',
+    },
+  ])
+  const [columns] = useState([
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      key: 'name',
+      width: '30%',
+    },
+    {
+      title: 'Age',
+      dataIndex: 'age',
+      key: 'age',
+      width: '20%',
+    },
+    {
+      title: 'Address',
+      dataIndex: 'address',
+      key: 'address',
+      width: '20%',
+    },
+    {
+      title: '',
+      key: 'action',
+      width: '30%',
+      render: (text, record) => (
+        <span>
+          <Button onClick={() => handleOpenDrawer(true)} type="view">
+            แสดง
+          </Button>
+          <Button onClick={() => handleOpenDrawer(true)} type="edit">
+            แก้ไข
+          </Button>
+        </span>
+      ),
     },
   ])
   const [visible, setVisible] = useState(false)
@@ -26,7 +62,7 @@ const Period = () => {
   }
   return (
     <React.Fragment>
-      <Paper title={'ระยะเวลาการประเมิน(Period)'}>
+      <Paper title={'ระยะเวลาการประเมิน'}>
         <span style={{ marginLeft: '20%' }}>
           <Button
             width="100px"
@@ -39,7 +75,12 @@ const Period = () => {
             เพิ่ม
           </Button>
         </span>
-        <ListData
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div style={{ width: 1000, justifyContent: 'center' }}>
+            <TableChange columns={columns} data={data} />
+          </div>
+        </div>
+        {/* <ListData
           header={'ชื่อ รอบการประเมิน(Period)'}
           data={data}
           width={'800px'}
@@ -49,7 +90,7 @@ const Period = () => {
           openDrawer={handleOpenDrawer}
           view
           edit
-        />
+        /> */}
         <br />
         <br />
         <DrawerTemplate

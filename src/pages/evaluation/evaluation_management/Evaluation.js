@@ -38,12 +38,12 @@ const Evaluation = () => {
       </ModalTemplate>
       <Paper title={'ประเมินผู้ขาย'}>
         <Tabs onChange={callback} type="card">
-          <TabPane tab="รายการ การประเมิน" key="1">
+          <TabPane tab="รายการการประเมิน" key="1">
             <div style={{ padding: 50 }}>
               <TableEve openPreview={openPreview} />
             </div>
           </TabPane>
-          <TabPane tab="รายการ การประเมินทั้งหมด" key="2">
+          <TabPane tab="รายการการประเมินทั้งหมด" key="2">
             <div style={{ padding: 50 }}>
               <TableEve />
             </div>

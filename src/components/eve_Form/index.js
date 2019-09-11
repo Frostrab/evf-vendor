@@ -3,7 +3,9 @@ import { Paper, TableTemplate, Button, PopoverIcon } from '../../components'
 import Styled from 'styled-components'
 import TableForm from '../table/index'
 import { Input, Card, Row, Col } from 'antd'
-import { Switch, Icon } from 'antd'
+import { Switch, Icon, Select } from 'antd'
+
+const { Option } = Select
 
 const Title = Styled.h2`
     font-size: ${props => props.size}
@@ -41,8 +43,20 @@ export const EveForm = () => (
             >
               ผู้ขาย <i style={{ color: 'red' }}>*</i>
             </div>
+            <div style={{ marginLeft: 10, marginRight: 10 }}>
+              <Input value="leaderplanet" readOnly />
+            </div>
+            <div
+              style={{ display: 'flex', alignItems: 'center', width: '100px' }}
+            >
+              ประเภทงาน
+            </div>
             <div style={{ marginLeft: 10 }}>
-              <Input value="ทดสอบ" readOnly />
+              <Select style={{ width: 100 }} mode="tags">
+                <Option value="jack">งานโยธา</Option>
+                <Option value="lucy">งานก่อสร้าง</Option>
+                <Option value="Yiminghe">อื่นๆ</Option>
+              </Select>
             </div>
           </span>
           <span style={{ display: 'flex', fontSize: 16, marginTop: 5 }}>
@@ -52,7 +66,7 @@ export const EveForm = () => (
               รอบการประเมิน
             </div>
             <div style={{ marginLeft: 10 }}>
-              <Input value="ทดสอบ" readOnly />
+              <Input value="รอบการประเมิน กลางปี" readOnly />
             </div>
           </span>
           <span style={{ display: 'flex', fontSize: 16, marginTop: 5 }}>
@@ -62,7 +76,7 @@ export const EveForm = () => (
               เริ่มต้น-สิ้นสุด
             </div>
             <div style={{ marginLeft: 10 }}>
-              <Input value="ทดสอบ" readOnly />
+              <Input value="1/1/2019 - 15/2/2019" readOnly />
             </div>
           </span>
           <span style={{ display: 'flex', fontSize: 16, marginTop: 5 }}>
