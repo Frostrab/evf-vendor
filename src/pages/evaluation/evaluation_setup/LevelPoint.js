@@ -27,7 +27,7 @@ const LevelPoint = () => {
       <Paper title={'ระดับคะแนน (LevelPoint)'}>
         <span style={{ marginLeft: '20%' }}>
           <Button
-            width="100px"
+            width="200px"
             height="40px"
             onClick={e => {
               handleOpenDrawer(true)

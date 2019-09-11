@@ -69,7 +69,7 @@ const Criteria = () => {
                   <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>
                     *
                   </i>
-                  <label>ชื่อ :</label>
+                  <label>ชื่อหลักเกณฑ์ :</label>
                 </div>
               </Col>
               <Col

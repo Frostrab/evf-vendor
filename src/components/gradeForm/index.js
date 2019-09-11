@@ -27,7 +27,7 @@ export const WrappedGradeForm = props => {
           <Col className="gutter-row" span={8} style={{ textAlign: 'right' }}>
             <div className="gutter-box">
               <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>*</i>
-              <label>ชื่อ หลักเกณฑ์การประเมิน(Grade) :</label>
+              <label>ชื่อ เกณฑ์การประเมิน(Grade) :</label>
             </div>
           </Col>
           <Col className="gutter-row" span={16} style={{ textAlign: 'left' }}>

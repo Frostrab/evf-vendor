@@ -17,7 +17,7 @@ export const WrappedLevelPointForm = props => {
           <Col className="gutter-row" span={8} style={{ textAlign: 'right' }}>
             <div className="gutter-box">
               <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>*</i>
-              <label>ชื่อ :</label>
+              <label>ชื่อระดับคะแนน :</label>
             </div>
           </Col>
           <Col className="gutter-row" span={16} style={{ textAlign: 'left' }}>
@@ -30,7 +30,7 @@ export const WrappedLevelPointForm = props => {
           style={{ display: 'flex', justifyContent: 'center', marginTop: 20 }}
         >
           <Button type="submit" width="200px" height="30px">
-            เพิ่มเกณฑ์การประเมิน
+            เพิ่มระดับคะแนน
           </Button>
         </div>
         <hr />
@@ -73,7 +73,7 @@ export const WrappedLevelPointForm = props => {
                   <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>
                     *
                   </i>
-                  <label>ชื่อ :</label>
+                  <label>ชื่อระดับคะแนนภาษาไทย :</label>
                 </div>
               </Col>
               <Col
@@ -96,7 +96,7 @@ export const WrappedLevelPointForm = props => {
                   <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>
                     *
                   </i>
-                  <label>Name :</label>
+                  <label>ชื่อระดับคะแนนภาษาอังกฤษ :</label>
                 </div>
               </Col>
               <Col
