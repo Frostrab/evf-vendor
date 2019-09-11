@@ -6,7 +6,7 @@ import {
   TableVendorFillter,
   TableChange,
 } from '../../components'
-import { Select, Col, Row } from 'antd'
+import { Select, Col, Row, Input } from 'antd'
 
 const { Option } = Select
 const VendorFilter = () => {
@@ -204,8 +204,31 @@ const VendorFilter = () => {
                   <Select defaultValue="lucy" style={{ width: 300 }}>
                     <Option value="jack">Condition A</Option>
                     <Option value="lucy">Condition B</Option>
-                    <Option value="Yiminghe">Condition C</Option>
+                    <Option value="Yiminghe">อื่นๆ</Option>
                   </Select>
+                </div>
+              </Col>
+            </Row>
+            <Row gutter={24} style={{ marginTop: 5 }}>
+              <Col
+                className="gutter-row"
+                span={8}
+                style={{ textAlign: 'right' }}
+              >
+                <div className="gutter-box">
+                  <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>
+                    *
+                  </i>
+                  <label>อื่นๆ :</label>
+                </div>
+              </Col>
+              <Col
+                className="gutter-row"
+                span={8}
+                style={{ textAlign: 'left' }}
+              >
+                <div className="gutter-box">
+                  <Input />
                 </div>
               </Col>
             </Row>

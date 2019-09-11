@@ -1,6 +1,7 @@
 import React from 'react'
 import { Table } from 'antd'
 import { Button } from '../../components'
+import { Link } from 'react-router-dom'
 const columns = [
   {
     title: 'ชื่อผู้ขาย',
@@ -23,7 +24,9 @@ const columns = [
     width: '20%',
     render: rec => (
       <span>
-        <Button type="view">รายละเอียด</Button>
+        <Link to="/spe-sum">
+          <Button type="view">แสดง</Button>
+        </Link>
         <Button type="approve">อนุมัติ</Button>
         <Button type="reject">ไม่อนุมัติ</Button>
       </span>

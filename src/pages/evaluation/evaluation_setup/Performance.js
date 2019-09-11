@@ -10,31 +10,26 @@ import { Input, Col, Row } from 'antd'
 const Performance = () => {
   const [data, setData] = useState([
     {
-      name: 'งานออกแบบมีความชัดเจนเหมาะสมต่อการใช้งานและspec ตรงตามความต้องการ',
-      description: 'คำอธิบาย',
+      KPITH:
+        'งานออกแบบมีความชัดเจนเหมาะสมต่อการใช้งานและspec ตรงตามความต้องการ',
+      KPIEN: '',
     },
     {
-      name: ' แผนการดำเนินงานสอดคล้อง และตรงตามความต้องการ',
-      description: 'คำอธิบาย',
+      KPITH: ' แผนการดำเนินงานสอดคล้อง และตรงตามความต้องการ',
+      KPIEN: '',
     },
   ])
   const [columns] = useState([
     {
-      title: 'Name',
-      dataIndex: 'name',
+      title: 'ชื่อตัวชี้วัดภาษาไทย',
+      dataIndex: 'KPITH',
       key: 'name',
       width: '30%',
     },
     {
-      title: 'Age',
-      dataIndex: 'age',
+      title: 'ชื่อตัวชีวัดภาษาอังกฤษ',
+      dataIndex: 'KPIEN',
       key: 'age',
-      width: '20%',
-    },
-    {
-      title: 'Address',
-      dataIndex: 'address',
-      key: 'address',
       width: '20%',
     },
     {

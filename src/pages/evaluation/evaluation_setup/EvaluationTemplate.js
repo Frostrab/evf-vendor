@@ -65,14 +65,14 @@ const EvaluationTemplate = () => {
       <Paper title={'Template แบบประเมิน'}>
         <span style={{ marginLeft: '20%' }}>
           <Button
-            width="100px"
+            width="150px"
             height="40px"
             onClick={e => {
               handleOpenDrawer(true)
             }}
             type={'submit'}
           >
-            เพิ่ม
+            เพิ่ม Template
           </Button>
         </span>
         <div style={{ display: 'flex', justifyContent: 'center' }}>

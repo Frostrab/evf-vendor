@@ -5,6 +5,7 @@ import {
   Button,
   ModalTemplate,
   TableInbox,
+  DrawerTemplate,
 } from '../components'
 import Styled from 'styled-components'
 
@@ -24,7 +25,10 @@ const MasterList = () => {
   const [viewSelect, setViewSelect] = React.useState()
   const [openModal, setOpenModal] = React.useState(false)
   const [title, setTitle] = React.useState()
-
+  const [visible, setVisible] = React.useState(false)
+  const handleOpenDrawer = (a, data) => {
+    setVisible(a)
+  }
   const openPreview = selected => {
     setOpenModal(true)
     setViewSelect(selected)
@@ -34,14 +38,14 @@ const MasterList = () => {
   }
   return (
     <React.Fragment>
-      <ModalTemplate
-        title={viewSelect}
-        visible={openModal}
-        handleClose={handleModalClose}
+      <DrawerTemplate
+        title={'รายละเอียด'}
+        visible={visible}
         width={'80%'}
+        handleOpenDrawer={handleOpenDrawer}
       >
         <TableInbox />
-      </ModalTemplate>
+      </DrawerTemplate>
       <TitleTab>
         <Title size="30px">Inbox</Title>
       </TitleTab>
@@ -72,7 +76,9 @@ const MasterList = () => {
                 justifyContent: 'center',
                 cursor: 'pointer',
               }}
-              onClick={() => openPreview('ผู้ขายทั้งหมด')}
+              onClick={e => {
+                handleOpenDrawer(true)
+              }}
             >
               <div>
                 <div style={{ fontSize: 100, color: 'brow' }}>60</div>
@@ -128,7 +134,9 @@ const MasterList = () => {
                 justifyContent: 'center',
                 cursor: 'pointer',
               }}
-              onClick={() => openPreview('ผู้ขาย ที่ได้คะแนนดี')}
+              onClick={e => {
+                handleOpenDrawer(true)
+              }}
             >
               <div>
                 <div style={{ fontSize: 80, color: '#092b00' }}>
@@ -178,7 +186,9 @@ const MasterList = () => {
                 cursor: 'pointer',
                 borderColor: '#fadb14',
               }}
-              onClick={() => openPreview('ผู้ขาย ที่ได้คะแนนปานกลาง')}
+              onClick={e => {
+                handleOpenDrawer(true)
+              }}
             >
               <div>
                 <div style={{ fontSize: 80, color: '#614700' }}>
@@ -229,7 +239,9 @@ const MasterList = () => {
                 justifyContent: 'center',
                 cursor: 'pointer',
               }}
-              onClick={() => openPreview('ผู้ขาย ที่ได้คะแนนควรปรับปรุง')}
+              onClick={e => {
+                handleOpenDrawer(true)
+              }}
             >
               <div>
                 <div style={{ fontSize: 80, color: '#cf1322' }}>

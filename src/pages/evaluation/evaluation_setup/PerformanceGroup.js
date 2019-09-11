@@ -23,21 +23,15 @@ const PerformanceGroup = () => {
   ])
   const [columns] = useState([
     {
-      title: 'Name',
-      dataIndex: 'name',
+      title: 'ชื่อกลุ่มตัวชี้วัดภาษาไทย',
+      dataIndex: 'KPIGroupTH',
       key: 'name',
       width: '30%',
     },
     {
-      title: 'Age',
-      dataIndex: 'age',
+      title: 'ชื่อกลุ่มตัวชี้วัดภาษาอังกฤษ',
+      dataIndex: 'KPIGroupEN',
       key: 'age',
-      width: '20%',
-    },
-    {
-      title: 'Address',
-      dataIndex: 'address',
-      key: 'address',
       width: '20%',
     },
     {
