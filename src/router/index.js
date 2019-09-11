@@ -24,14 +24,14 @@ export const RouterPath = () => {
         component={Inbox}
       /> */}
       {/* eval management*/}
-      <PrivateRoute
+      {/* <PrivateRoute
         path="/Evaluation_Group/Evaluation_MGT_Group/Evaluation"
         component={Evaluation}
       />
       <PrivateRoute
         path="/Evaluation_Group/Evaluation_MGT_Group/SummaryEvaluation"
         component={SummaryEvaluation}
-      />
+      /> */}
       {/* eval report */}
       <PrivateRoute
         path="/Evaluation_Group/Evaluation_RP_Group/EvaluationReportSummary"
@@ -42,7 +42,7 @@ export const RouterPath = () => {
         component={EvaluationReportVendor}
       />
       {/* eval  setup*/}
-      <PrivateRoute
+      {/* <PrivateRoute
         path="/Evaluation_Group/Evaluation_Setup_Group/Criteria"
         component={Criteria}
       />
@@ -69,16 +69,16 @@ export const RouterPath = () => {
       <PrivateRoute
         path="/Evaluation_Group/Evaluation_Setup_Group/Period"
         component={Period}
-      />
+      /> */}
 
-      <PrivateRoute
+      {/* <PrivateRoute
         path="/Vendor_Group/VendorFilter"
         component={VendorFilter}
       />
       <PrivateRoute
         path="/Vendor_Group/VendorProfile"
         component={VendorProfile}
-      />
+      /> */}
 
       <PrivateRoute
         path="/Authorization/AuthorityCompany"

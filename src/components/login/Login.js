@@ -77,7 +77,7 @@ const Login = props => (
           </Form.Item>
           <Form.Item style={{ textAlign: 'center' }}>
             <Link to="/Inbox">
-              <Button type="login" width="300px" height="43px">
+              <Button type="submit" width="300px" height="43px">
                 Log in
               </Button>
             </Link>

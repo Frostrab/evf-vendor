@@ -10,7 +10,7 @@ export const Evaluation = Loadable({
   ),
 })
 
-export const SummaryEvaluation = Loadable({
+export const SummaryEvaluationList = Loadable({
   loader: () => import('./SummaryEvaluation'),
   loading: () => (
     <div>

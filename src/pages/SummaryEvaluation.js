@@ -1,6 +1,6 @@
 import React from 'react'
 import { FormSummaryVendor } from '../components'
-const SummaryEvaluation = () => {
+const SummaryEvaluationTemplate = () => {
   return (
     <div>
       <FormSummaryVendor approve={true} />
@@ -8,4 +8,4 @@ const SummaryEvaluation = () => {
   )
 }
 
-export default SummaryEvaluation
+export default SummaryEvaluationTemplate
