@@ -10,17 +10,13 @@ const columns = [
     title: 'ยอดขาย',
     dataIndex: 'age',
   },
-  {
-    title: 'ที่อยู่',
-    dataIndex: 'address',
-  },
 ]
 
 const data = []
 for (let i = 0; i < 46; i++) {
   data.push({
     key: i,
-    name: `Edward King ${i}`,
+    name: `นาย ทดสอบ ${i}`,
     age: `${i + 1}000`,
     address: `ลาดพร้าว ซอย. ${i}`,
   })

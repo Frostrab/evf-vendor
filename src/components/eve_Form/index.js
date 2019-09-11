@@ -21,7 +21,7 @@ const TitleTab = Styled.div`
 export const EveForm = () => (
   <React.Fragment>
     <TitleTab>
-      <Title size="30px">ประเมินผลการปฏิบัติงานผู้รับจ้าง</Title>
+      <Title size="30px">แบบประเมิน</Title>
     </TitleTab>
     <div style={{ display: 'flex', height: 250 }}>
       <div
@@ -47,14 +47,23 @@ export const EveForm = () => (
               <Input value="leaderplanet" readOnly />
             </div>
             <div
-              style={{ display: 'flex', alignItems: 'center', width: '100px' }}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                width: '100px',
+                marginLeft: 14,
+              }}
             >
               ประเภทงาน
             </div>
             <div style={{ marginLeft: 10 }}>
-              <Select style={{ width: 100 }} mode="tags">
+              <Select
+                placeholder={'เลือกประเภทงาน'}
+                style={{ width: 200 }}
+                mode="tags"
+              >
                 <Option value="jack">งานโยธา</Option>
-                <Option value="lucy">งานก่อสร้าง</Option>
+                <Option value="lucy">งานเครื่องกล</Option>
                 <Option value="Yiminghe">อื่นๆ</Option>
               </Select>
             </div>
@@ -67,6 +76,22 @@ export const EveForm = () => (
             </div>
             <div style={{ marginLeft: 10 }}>
               <Input value="รอบการประเมิน กลางปี" readOnly />
+            </div>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                width: '90px',
+                marginLeft: 6,
+              }}
+            >
+              ผู้สั่งซื้อ
+            </div>
+            <div style={{ marginLeft: 10 }}>
+              <Select placeholder={'เลือกผู้สั่งซื้อ'} style={{ width: 200 }}>
+                <Option value="jack">BRB</Option>
+                <Option value="lucy">BRT</Option>
+              </Select>
             </div>
           </span>
           <span style={{ display: 'flex', fontSize: 16, marginTop: 5 }}>

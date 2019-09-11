@@ -36,6 +36,13 @@
                 "parent": null
               },
               {
+                "name": "ใบประเมิน",
+                "icon": "file-protect",
+                "displayOnly": false,
+                "url": "/Evaluation_Group/Evaluation_MGT_Group/SendEvaluation",
+                "parent": null
+              },
+              {
                 "name": "ภาพรวมประเมินผู้ขาย",
                 "icon": "file-protect",
                 "displayOnly": false,

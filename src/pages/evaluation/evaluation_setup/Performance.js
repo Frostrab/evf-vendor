@@ -24,13 +24,13 @@ const Performance = () => {
       title: 'ชื่อตัวชี้วัดภาษาไทย',
       dataIndex: 'KPITH',
       key: 'name',
-      width: '30%',
+      width: '35%',
     },
     {
       title: 'ชื่อตัวชีวัดภาษาอังกฤษ',
       dataIndex: 'KPIEN',
       key: 'age',
-      width: '20%',
+      width: '35%',
     },
     {
       title: '',
@@ -58,16 +58,16 @@ const Performance = () => {
   return (
     <React.Fragment>
       <Paper title={'ตัวชี้วัด'}>
-        <span style={{ marginLeft: '20%' }}>
+        <span style={{ marginLeft: '10%' }}>
           <Button
-            width="100px"
+            width="140px"
             height="40px"
             onClick={e => {
               handleOpenDrawer(true)
             }}
             type={'submit'}
           >
-            เพิ่ม
+            เพิ่มตัวชี้วัด
           </Button>
         </span>
         <div style={{ display: 'flex', justifyContent: 'center' }}>

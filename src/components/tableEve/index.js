@@ -4,17 +4,29 @@ import { Button } from '..'
 export const TableEve = props => {
   const [columns] = React.useState([
     {
-      title: 'ชื่อผู้ขาย',
+      title: 'เลขที่ใบประเมิน',
+      dataIndex: 'key',
+      key: 'age',
+      width: '20%',
+    },
+    {
+      title: 'ผู้สั่งซื้อ',
+      dataIndex: 'buyer',
+      key: 'age',
+      width: '20%',
+    },
+    {
+      title: 'ผู้ขาย',
       dataIndex: 'name',
       key: 'name',
-      render: text => <a>{text}</a>,
+      width: '20%',
     },
-    // {
-    //   title: 'ชื่อผู้ขาย',
-    //   dataIndex: 'age',
-    //   key: 'age',
-    //   width: '20%',
-    // },
+    {
+      title: 'ประเภทผู้ขาย',
+      dataIndex: 'age',
+      key: 'age',
+      width: '20%',
+    },
     {
       title: '',
       key: 'tags',
@@ -35,26 +47,29 @@ export const TableEve = props => {
   ])
   const [data] = React.useState([
     {
-      key: '1',
+      key: '000000',
       name: 'leaderplanet',
-      age: 32,
+      age: 'A2',
       address: 'New York No. 1 Lake Park',
+      buyer: 'BRB',
       tags: ['nice', 'developer'],
     },
     {
-      key: '2',
+      key: '000001',
       name: 'leaderplanet',
-      age: 42,
+      age: 'A2',
+      buyer: 'BRB',
       address: 'London No. 1 Lake Park',
       tags: ['loser'],
     },
     {
-      key: '3',
+      key: '0000002',
       name: 'leaderplanet',
-      age: 32,
+      age: 'A2',
+      buyer: 'BRB',
       address: 'Sidney No. 1 Lake Park',
       tags: ['cool', 'teacher'],
     },
   ])
-  return <Table columns={columns} dataSource={data} />
+  return <Table columns={columns} dataSource={data} size={'medium'} />
 }

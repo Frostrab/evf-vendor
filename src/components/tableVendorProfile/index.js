@@ -10,12 +10,12 @@ const columns = [
     render: text => <a>{text}</a>,
   },
   {
-    title: 'คะแนนที่ได้',
+    title: 'คะแนน',
     dataIndex: 'age',
     key: 'age',
   },
   {
-    title: 'เกณฑ์การประเมินที่ได้',
+    title: 'เกรด',
     key: 'tags',
     dataIndex: 'tags',
     render: tags => (

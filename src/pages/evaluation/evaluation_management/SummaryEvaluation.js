@@ -6,8 +6,10 @@ import {
   DrawerTemplate,
   FormSummaryVendor,
   TableChange,
+  EVACreateForm,
 } from '../../../components'
 import { Select, Card } from 'antd'
+import { Link } from 'react-router-dom'
 const { Option } = Select
 const SummaryEvaluation = () => {
   const [data, setData] = useState([
@@ -45,9 +47,10 @@ const SummaryEvaluation = () => {
       width: '20%',
       render: (text, record) => (
         <span>
-          <Button onClick={() => handleOpenDrawer(true)} type="view">
-            แสดง
-          </Button>
+          <Link to="/spe-sum">
+            <Button type="view">แสดง</Button>
+          </Link>
+          <Button>ส่งอนุมัติ</Button>
         </span>
       ),
     },
@@ -61,43 +64,67 @@ const SummaryEvaluation = () => {
       <Paper title={'ภาพรวมประเมินผู้ขาย'}>
         <div
           style={{
-            display: 'flex',
-            justifyContent: 'center',
             padding: 10,
             marginBottom: 7,
+            display: 'flex',
+            justifyContent: 'center',
           }}
         >
-          <Card
-            style={{
-              width: 800,
-              display: 'flex',
-              justifyContent: 'center',
-            }}
-          >
-            <div style={{ marginRight: 10 }}>
-              <label style={{ marginRight: 42, width: 100 }}>
-                เลือกปีที่ต้องการ
-              </label>
-              <Select style={{ width: 200 }} placeholder="เลือกปีที่ต้องการ">
-                <Option value="jack">2562</Option>
-                <Option value="lucy">2561</Option>
-                <Option value="Yiminghe">2560</Option>
-              </Select>
+          <div style={{ display: 'flex', width: 800 }}>
+            <div
+              style={{
+                height: '100%',
+                width: 40,
+                display: 'flex',
+                alignItems: 'center',
+                marginRight: '65px',
+              }}
+            >
+              <div>
+                <Button type="add" onClick={() => handleOpenDrawer(true)}>
+                  สร้างใบประเมิน
+                </Button>
+              </div>
             </div>
-            <div>
-              <label style={{ marginRight: 10 }}>เลือกครั้งที่ต้องการการ</label>
-              <Select
-                style={{ width: 200 }}
-                placeholder="เลือกครั้งที่ต้องการการ"
+            <div style={{ float: 'right' }}>
+              <Card
+                style={{
+                  width: 800,
+                  display: 'flex',
+                  justifyContent: 'center',
+                }}
               >
-                <Option value="jack">ครั้งที่ 1</Option>
-                <Option value="lucy">ครั้งที่ 2</Option>
-              </Select>
+                <div style={{ marginRight: 10 }}>
+                  <label style={{ marginRight: 42, width: 100 }}>
+                    เลือกปีที่ต้องการ
+                  </label>
+                  <Select
+                    style={{ width: 200 }}
+                    placeholder="เลือกปีที่ต้องการ"
+                  >
+                    <Option value="jack">2562</Option>
+                    <Option value="lucy">2561</Option>
+                    <Option value="Yiminghe">2560</Option>
+                  </Select>
+                </div>
+                <div>
+                  <label style={{ marginRight: 10 }}>
+                    เลือกครั้งที่ต้องการการ
+                  </label>
+                  <Select
+                    style={{ width: 200 }}
+                    placeholder="เลือกครั้งที่ต้องการการ"
+                  >
+                    <Option value="jack">ครั้งที่ 1</Option>
+                    <Option value="lucy">ครั้งที่ 2</Option>
+                  </Select>
+                </div>
+                <div style={{ marginLeft: 5 }}>
+                  <Button type="view">ค้นหา</Button>
+                </div>
+              </Card>
             </div>
-            <div style={{ marginLeft: 5 }}>
-              <Button type="view">ค้นหา</Button>
-            </div>
-          </Card>
+          </div>
         </div>
         {/* <span style={{ marginLeft: '20%' }}>
           <Button
@@ -127,12 +154,12 @@ const SummaryEvaluation = () => {
           </div>
         </div>
         <DrawerTemplate
-          title={'ชื่อผ้ขาย'}
+          title={'สร้างใบประเมิน'}
           visible={visible}
-          width={'80%'}
+          width={'50%'}
           handleOpenDrawer={handleOpenDrawer}
         >
-          <FormSummaryVendor />
+          <EVACreateForm />
         </DrawerTemplate>
       </Paper>
     </React.Fragment>

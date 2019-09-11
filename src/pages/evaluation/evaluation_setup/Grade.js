@@ -20,23 +20,23 @@ const Grade = () => {
   ])
   const [columns] = useState([
     {
-      title: 'Name',
+      title: 'ชื่อเกณฑ์การประเมิน',
       dataIndex: 'name',
       key: 'name',
-      width: '30%',
+      // width: '30%',
     },
-    {
-      title: 'Age',
-      dataIndex: 'age',
-      key: 'age',
-      width: '20%',
-    },
-    {
-      title: 'Address',
-      dataIndex: 'address',
-      key: 'address',
-      width: '20%',
-    },
+    // {
+    //   title: 'Age',
+    //   dataIndex: 'age',
+    //   key: 'age',
+    //   width: '20%',
+    // },
+    // {
+    //   title: 'Address',
+    //   dataIndex: 'address',
+    //   key: 'address',
+    //   width: '20%',
+    // },
     {
       title: '',
       key: 'action',
@@ -59,17 +59,17 @@ const Grade = () => {
   }
   return (
     <React.Fragment>
-      <Paper title={'ชื่อเกณฑ์การประเมิน'}>
-        <span style={{ marginLeft: '20%' }}>
+      <Paper title={'เกณฑ์การประเมิน'}>
+        <span style={{ marginLeft: '10%' }}>
           <Button
-            width="100px"
+            width="180px"
             height="40px"
             onClick={e => {
               handleOpenDrawer(true)
             }}
             type={'submit'}
           >
-            เพิ่ม
+            เพิ่มเกณฑ์การประเมิน
           </Button>
         </span>
         <div style={{ display: 'flex', justifyContent: 'center' }}>

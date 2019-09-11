@@ -7,7 +7,7 @@ const content = (
     <p>หมายเหตุ :</p>
   </div>
 )
-const CardList = list => {
+const CardList = (list, perc) => {
   return (
     <Card
       headStyle={{ padding: 0 }}
@@ -25,8 +25,9 @@ const CardList = list => {
       }
       style={{ width: 300, marginRight: 10, marginBottom: 10 }}
     >
+      {/* <p>อัตราส่วนคะแนน : {perc?perc:"10%"}</p> */}
+      <p>หน่วยงาน : ทดสอบ</p>
       <div>
-        <p>อัตราส่วนคะแนน</p>
         <div>
           <label>1. กลุ่มตัวชี้วัดที่ 1</label>
           <Divider type="vertical" />
@@ -96,72 +97,6 @@ const CardList = list => {
             </span>
           </Popover>
         </div>
-        <hr />
-        <div>
-          <label>ตัวชี้วัด 3</label>
-          <Divider type="vertical" />
-          <Icon type="profile" style={{ marginRight: 3, marginLeft: 3 }} />
-          <label>32 คะแนน</label>
-          <Divider type="vertical" />
-          <Icon type="message" />
-        </div>
-        <div style={{ marginLeft: 5 }}>
-          <label>3.1 ตัวชี้วัดที่ 3.1</label>
-          <Divider type="vertical" />
-          <Icon type="profile" style={{ marginRight: 3, marginLeft: 3 }} />
-          <label>8 คะแนน</label>
-          <Divider type="vertical" />
-          <Popover content={content} title="หมายเหตุ">
-            <span style={{ cursor: 'pointer' }}>
-              <Icon type="message" />
-            </span>
-          </Popover>
-        </div>
-        <div style={{ marginLeft: 5 }}>
-          <label>3.2 ตัวชี้วัดที่ 3.2</label>
-          <Divider type="vertical" />
-          <Icon type="profile" style={{ marginRight: 3, marginLeft: 3 }} />
-          <label>2 คะแนน</label>
-          <Divider type="vertical" />
-          <Popover content={content} title="หมายเหตุ">
-            <span style={{ cursor: 'pointer' }}>
-              <Icon type="message" />
-            </span>
-          </Popover>
-        </div>
-        <hr />
-        <div>
-          <label>ตัวชี้วัด 4</label>
-          <Divider type="vertical" />
-          <Icon type="profile" style={{ marginRight: 3, marginLeft: 3 }} />
-          <label>32 คะแนน</label>
-          <Divider type="vertical" />
-          <Icon type="message" />
-        </div>{' '}
-        <div style={{ marginLeft: 5 }}>
-          <label>4.1 ตัวชี้วัดที่ 4.1</label>
-          <Divider type="vertical" />
-          <Icon type="profile" style={{ marginRight: 3, marginLeft: 3 }} />
-          <label>8 คะแนน</label>
-          <Divider type="vertical" />
-          <Popover content={content} title="หมายเหตุ">
-            <span style={{ cursor: 'pointer' }}>
-              <Icon type="message" />
-            </span>
-          </Popover>
-        </div>
-        <div style={{ marginLeft: 5 }}>
-          <label>4.2 ตัวชี้วัดที่ 4.2</label>
-          <Divider type="vertical" />
-          <Icon type="profile" style={{ marginRight: 3, marginLeft: 3 }} />
-          <label>2 คะแนน</label>
-          <Divider type="vertical" />
-          <Popover content={content} title="หมายเหตุ">
-            <span style={{ cursor: 'pointer' }}>
-              <Icon type="message" />
-            </span>
-          </Popover>
-        </div>
       </div>
     </Card>
   )
@@ -187,52 +122,68 @@ export const FormSummaryVendor = props => {
         <EveForm />
       </ModalTemplate>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <Card style={{ width: 1000, marginRight: 10 }}>
-          <div>
-            <p>ผู้ขาย</p>
-            <div style={{ display: 'flex' }}>
-              <div
-                style={{ width: '100px', textAlign: 'right', marginRight: 3 }}
-              >
-                <div>ชื่อผู้ขาย :</div>
+        <Card
+          style={{ width: 1000, marginRight: 10 }}
+          title={'ข้อมูลการประเมิน'}
+        >
+          <div style={{ display: 'flex' }}>
+            <div>
+              <div style={{ display: 'flex' }}>
+                <div
+                  style={{ width: '100px', textAlign: 'right', marginRight: 3 }}
+                >
+                  <div>ผู้ขาย :</div>
+                </div>
+                <Icon type="user" style={{ marginRight: 3, marginLeft: 3 }} />
+                <div>
+                  <label>leaderplanet</label>
+                </div>
               </div>
-              <Icon type="user" style={{ marginRight: 3, marginLeft: 3 }} />
-              <div>
-                <label>leaderplanet</label>
+              <div style={{ display: 'flex' }}>
+                <div
+                  style={{ width: '100px', textAlign: 'right', marginRight: 3 }}
+                >
+                  <div>เลขที่ใบประเมิน :</div>
+                </div>
+                <Icon type="user" style={{ marginRight: 3, marginLeft: 3 }} />
+                <div>
+                  <label>000000</label>
+                </div>
               </div>
-            </div>
-            <div style={{ display: 'flex' }}>
-              <div
-                style={{ width: '100px', textAlign: 'right', marginRight: 3 }}
-              >
-                <div>ประเภทผู้ขาย :</div>
+              <div style={{ display: 'flex' }}>
+                <div
+                  style={{ width: '100px', textAlign: 'right', marginRight: 3 }}
+                >
+                  <div>ผู้สั่งซื้อ :</div>
+                </div>
+                <Icon type="user" style={{ marginRight: 3, marginLeft: 3 }} />
+                <div>
+                  <label>ทดสอบ</label>
+                </div>
               </div>
-              <Icon type="user" style={{ marginRight: 3, marginLeft: 3 }} />
-              <div>
-                <label>งานบริการ</label>
-              </div>
-            </div>
-            <div style={{ display: 'flex' }}>
-              <div
-                style={{ width: '100px', textAlign: 'right', marginRight: 3 }}
-              >
-                <div>WeightingKey :</div>
-              </div>
-              <Icon type="user" style={{ marginRight: 3, marginLeft: 3 }} />
-              <div>
-                <label>A2</label>
+              <div style={{ display: 'flex' }}>
+                <div
+                  style={{ width: '100px', textAlign: 'right', marginRight: 3 }}
+                >
+                  <div>ประเภทผู้ขาย :</div>
+                </div>
+                <Icon type="user" style={{ marginRight: 3, marginLeft: 3 }} />
+                <div>
+                  <label>งานบริการ</label>
+                </div>
               </div>
             </div>
           </div>
         </Card>
         <Card
+          title={'สรุปการประเมิน'}
           style={{ width: 1000, marginRight: 10 }}
           actions={[
             <Icon type="edit" key="edit" onClick={() => setOpenModal(true)} />,
           ]}
         >
           <div>
-            <p>อัตราส่วนคะแนน</p>
+            {/* <p>สรุปการประเมิน</p> */}
             <div>
               <label>1. กลุ่มตัวชี้วัดที่ 1</label>
               <Divider type="vertical" />
@@ -251,77 +202,23 @@ export const FormSummaryVendor = props => {
               <Icon type="profile" style={{ marginRight: 3, marginLeft: 3 }} />
               <label>20 คะแนน</label>
             </div>
-            <hr />
-            <div>
-              <label>2.กลุ่มตัวชี้วัด 2</label>
-              <Divider type="vertical" />
-              <Icon type="profile" style={{ marginRight: 3, marginLeft: 3 }} />
-              <label>10 คะแนน</label>
-              <Divider type="vertical" />
-            </div>
-            <div style={{ marginLeft: 5 }}>
-              <label>2.1 ตัวชี้วัดที่ 2.1</label>
-              <Divider type="vertical" />
-              <Icon type="profile" style={{ marginRight: 3, marginLeft: 3 }} />
-              <label>8 คะแนน</label>
-              <Divider type="vertical" />
-            </div>
-            <div style={{ marginLeft: 5 }}>
-              <label>2.2 ตัวชี้วัดที่ 2.2</label>
-              <Divider type="vertical" />
-              <Icon type="profile" style={{ marginRight: 3, marginLeft: 3 }} />
-              <label>2 คะแนน</label>
-            </div>
-            <hr />
-            <div>
-              <label>3. ตัวชี้วัด 3</label>
-              <Divider type="vertical" />
-              <Icon type="profile" style={{ marginRight: 3, marginLeft: 3 }} />
-              <label>32 คะแนน</label>
-              <Divider type="vertical" />
-            </div>
-            <div style={{ marginLeft: 5 }}>
-              <label>3.1 ตัวชี้วัดที่ 3.1</label>
-              <Divider type="vertical" />
-              <Icon type="profile" style={{ marginRight: 3, marginLeft: 3 }} />
-              <label>8 คะแนน</label>
-            </div>
-            <div style={{ marginLeft: 5 }}>
-              <label>3.2 ตัวชี้วัดที่ 3.2</label>
-              <Divider type="vertical" />
-              <Icon type="profile" style={{ marginRight: 3, marginLeft: 3 }} />
-              <label>2 คะแนน</label>
-            </div>
-            <hr />
-            <div>
-              <label>4. ตัวชี้วัด 4</label>
-              <Divider type="vertical" />
-              <Icon type="profile" style={{ marginRight: 3, marginLeft: 3 }} />
-              <label>32 คะแนน</label>
-            </div>{' '}
-            <div style={{ marginLeft: 5 }}>
-              <label>4.1 ตัวชี้วัดที่ 4.1</label>
-              <Divider type="vertical" />
-              <Icon type="profile" style={{ marginRight: 3, marginLeft: 3 }} />
-              <label>8 คะแนน</label>
-            </div>
-            <div style={{ marginLeft: 5 }}>
-              <label>4.2 ตัวชี้วัดที่ 4.2</label>
-              <Divider type="vertical" />
-              <Icon type="profile" style={{ marginRight: 3, marginLeft: 3 }} />
-              <label>2 คะแนน</label>
-            </div>
           </div>
         </Card>
         <Card
+          title={'สรุปผลประเมิน'}
           style={{
             width: 1000,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
           }}
         >
-          <div style={{ height: '100%' }}>
+          {/* <p>ข้อมูลการประเมิน</p> */}
+          <div
+            style={{
+              height: '100%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
             <div
               style={{
                 display: 'flex',
@@ -419,7 +316,7 @@ export const FormSummaryVendor = props => {
           }}
         >
           <div>
-            <p>อัตราส่วนคะแนน</p>
+            {/* <p>อัตราส่วนคะแนน</p> */}
             <div>
               <label>ตัวชี้วัด 1</label>
               <Divider type="vertical" />

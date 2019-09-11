@@ -19,6 +19,7 @@ export * from './NomalForm'
 export * from './gradeForm'
 export * from './eve_Form'
 export * from './summaryVendorForm'
+export * from './createEVA'
 
 export * from './tableCriteria'
 export * from './tablePeriod'

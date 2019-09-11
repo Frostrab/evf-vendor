@@ -15,20 +15,20 @@ const VendorFilter = () => {
       title: 'Name',
       dataIndex: 'name',
       key: 'name',
-      width: '30%',
+      // width: '30%',
     },
-    {
-      title: 'Age',
-      dataIndex: 'age',
-      key: 'age',
-      width: '20%',
-    },
-    {
-      title: 'Address',
-      dataIndex: 'address',
-      key: 'address',
-      width: '20%',
-    },
+    // {
+    //   title: 'Age',
+    //   dataIndex: 'age',
+    //   key: 'age',
+    //   width: '20%',
+    // },
+    // {
+    //   title: 'Address',
+    //   dataIndex: 'address',
+    //   key: 'address',
+    //   width: '20%',
+    // },
     {
       title: '',
       key: 'action',
@@ -92,7 +92,7 @@ const VendorFilter = () => {
             </Select>
           </div>
         </div>
-        <span style={{ marginLeft: '20%' }}>
+        <span style={{ marginLeft: '10%' }}>
           <Button
             width="100px"
             height="40px"
@@ -165,7 +165,7 @@ const VendorFilter = () => {
                   <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>
                     *
                   </i>
-                  <label>ประเภทผู้ขาย :</label>
+                  <label>WeightingKey :</label>
                 </div>
               </Col>
               <Col
@@ -175,9 +175,9 @@ const VendorFilter = () => {
               >
                 <div className="gutter-box">
                   <Select defaultValue="lucy" style={{ width: 300 }}>
-                    <Option value="jack">Type 1</Option>
-                    <Option value="lucy">Type 2</Option>
-                    <Option value="Yiminghe">Type 3</Option>
+                    <Option value="jack">A1</Option>
+                    <Option value="lucy">A2</Option>
+                    <Option value="Yiminghe">A3</Option>
                   </Select>
                 </div>
               </Col>
@@ -219,7 +219,7 @@ const VendorFilter = () => {
                   <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>
                     *
                   </i>
-                  <label>อื่นๆ :</label>
+                  <label>ยอดขาย :</label>
                 </div>
               </Col>
               <Col

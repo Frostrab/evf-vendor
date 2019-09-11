@@ -13,11 +13,11 @@ const { Option } = Select
 const PerformanceGroup = () => {
   const [data, setData] = useState([
     {
-      name: 'การจัดทำรายงาน',
+      KPIGroupTH: 'การจัดทำรายงาน',
       description: 'จัดทำรายงานเอกสาร',
     },
     {
-      name: 'การประสานงาน',
+      KPIGroupTH: 'การประสานงาน',
       description: 'ประสานงานกับฝ่ายที่เกี่ยวข้อง',
     },
   ])
@@ -32,7 +32,7 @@ const PerformanceGroup = () => {
       title: 'ชื่อกลุ่มตัวชี้วัดภาษาอังกฤษ',
       dataIndex: 'KPIGroupEN',
       key: 'age',
-      width: '20%',
+      width: '30%',
     },
     {
       title: '',
@@ -57,16 +57,16 @@ const PerformanceGroup = () => {
   return (
     <React.Fragment>
       <Paper title={'กลุ่มตัวชี้วัด'}>
-        <span style={{ marginLeft: '20%' }}>
+        <span style={{ marginLeft: '10%' }}>
           <Button
-            width="100px"
+            width="140px"
             height="40px"
             onClick={e => {
               handleOpenDrawer(true)
             }}
             type={'submit'}
           >
-            เพิ่ม
+            เพิ่มกลุ่มตัวชี้วัด
           </Button>
         </span>
         <div style={{ display: 'flex', justifyContent: 'center' }}>

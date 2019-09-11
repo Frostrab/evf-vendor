@@ -98,7 +98,7 @@ export class EditableTableCriteria extends React.Component {
     super(props)
     this.columns = [
       {
-        title: 'กลุ่มตัวชี้วัด',
+        title: 'ชื่อกลุ่มตัวชี้วัด',
         dataIndex: 'name',
         width: '70%',
         // editable: true,

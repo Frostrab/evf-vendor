@@ -86,12 +86,11 @@ const ButtonCustom = Styled.button`
     } else if (props.type === 'add') {
       return `
     &:hover {
-      background-color: #ffffff;
-      color: #000000;
-      border-color:#95de64
+      background-color: #adc6ff;
+      color: #fff;
+      border-color:black
     }
-    background-color:#95de64
-    border-color:#e8e8e8
+    border-color:#adc6ff
     color: #000000
   `
     } else if (props.type === 'copy') {

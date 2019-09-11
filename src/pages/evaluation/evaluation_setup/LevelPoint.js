@@ -21,27 +21,15 @@ const LevelPoint = () => {
   ])
   const [columns] = useState([
     {
-      title: 'Name',
+      title: 'ชื่อระดับคะแนน',
       dataIndex: 'name',
       key: 'name',
-      width: '30%',
-    },
-    {
-      title: 'Age',
-      dataIndex: 'age',
-      key: 'age',
-      width: '20%',
-    },
-    {
-      title: 'Address',
-      dataIndex: 'address',
-      key: 'address',
-      width: '20%',
+      // width: '30%',
     },
     {
       title: '',
       key: 'action',
-      width: '30%',
+      width: '20%',
       render: (text, record) => (
         <span>
           <Button onClick={() => handleOpenDrawer(true)} type="view">
@@ -61,7 +49,7 @@ const LevelPoint = () => {
   return (
     <React.Fragment>
       <Paper title={'ระดับคะแนน'}>
-        <span style={{ marginLeft: '20%' }}>
+        <span style={{ marginLeft: '10%' }}>
           <Button
             width="200px"
             height="40px"

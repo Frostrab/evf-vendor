@@ -29,7 +29,7 @@ const Evaluation = () => {
   return (
     <React.Fragment>
       <ModalTemplate
-        title={viewSelect}
+        title={' '}
         visible={openModal}
         handleClose={handleModalClose}
         width={'80%'}
@@ -49,7 +49,6 @@ const Evaluation = () => {
             </div>
           </TabPane>
         </Tabs>
-        ,
       </Paper>
     </React.Fragment>
   )

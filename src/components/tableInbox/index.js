@@ -4,24 +4,40 @@ import { Button } from '../../components'
 import { Link } from 'react-router-dom'
 const columns = [
   {
-    title: 'ชื่อผู้ขาย',
-    dataIndex: 'name',
-    width: '30%',
+    title: 'เลขที่ใบประเมิน',
+    dataIndex: 'เลขที่ใบประเมิน',
+    width: '10%',
   },
   {
-    title: 'คะแนนที่ได้',
-    dataIndex: 'age',
-    width: '30%',
-  },
-  {
-    title: 'เกณฑ์การประเมิน',
-    dataIndex: 'address',
+    title: 'ผู้ขาย',
+    dataIndex: 'ผู้ขาย',
     width: '20%',
   },
+  {
+    title: 'ผู้ซื้อ',
+    dataIndex: 'ผู้ซื้อ',
+    width: '20%',
+  },
+  {
+    title: 'ประเภทผู้ขาย',
+    dataIndex: 'ประเภทผู้ขาย',
+    width: '10%',
+  },
+  {
+    title: 'สรุปผลคะแนน',
+    dataIndex: 'คะแนน',
+    width: '10%',
+  },
+  {
+    title: 'สรุปผลเกรด',
+    dataIndex: 'เกรด',
+    width: '10%',
+  },
+
   {
     title: '',
     dataIndex: 'address',
-    width: '20%',
+    width: '30%',
     render: rec => (
       <span>
         <Link to="/spe-sum">
@@ -37,7 +53,12 @@ const columns = [
 const data = []
 for (let i = 0; i < 20; i++) {
   data.push({
-    key: i,
+    เลขที่ใบประเมิน: i,
+    ผู้ขาย: 'Leaderplanet',
+    ผู้ซื้อ: 'BRB',
+    ประเภทผู้ขาย: 'A2',
+    คะแนน: '80',
+    เกรด: 'A',
     name: `Edward King ${i}`,
     age: 32,
     address: `A`,

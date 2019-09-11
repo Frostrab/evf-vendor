@@ -29,7 +29,7 @@ const VendorProfile = () => {
                 title="ชื่อ: Leaderplanet"
                 description={
                   <div style={{ display: 'flex' }}>
-                    <span style={{ marginRight: 10 }}>
+                    <span>
                       <div style={{ display: 'flex' }}>
                         <div
                           style={{
@@ -38,10 +38,10 @@ const VendorProfile = () => {
                             textAlign: 'right',
                           }}
                         >
-                          <b>อีเมล :</b>
+                          <b>รหัสผู้ขาย :</b>
                         </div>
                         <Input
-                          value={'admin@leaderplanet.co.th'}
+                          value={'000000'}
                           style={{ width: '200px' }}
                           readOnly={true}
                         />
@@ -54,8 +54,61 @@ const VendorProfile = () => {
                             textAlign: 'right',
                           }}
                         >
-                          <b>เบอร์โทรศัพท์ :</b>
+                          <b>ชื่อ :</b>
                         </div>
+                        <Input
+                          value={'นาย ทดสอบ'}
+                          style={{ width: '200px' }}
+                          readOnly={true}
+                        />
+                      </div>
+                      <div style={{ display: 'flex', marginTop: 7 }}>
+                        <label
+                          style={{
+                            marginRight: 10,
+                            width: '130px',
+                            textAlign: 'right',
+                          }}
+                        >
+                          <b>Name :</b>
+                        </label>
+                        <Input
+                          value={'ลีดเดอร์แพลนเนท'}
+                          style={{ width: '200px' }}
+                          readOnly={true}
+                        />
+                      </div>
+                      <div style={{ display: 'flex', marginTop: 7 }}>
+                        <label
+                          style={{
+                            marginRight: 10,
+                            width: '130px',
+                            textAlign: 'right',
+                          }}
+                        >
+                          <div>
+                            <b>ชื่อผู้ขาย ภาษา :</b>
+                          </div>
+                          <div>
+                            <b>อังกฤษ :</b>
+                          </div>
+                        </label>
+                        <Input
+                          value={'leaderplanet'}
+                          style={{ width: '200px' }}
+                          readOnly={true}
+                        />
+                      </div>
+                      <div style={{ display: 'flex', marginTop: 7 }}>
+                        <label
+                          style={{
+                            marginRight: 10,
+                            width: '130px',
+                            textAlign: 'right',
+                          }}
+                        >
+                          <b>เบอร์โทรศัพท์ :</b>
+                        </label>
                         <Input
                           value={'0800000000'}
                           style={{ width: '200px' }}
@@ -70,7 +123,7 @@ const VendorProfile = () => {
                             textAlign: 'right',
                           }}
                         >
-                          <b>เบอร์โทรศัพท์ (มือถือ) :</b>
+                          <b>เบอร์ติดต่อภายใน :</b>
                         </label>
                         <Input
                           value={'0800000000'}
@@ -84,7 +137,7 @@ const VendorProfile = () => {
                         <div
                           style={{
                             marginRight: 10,
-                            width: '146px',
+                            width: '130px',
                             textAlign: 'right',
                           }}
                         >
@@ -92,7 +145,7 @@ const VendorProfile = () => {
                         </div>
                         <Input
                           value={'บริการ'}
-                          style={{ width: '80px' }}
+                          style={{ width: '150px' }}
                           readOnly={true}
                         />
                       </div>
@@ -100,15 +153,104 @@ const VendorProfile = () => {
                         <div
                           style={{
                             marginRight: 10,
-                            width: '147px',
+                            width: '130px',
                             textAlign: 'right',
                           }}
                         >
-                          <b>WeightingKey :</b>
+                          <b>ผู้ติดต่อ :</b>
                         </div>
                         <Input
-                          value={'A2'}
-                          style={{ width: '80px' }}
+                          value={'บริษัท ลีดเดอร์แพลนเนททดสอบ'}
+                          style={{ width: '150px' }}
+                          readOnly={true}
+                        />
+                      </div>
+                      <div style={{ display: 'flex', marginTop: 7 }}>
+                        <div
+                          style={{
+                            marginRight: 10,
+                            width: '130px',
+                            textAlign: 'right',
+                          }}
+                        >
+                          <b>อีเมล :</b>
+                        </div>
+                        <Input
+                          value={'admin@leaderplanet'}
+                          style={{ width: '150px' }}
+                          readOnly={true}
+                        />
+                      </div>
+                      <div style={{ display: 'flex', marginTop: 7 }}>
+                        <div
+                          style={{
+                            marginRight: 10,
+                            width: '130px',
+                            textAlign: 'right',
+                          }}
+                        >
+                          <b>เบอร์ Fax :</b>
+                        </div>
+                        <Input
+                          value={'020000000'}
+                          style={{ width: '150px' }}
+                          readOnly={true}
+                        />
+                      </div>
+                      <div style={{ display: 'flex', marginTop: 7 }}>
+                        <div
+                          style={{
+                            marginRight: 10,
+                            width: '130px',
+                            textAlign: 'right',
+                          }}
+                        >
+                          <div>
+                            <b>เบอร์โทรศัพท์ :</b>
+                          </div>
+                          <div>
+                            <b>มือถือ</b>
+                          </div>
+                        </div>
+                        <Input
+                          value={'080000000'}
+                          style={{ width: '150px' }}
+                          readOnly={true}
+                        />
+                      </div>
+                      <div style={{ display: 'flex', marginTop: 7 }}>
+                        <div
+                          style={{
+                            marginRight: 10,
+                            width: '130px',
+                            textAlign: 'right',
+                          }}
+                        >
+                          <div>
+                            <b>วันที่สร้าง :</b>
+                          </div>
+                        </div>
+                        <Input
+                          value={'ทดสอบ'}
+                          style={{ width: '150px' }}
+                          readOnly={true}
+                        />
+                      </div>
+                      <div style={{ display: 'flex', marginTop: 7 }}>
+                        <div
+                          style={{
+                            marginRight: 10,
+                            width: '130px',
+                            textAlign: 'right',
+                          }}
+                        >
+                          <div>
+                            <b>ผู้สร้าง :</b>
+                          </div>
+                        </div>
+                        <Input
+                          value={'ทดสอบ'}
+                          style={{ width: '150px' }}
                           readOnly={true}
                         />
                       </div>
@@ -122,7 +264,7 @@ const VendorProfile = () => {
         </div>
         <div style={{ width: '800px' }}>
           <Paper>
-            <div style={{ display: 'flex' }}>
+            <div style={{ display: 'flex', height: '420px' }}>
               <GraphPieForVendor />
               <GraphLineForVendor />
             </div>
