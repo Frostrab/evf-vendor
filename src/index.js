@@ -4,13 +4,13 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import 'antd/dist/antd.css'
 import App from './App'
-import { BrowserRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 
 import * as serviceWorker from './serviceWorker'
 const AppWithRouter = () => (
-  <BrowserRouter>
+  <HashRouter>
     <App />
-  </BrowserRouter>
+  </HashRouter>
 )
 ReactDOM.render(<AppWithRouter />, document.getElementById('root'))
 

@@ -31,12 +31,44 @@ export const EveForm = () => (
           marginTop: 30,
           marginLeft: '2.5%',
           marginRight: '5%',
-          width: '45%',
+          width: '100%',
           borderRadius: '10px',
           border: '1px solid  #fff',
         }}
       >
         <div style={{ padding: '50px' }}>
+          <Row gutter={24}>
+            <Col className="gutter-row" span={6} style={{ textAlign: 'left' }}>
+              <div className="gutter-box">
+                <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>*</i>
+                <label>ผู้ขาย :</label>
+              </div>
+            </Col>
+            <Col className="gutter-row" span={6} style={{ textAlign: 'left' }}>
+              <div className="gutter-box">
+                <Input />
+              </div>
+            </Col>
+            <Col className="gutter-row" span={6} style={{ textAlign: 'right' }}>
+              <div className="gutter-box">
+                <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>*</i>
+                <label>ประเภทงาน :</label>
+              </div>
+            </Col>
+            <Col className="gutter-row" span={6} style={{ textAlign: 'left' }}>
+              <div className="gutter-box">
+                <Select
+                  placeholder={'เลือกประเภทงาน'}
+                  style={{ width: 200 }}
+                  mode="tags"
+                >
+                  <Option value="jack">งานโยธา</Option>
+                  <Option value="lucy">งานเครื่องกล</Option>
+                  <Option value="Yiminghe">อื่นๆ</Option>
+                </Select>
+              </div>
+            </Col>
+          </Row>
           <span style={{ display: 'flex', fontSize: 16, marginTop: 5 }}>
             <div
               style={{ display: 'flex', alignItems: 'center', width: '100px' }}
@@ -121,7 +153,7 @@ export const EveForm = () => (
           backgroundColor: '#456',
           marginBottom: 30,
           marginTop: 30,
-          width: '45%',
+          width: '100%',
           padding: '30px',
           borderRadius: '10px',
           border: '1px solid  #fff',
