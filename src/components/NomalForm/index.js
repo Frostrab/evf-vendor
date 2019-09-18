@@ -1,12 +1,12 @@
 import React from 'react'
-import { Form, Input, Row, Col, Avatar } from 'antd'
+import { Form, Input, Row, Col, Avatar, Upload, Icon, Modal } from 'antd'
 import {
   Button,
   SelectTemplate,
   ModalTemplate,
   EveForm,
 } from '../../components'
-
+import UploadPhoto from './Upload_photo'
 const RegistrationForm = props => {
   const [viewSelect, setViewSelect] = React.useState()
   const [openModal, setOpenModal] = React.useState(false)
@@ -153,6 +153,13 @@ const RegistrationForm = props => {
                 }}
                 onClick={() => openPreview(levelPoint.label)}
               />
+            </Col>
+          </Row>
+        </Form.Item>
+        <Form.Item label="ภาพประกอบ">
+          <Row gutter={8}>
+            <Col span={20}>
+              <UploadPhoto />
             </Col>
           </Row>
         </Form.Item>
