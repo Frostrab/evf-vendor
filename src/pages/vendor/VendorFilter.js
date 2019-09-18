@@ -219,7 +219,7 @@ const VendorFilter = () => {
                   <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>
                     *
                   </i>
-                  <label>ยอดขาย :</label>
+                  <label>ยอดรับ(บาท) :</label>
                 </div>
               </Col>
               <Col

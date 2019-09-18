@@ -91,7 +91,7 @@ const PerformanceGroup = () => {
         <DrawerTemplate
           title={'รายละเอียด'}
           visible={visible}
-          width={'50%'}
+          width={'80%'}
           handleOpenDrawer={handleOpenDrawer}
         >
           <div style={{ color: '#000000', marginBottom: 5 }}>
@@ -99,7 +99,7 @@ const PerformanceGroup = () => {
             <Row gutter={24}>
               <Col
                 className="gutter-row"
-                span={8}
+                span={5}
                 style={{ textAlign: 'right' }}
               >
                 <div className="gutter-box">
@@ -125,7 +125,33 @@ const PerformanceGroup = () => {
             <Row gutter={24}>
               <Col
                 className="gutter-row"
-                span={8}
+                span={5}
+                style={{ textAlign: 'right' }}
+              >
+                <div className="gutter-box">
+                  <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>
+                    *
+                  </i>
+                  <label>ชื่อย่อกลุ่มตัวชี้วัดภาษาไทย :</label>
+                </div>
+              </Col>
+              <Col
+                className="gutter-row"
+                span={16}
+                style={{ textAlign: 'left' }}
+              >
+                <div className="gutter-box">
+                  <Input />
+                </div>
+              </Col>
+            </Row>
+          </div>
+          <div style={{ color: '#000000', marginBottom: 5, marginTop: 5 }}>
+            {' '}
+            <Row gutter={24}>
+              <Col
+                className="gutter-row"
+                span={5}
                 style={{ textAlign: 'right' }}
               >
                 <div className="gutter-box">
@@ -151,14 +177,14 @@ const PerformanceGroup = () => {
             <Row gutter={24}>
               <Col
                 className="gutter-row"
-                span={8}
+                span={5}
                 style={{ textAlign: 'right' }}
               >
                 <div className="gutter-box">
                   <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>
                     *
                   </i>
-                  <label>SAP Field:</label>
+                  <label>ชื่อย่อกลุ่มตัวชี้วัดภาษาอังกฤษ :</label>
                 </div>
               </Col>
               <Col
@@ -167,11 +193,7 @@ const PerformanceGroup = () => {
                 style={{ textAlign: 'left' }}
               >
                 <div className="gutter-box">
-                  <Select defaultValue="1" style={{ width: 120 }}>
-                    <Option value="1">1</Option>
-                    <Option value="2">2</Option>
-                    <Option value="3">3</Option>
-                  </Select>
+                  <Input />
                 </div>
               </Col>
             </Row>

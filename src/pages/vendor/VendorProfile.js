@@ -131,6 +131,22 @@ const VendorProfile = () => {
                           readOnly={true}
                         />
                       </div>
+                      <div style={{ display: 'flex', marginTop: 7 }}>
+                        <label
+                          style={{
+                            marginRight: 10,
+                            width: '130px',
+                            textAlign: 'right',
+                          }}
+                        >
+                          <b>ชื่อกลุ่มจัดซื้อ :</b>
+                        </label>
+                        <Input
+                          value={'กลุ่มจัดซื้อกลาง'}
+                          style={{ width: '200px' }}
+                          readOnly={true}
+                        />
+                      </div>
                     </span>
                     <span>
                       <div style={{ display: 'flex' }}>

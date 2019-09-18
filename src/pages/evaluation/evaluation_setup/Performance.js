@@ -1,13 +1,10 @@
 import React, { useState } from 'react'
-import {
-  Paper,
-  Button,
-  ListData,
-  DrawerTemplate,
-  TableChange,
-} from '../../../components'
-import { Input, Col, Row } from 'antd'
-const Performance = () => {
+import { Paper, Button, DrawerTemplate, TableChange } from '../../../components'
+import { Form, Input, Col, Row } from 'antd'
+const Performance = props => {
+  const { getFieldDecorator } = props.form
+  const [formLayout, setTypeDisplay] = useState('')
+  const [DrawerWidth, setDrawerWidth] = useState(0)
   const [data, setData] = useState([
     {
       KPITH:
@@ -52,6 +49,22 @@ const Performance = () => {
     },
   ])
   const [visible, setVisible] = useState(false)
+  React.useEffect(() => {
+    if (window.innerWidth > 480) {
+      setTypeDisplay('horizontal')
+      setDrawerWidth('60%')
+    } else {
+      setTypeDisplay('Vertical')
+      setDrawerWidth('90%')
+    }
+  }, [setDrawerWidth])
+  const formItemLayout =
+    formLayout === 'horizontal'
+      ? {
+          labelCol: { span: 6 },
+          wrapperCol: { span: 14 },
+        }
+      : null
   const handleOpenDrawer = (a, data) => {
     setVisible(a)
   }
@@ -93,65 +106,92 @@ const Performance = () => {
         <DrawerTemplate
           title={'รายละเอียด'}
           visible={visible}
-          width={'50%'}
+          width={DrawerWidth}
           handleOpenDrawer={handleOpenDrawer}
         >
           <div style={{ color: '#000000', marginBottom: 5 }}>
             {' '}
-            <Row gutter={24}>
-              <Col
-                className="gutter-row"
-                span={8}
-                style={{ textAlign: 'right' }}
+            <Form layout={formLayout}>
+              <Form.Item
+                label="ชื่อตัวชี้วัดภาษาไทย"
+                {...formItemLayout}
+                style={{ marginBottom: 10 }}
               >
-                <div className="gutter-box">
-                  <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>
-                    *
-                  </i>
-                  <label>ชื่อตัวชี้วัดภาษาไทย :</label>
-                </div>
-              </Col>
-              <Col
-                className="gutter-row"
-                span={16}
-                style={{ textAlign: 'left' }}
+                {getFieldDecorator('gradeTH', {
+                  rules: [
+                    {
+                      type: 'text',
+                      message: 'กรุณากรอก ชื่อตัวชี้วัดภาษาไทย!',
+                    },
+                    {
+                      required: true,
+                      message: 'กรุณากรอก ชื่อตัวชี้วัดภาษาไทย!',
+                    },
+                  ],
+                })(<Input placeholder="กรุณากรอก ชื่อตัวชี้วัดภาษาไทย" />)}
+              </Form.Item>
+              <Form.Item
+                label="ชื่อย่อตัวชี้วัดภาษาไทย"
+                {...formItemLayout}
+                style={{ marginBottom: 10 }}
               >
-                <div className="gutter-box">
-                  <Input />
-                </div>
-              </Col>
-            </Row>
-          </div>
-          <div style={{ color: '#000000', marginBottom: 5 }}>
-            {' '}
-            <Row gutter={24}>
-              <Col
-                className="gutter-row"
-                span={8}
-                style={{ textAlign: 'right' }}
+                {getFieldDecorator('gradeTH', {
+                  rules: [
+                    {
+                      type: 'text',
+                      message: 'กรุณากรอก ชื่อย่อตัวชี้วัดภาษาไทย!',
+                    },
+                    {
+                      required: true,
+                      message: 'กรุณากรอก ชื่อย่อตัวชี้วัดภาษาไทย!',
+                    },
+                  ],
+                })(<Input placeholder="กรุณากรอก ชื่อย่อตัวชี้วัดภาษาไทย" />)}
+              </Form.Item>{' '}
+              <Form.Item
+                label="ชื่อตัวชี้วัดภาษาอังกฤษ"
+                {...formItemLayout}
+                style={{ marginBottom: 10 }}
               >
-                <div className="gutter-box">
-                  <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>
-                    *
-                  </i>
-                  <label>ชื่อตัวชี้วัดภาษาอังกฤษ:</label>
-                </div>
-              </Col>
-              <Col
-                className="gutter-row"
-                span={16}
-                style={{ textAlign: 'left' }}
+                {getFieldDecorator('gradeTH', {
+                  rules: [
+                    {
+                      type: 'text',
+                      message: 'กรุณากรอก ชื่อตัวชี้วัดภาษาอังกฤษ!',
+                    },
+                    {
+                      required: true,
+                      message: 'กรุณากรอก ชื่อตัวชี้วัดภาษาอังกฤษ!',
+                    },
+                  ],
+                })(<Input placeholder="กรุณากรอก ชื่อตัวชี้วัดภาษาอังกฤษ" />)}
+              </Form.Item>{' '}
+              <Form.Item
+                label="ชื่อย่อตัวชี้วัดภาษาอังกฤษ"
+                {...formItemLayout}
+                style={{ marginBottom: 10 }}
               >
-                <div className="gutter-box">
-                  <Input />
-                </div>
-              </Col>
-            </Row>
+                {getFieldDecorator('gradeTH', {
+                  rules: [
+                    {
+                      type: 'text',
+                      message: 'กรุณากรอก ชื่อย่อตัวชี้วัดภาษาอังกฤษ!',
+                    },
+                    {
+                      required: true,
+                      message: 'กรุณากรอก ชื่อย่อตัวชี้วัดภาษาอังกฤษ!',
+                    },
+                  ],
+                })(
+                  <Input placeholder="กรุณากรอก ชื่อย่อตัวชี้วัดภาษาอังกฤษ" />
+                )}
+              </Form.Item>
+            </Form>
           </div>
         </DrawerTemplate>
       </Paper>
     </React.Fragment>
   )
 }
-
-export default Performance
+const WrappedPerformanceForm = Form.create({ name: 'performance' })(Performance)
+export default WrappedPerformanceForm

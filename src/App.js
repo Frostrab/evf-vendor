@@ -24,7 +24,7 @@ import PrivateRoute from './components/PrivateRoute'
 function App() {
   return (
     <Switch>
-      <Route exact path="/" component={LoginPage} />
+      <PrivateRoute exact path="/" component={Content1} />
       <PrivateRoute path="/Inbox" component={Content1} />
       <PrivateRoute path="/spe-sum" component={SummaryEvaluationTemplate} />
 
