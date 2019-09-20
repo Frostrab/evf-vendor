@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Input, Row, Col, Avatar, Upload, Icon, Modal } from 'antd'
+import { Form, Input, Row, Col, Avatar } from 'antd'
 import {
   Button,
   SelectTemplate,

@@ -1,9 +1,10 @@
-import React from 'react'
-import { Paper, TableTemplate, Button, PopoverIcon } from '../../components'
+import React, { useState } from 'react'
+import { Button } from '../../components'
 import Styled from 'styled-components'
 import TableForm from '../table/index'
-import { Input, Card, Row, Col } from 'antd'
-import { Switch, Icon, Select } from 'antd'
+import { Input, Form, Switch, Select } from 'antd'
+import productIMG from '../../img/SinghaLogo1.png'
+const { TextArea } = Input
 
 const { Option } = Select
 
@@ -18,48 +19,98 @@ const TitleTab = Styled.div`
     border: 1px solid  #27b6ba
     margin-bottom: 3px
 `
-export const EveForm = () => (
-  <React.Fragment>
-    <TitleTab>
-      <Title size="30px">แบบประเมิน</Title>
-    </TitleTab>
-    <div style={{ display: 'flex', height: 250 }}>
+
+const EvaluationForm = props => {
+  const styles = {
+    label: {
+      width:
+        props.mediaSize === 'pc' || props.mediaSize === 'tablat'
+          ? '30%'
+          : '100%',
+      textAlign:
+        props.mediaSize === 'pc' || props.mediaSize === 'tablat'
+          ? 'right'
+          : 'left',
+      marginRight: 5,
+    },
+    col: {
+      display: 'flex',
+      width:
+        props.mediaSize === 'pc' || props.mediaSize === 'tablat'
+          ? '50%'
+          : '100%',
+      alignItems: 'center',
+      flexWrap:
+        props.mediaSize === 'pc' || props.mediaSize === 'tablat'
+          ? 'nowrap'
+          : 'wrap',
+    },
+    row: {
+      marginTop: 7,
+      display: 'flex',
+      flexWrap:
+        props.mediaSize === 'pc' || props.mediaSize === 'tablat'
+          ? 'nowrap'
+          : 'wrap',
+    },
+    input: {
+      width:
+        props.mediaSize === 'pc' || props.mediaSize === 'tablat'
+          ? '70%'
+          : '100%',
+    },
+  }
+  return (
+    <React.Fragment>
+      {console.log('mediasize', props.mediaSize)}
+      <TitleTab>
+        <Title size="30px">แบบประเมิน</Title>
+      </TitleTab>
       <div
         style={{
-          backgroundColor: '#fff',
-          marginBottom: 30,
-          marginTop: 30,
-          marginLeft: '2.5%',
-          marginRight: '5%',
-          width: '100%',
-          borderRadius: '10px',
-          border: '1px solid  #fff',
+          display: 'flex',
+          height: '40%',
+          flexWrap:
+            props.mediaSize === 'pc' || props.mediaSize === 'tablat'
+              ? 'nowrap'
+              : 'wrap',
         }}
       >
-        <div style={{ padding: '50px' }}>
-          <Row gutter={24}>
-            <Col className="gutter-row" span={6} style={{ textAlign: 'left' }}>
-              <div className="gutter-box">
-                <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>*</i>
+        <div
+          style={{
+            backgroundColor: '#fff',
+            marginBottom: 30,
+            marginTop: 30,
+            marginRight: props.mediaSize === 'pc' ? '5%' : '0px',
+            width:
+              props.mediaSize === 'pc' || props.mediaSize === 'tablat'
+                ? '70%'
+                : '100%',
+            borderRadius: '10px',
+            border: '1px solid  #fff',
+          }}
+        >
+          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+            <div style={styles.col}>
+              <div style={styles.label}>
                 <label>ผู้ขาย :</label>
               </div>
-            </Col>
-            <Col className="gutter-row" span={6} style={{ textAlign: 'left' }}>
-              <div className="gutter-box">
-                <Input />
+              <div style={styles.input}>
+                <Input
+                  placeholder="vendor"
+                  value={'leaderplanet'}
+                  displayonly={true}
+                />
               </div>
-            </Col>
-            <Col className="gutter-row" span={6} style={{ textAlign: 'right' }}>
-              <div className="gutter-box">
-                <i style={{ color: 'red', fontSize: 20, marginRight: 4 }}>*</i>
+            </div>
+            <div style={styles.col}>
+              <div style={styles.label}>
                 <label>ประเภทงาน :</label>
               </div>
-            </Col>
-            <Col className="gutter-row" span={6} style={{ textAlign: 'left' }}>
-              <div className="gutter-box">
+              <div style={styles.input}>
                 <Select
                   placeholder={'เลือกประเภทงาน'}
-                  style={{ width: 200 }}
+                  style={{ width: '100%' }}
                   mode="tags"
                 >
                   <Option value="jack">งานโยธา</Option>
@@ -67,135 +118,94 @@ export const EveForm = () => (
                   <Option value="Yiminghe">อื่นๆ</Option>
                 </Select>
               </div>
-            </Col>
-          </Row>
-          <span style={{ display: 'flex', fontSize: 16, marginTop: 5 }}>
-            <div
-              style={{ display: 'flex', alignItems: 'center', width: '100px' }}
-            >
-              ผู้ขาย <i style={{ color: 'red' }}>*</i>
             </div>
-            <div style={{ marginLeft: 10, marginRight: 10 }}>
-              <Input value="leaderplanet" readOnly />
+          </div>
+          <div style={styles.row}>
+            <div style={styles.col}>
+              <div style={styles.label}>
+                <label>รอบการประเมิน:</label>
+              </div>
+
+              <div style={styles.input}>
+                <Input value={'01/2020'} displayonly={true} width={'100%'} />
+              </div>
             </div>
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                width: '100px',
-                marginLeft: 14,
-              }}
-            >
-              ประเภทงาน
-            </div>
-            <div style={{ marginLeft: 10 }}>
-              <Select
-                placeholder={'เลือกประเภทงาน'}
-                style={{ width: 200 }}
-                mode="tags"
-              >
-                <Option value="jack">งานโยธา</Option>
-                <Option value="lucy">งานเครื่องกล</Option>
-                <Option value="Yiminghe">อื่นๆ</Option>
-              </Select>
-            </div>
-          </span>
-          <span style={{ display: 'flex', fontSize: 16, marginTop: 5 }}>
-            <div
-              style={{ display: 'flex', alignItems: 'center', width: '100px' }}
-            >
-              รอบการประเมิน
-            </div>
-            <div style={{ marginLeft: 10 }}>
-              <Input value="รอบการประเมิน กลางปี" readOnly />
-            </div>
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                width: '90px',
-                marginLeft: 6,
-              }}
-            >
-              ผู้สั่งซื้อ
-            </div>
-            <div style={{ marginLeft: 10 }}>
-              <Select placeholder={'เลือกผู้สั่งซื้อ'} style={{ width: 200 }}>
-                <Option value="jack">BRB</Option>
-                <Option value="lucy">BRT</Option>
-              </Select>
-            </div>
-          </span>
-          <span style={{ display: 'flex', fontSize: 16, marginTop: 5 }}>
-            <div
-              style={{ display: 'flex', alignItems: 'center', width: '100px' }}
-            >
-              เริ่มต้น-สิ้นสุด
-            </div>
-            <div style={{ marginLeft: 10 }}>
-              <Input value="1/1/2019 - 15/2/2019" readOnly />
-            </div>
-          </span>
-          <span style={{ display: 'flex', fontSize: 16, marginTop: 5 }}>
-            <div
-              style={{ display: 'flex', alignItems: 'center', width: '100px' }}
-            >
-              ภาษา (Language)
-            </div>
-            <div style={{ marginLeft: 10 }}>
-              <Switch checkedChildren="EN" unCheckedChildren="TH" />
-            </div>
-          </span>
-        </div>
-      </div>
-      <div
-        style={{
-          backgroundColor: '#456',
-          marginBottom: 30,
-          marginTop: 30,
-          width: '100%',
-          padding: '30px',
-          borderRadius: '10px',
-          border: '1px solid  #fff',
-        }}
-      >
-        <Row gutter={16} style={{ display: 'flex', justifyContent: 'center' }}>
-          <Col span={9}>
-            <Card
-              style={{ fontSize: 20, height: 130 }}
-              bodyStyle={{ padding: '25px' }}
-            >
-              <div />
-              <div>คะแนนรวม</div>
-              <div style={{ fontSize: 50, color: '#3f8600' }}>0</div>
-              <p />
-            </Card>
-          </Col>
-          <Col span={9}>
-            <Card style={{ height: 130 }} bodyStyle={{ padding: '0px' }}>
-              <span style={{ float: 'right', fontSize: 20 }}>
-                <PopoverIcon />
-              </span>
-              <div style={{ padding: '25px' }}>
-                <div style={{ fontSize: 20 }}>เกรด</div>
-                <div
-                  style={{
-                    fontSize: 50,
-                    color: '#cf1322',
-                    textAlign: 'center',
-                  }}
+            <div style={styles.col}>
+              <div style={styles.label}>
+                <label>ผู้สั่งซื้อ :</label>
+              </div>
+              <div style={styles.input}>
+                <Input
+                  placeholder="vendor"
+                  value={'BRB'}
+                  displayonly={true}
+                  width={'100%'}
                 />
               </div>
-            </Card>
-          </Col>
-        </Row>
+            </div>
+          </div>
+          <div style={styles.row}>
+            <div style={styles.col}>
+              <div style={styles.label}>
+                <label>เริ่มต้น-สิ้นสุด :</label>
+              </div>
+              <div style={styles.input}>
+                <Input value={'01/01/2020 - 31/06/2020'} displayonly={true} />
+              </div>
+            </div>
+            <div style={styles.col}>
+              <div style={styles.label}>
+                <label>
+                  <p style={{ marginBottom: 0 }}>ภาษา </p>
+                  <p>(Language) :</p>
+                </label>
+              </div>
+              <div style={styles.input}>
+                <Switch checkedChildren="EN" unCheckedChildren="TH" />
+              </div>
+            </div>
+          </div>
+          <div style={styles.row}>
+            <div style={styles.col}>
+              <div style={styles.label}>
+                <label>หมายเหตุ :</label>
+              </div>
+              <div style={styles.input}>
+                <TextArea
+                  placeholder={'หมายเหตุ'}
+                  rows={2}
+                  displayonly={false}
+                />
+              </div>
+            </div>
+
+            <div style={styles.col}>
+              <div style={{ marginLeft: 50 }}>
+                <img src={productIMG} height={'100px'} width={'100px'} />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          style={{
+            backgroundColor: '#456',
+            marginBottom: 30,
+            marginTop: 30,
+            width:
+              props.mediaSize === 'pc' || props.mediaSize === 'tablat'
+                ? '30%'
+                : '100%',
+            padding: '30px',
+            borderRadius: '10px',
+            border: '1px solid  #fff',
+          }}
+        />
       </div>
-    </div>
-    <Paper>
       <TableForm />
       <span style={{ display: 'flex', justifyContent: 'center' }}>
         <Button type="approve">Submit</Button>
       </span>
-    </Paper>
-  </React.Fragment>
-)
+    </React.Fragment>
+  )
+}
+export const EveForm = Form.create({ name: 'performance' })(EvaluationForm)

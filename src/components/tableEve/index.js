@@ -71,5 +71,12 @@ export const TableEve = props => {
       tags: ['cool', 'teacher'],
     },
   ])
-  return <Table columns={columns} dataSource={data} size={'medium'} />
+  return (
+    <Table
+      columns={columns}
+      dataSource={data}
+      size={'medium'}
+      scroll={{ x: 1300 }}
+    />
+  )
 }

@@ -15,10 +15,20 @@ function callback(key) {
 const Evaluation = () => {
   const [viewSelect, setViewSelect] = useState()
   const [openModal, setOpenModal] = useState(false)
+  const [mediaSize, setMediaSize] = useState('')
   const [visible, setVisible] = useState(false)
-  const handleOpenDrawer = (a, data) => {
-    setVisible(a)
-  }
+
+  React.useEffect(() => {
+    if (window.innerWidth > 1024) {
+      setMediaSize('pc')
+    } else if (window.innerWidth > 768 && window.innerWidth <= 1024) {
+      setMediaSize('tablat')
+    } else if (window.innerWidth >= 480 && window.innerWidth <= 768) {
+      setMediaSize('medium')
+    } else {
+      setMediaSize('mobile')
+    }
+  }, [])
   const openPreview = selected => {
     setOpenModal(true)
     setViewSelect(selected)
@@ -32,9 +42,9 @@ const Evaluation = () => {
         title={' '}
         visible={openModal}
         handleClose={handleModalClose}
-        width={'80%'}
+        width={mediaSize === 'pc' || 'tablat' ? '90%' : '99%'}
       >
-        <EveForm />
+        <EveForm mediaSize={mediaSize} />
       </ModalTemplate>
       <Paper title={'ประเมินผู้ขาย'}>
         <Tabs onChange={callback} type="card">
