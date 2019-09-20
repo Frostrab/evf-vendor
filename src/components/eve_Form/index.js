@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button } from '../../components'
+import { Button, PopoverIcon } from '../../components'
 import Styled from 'styled-components'
 import TableForm from '../table/index'
 import { Input, Form, Switch, Select } from 'antd'
@@ -182,6 +182,8 @@ const EvaluationForm = props => {
             <div style={styles.col}>
               <div style={{ marginLeft: 50 }}>
                 <img src={productIMG} height={'100px'} width={'100px'} />
+                <img src={productIMG} height={'100px'} width={'100px'} />
+                <img src={productIMG} height={'100px'} width={'100px'} />
               </div>
             </div>
           </div>
@@ -198,8 +200,52 @@ const EvaluationForm = props => {
             padding: '30px',
             borderRadius: '10px',
             border: '1px solid  #fff',
+            display: 'flex',
           }}
-        />
+        >
+          <div
+            style={{
+              backgroundColor: '#fff',
+              width: '50%',
+              padding: '10px',
+              marginRight: '5px',
+            }}
+          >
+            <div>คะแนนรวม</div>
+            <div
+              style={{
+                fontSize: 50,
+                color: '#3f8600',
+                textAlign: 'center',
+                marginTop: 20,
+              }}
+            >
+              0
+            </div>
+          </div>
+          <div
+            style={{
+              backgroundColor: '#fff',
+              width: '50%',
+              padding: '10px',
+              marginLeft: '5px',
+            }}
+          >
+            <span style={{ float: 'right', fontSize: 20 }}>
+              <PopoverIcon />
+            </span>
+            <div
+              style={{
+                fontSize: 50,
+                color: '#cf1322',
+                textAlign: 'center',
+                marginTop: 40,
+              }}
+            >
+              C
+            </div>
+          </div>
+        </div>
       </div>
       <TableForm />
       <span style={{ display: 'flex', justifyContent: 'center' }}>
