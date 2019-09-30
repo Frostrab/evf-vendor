@@ -203,7 +203,7 @@ const Index = props => {
       ],
     },
   ])
-  const [userLogin, setUserLogin] = useState({
+  const [userLogin] = useState({
     empNo: '001754',
     firstNameTH: 'สัญชัย',
     lastNameTH: 'ต้นพุดซา',
@@ -216,17 +216,13 @@ const Index = props => {
   const [showDrawer, setShowDrawer] = useState(false)
   const [systenName] = useState('SPE System')
   React.useEffect(() => {
-    // getMenu ().then (res => {
-    //   const {menu, employee} = res.data;
     const data = []
     menu.map(item => data.push(item.name))
-    if (window.innerWidth > 480) setCollapsed(false)
-    if (window.innerWidth < 480) setCollapsed(true)
+    if (window.innerWidth > 1025) setCollapsed(false)
+    if (window.innerWidth <= 1024) setCollapsed(true)
     setMenu(menu)
-    // setUserLogin (employee);
     setLoading(false)
     setRootKey(data)
-    // });
   }, [menu])
   const toggle = () => {
     setCollapsed(!collapsed)
@@ -246,7 +242,6 @@ const Index = props => {
             collapsedWidth="0"
             collapsed={collapsed}
             width={256}
-            // theme={'light'}
             style={{
               backgroundColor: '#F7F7F8',
               height: '100vh',
@@ -270,7 +265,7 @@ const Index = props => {
         <Layout>
           <div style={{ background: '#d9d9d9', minHeight: '100vh' }}>
             <HeaderTab toggle={toggle} user={userLogin} />
-            <div style={{ padding: '20px' }}>
+            <div style={{ padding: '10px' }}>
               <span style={styleForAnt.content}>{props.children}</span>
             </div>
           </div>

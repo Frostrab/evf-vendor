@@ -6,7 +6,10 @@ export const TableChange = props => {
       <Table
         columns={props.columns}
         dataSource={props.data}
-        size={'default '}
+        expandIconColumnIndex={0}
+        expandIconAsCell={false}
+        size={props.size}
+        expandedRowRender={props.expandedRow}
         indentSize={24}
       />
     </div>

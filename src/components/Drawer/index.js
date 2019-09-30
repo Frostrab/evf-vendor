@@ -24,6 +24,16 @@ export const DrawerTemplate = props => {
           textAlign: 'right',
         }}
       >
+        {props.deleteButton === true ? (
+          <Button
+            type={'delete'}
+            height="100%"
+            onClick={e => props.handleOpenDrawer(false)}
+            style={{ marginRight: 8 }}
+          >
+            ลบ
+          </Button>
+        ) : null}
         <Button
           type={'submit'}
           height="100%"
